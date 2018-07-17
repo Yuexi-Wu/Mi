@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration> 
+    
+     
+     <!-- typeAliases元素：用来配置类别名
+     	内置类别名：
+     	int long String map list
+      -->
+     <typeAliases>
+         <!-- <typeAlias type="mybatis.bean.UserInfo" alias="UserInfo"/>
+         <typeAlias type="mybatis.bean.EMP" alias="EMP"/>
+         <typeAlias type="mybatis.bean.Employee" alias="Employee"/>
+         <typeAlias type="mybatis.bean.Department" alias="Department"/> -->
+         <package name="com.mi.model.bean"/>
+     </typeAliases>
+	 
+	 
+</configuration>  
