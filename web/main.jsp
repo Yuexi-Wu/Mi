@@ -23,9 +23,9 @@
     <li class="layui-nav-item">
       <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
       <dl class="layui-nav-child">
-        <dd><a href="javascript:;">修改信息</a></dd>
-        <dd><a href="javascript:;">安全管理</a></dd>
-        <dd><a href="javascript:;">退了</a></dd>
+        <dd><a href="javascript:;">资料管理</a></dd>
+        <dd><a href="javascript:;">修改密码</a></dd>
+        <dd><a href="javascript:;">注销</a></dd>
       </dl>
     </li>
   </ul>

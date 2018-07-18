@@ -1,0 +1,38 @@
+.login_page{
+	background-color: #eee
+}
+.login_card{
+	width: 350px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.login_card_head{
+	height: 80px;
+	text-align: center;
+	color: #aaa;
+	font-size: 15px;
+}
+.login_card_body{
+	margin-top: 30px;
+	height: 270px;
+}
+.login_card_footer{
+	text-align: center;
+	color: #757575;
+	font-size: 15px;
+}
+.login_form_item{
+	background-color: #fff;
+}
+.login_label{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.login_btn{
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 300px;
+}
