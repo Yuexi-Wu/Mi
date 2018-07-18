@@ -26,6 +26,9 @@ public class ManagerService {
         }
     }
 
-
+    //通过ID获取管理员对象
+    public Manager selectManagerById(int managerId){
+        return dao.selectManagerById(managerId);
+    }
 
 }

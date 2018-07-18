@@ -3,8 +3,12 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
-<configuration> 
-    
+<configuration>
+
+    <settings>
+        <!-- 驼峰法 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
      
      <!-- typeAliases元素：用来配置类别名
      	内置类别名：

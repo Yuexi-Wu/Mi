@@ -13,9 +13,9 @@
 						http://www.springframework.org/schema/aop
 						http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-
     <!-- 加载db.properties文件的内容 location：指定要加载的文件的位置 -->
     <context:property-placeholder location="classpath:db.properties"/>
+
 
     <!-- 配置数据源 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
@@ -38,7 +38,7 @@
     <!-- 管理所有的sql映射文件 mapper扫描 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 组件扫描所有的mapper -->
-        <property name="basePackage" value="com.ssm.model.dao"></property>
+        <property name="basePackage" value="com.mi.model.dao"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
 
