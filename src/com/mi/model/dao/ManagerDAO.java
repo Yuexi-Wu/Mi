@@ -9,5 +9,5 @@ public interface ManagerDAO {
     public Manager selectManagerByName(String managerName);
     public Manager selectManagerById(int managerId);
     public void updateManager(Manager manager);
-    public String updateManagerPassword(int managerId);
+    public void updateManagerPassword(Manager manager);
 }

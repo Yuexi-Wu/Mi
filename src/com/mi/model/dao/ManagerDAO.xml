@@ -10,4 +10,29 @@
     <select id="selectManagerById" parameterType="int" resultType="Manager">
         select * from manager where manager_id = #{id}
     </select>
+
+    <update id="updateManager" parameterType="Manager">
+        update manager 
+        <set>
+            <if test="managerName != null and managerName != ''">
+                manager_name = #{managerName},
+            </if>
+            <if test="managerSex != null">
+                manager_sex = #{managerSex},
+            </if>
+            <if test="managerTelephone != null and managerTelephone != ''">
+                manager_telephone = #{managerTelephone},
+            </if>
+            <if test="managerEmail != null and managerEmail != ''">
+                manager_email = #{managerEmail},
+            </if>
+            <if test="managerAddress != null and managerAddress != ''">
+                manager_address = #{managerAddress},
+            </if>
+        </set>
+        where manager_id = #{managerId}
+    </update>
+    <update id="updateManagerPassword" parameterType="Manager">
+        update manager set manager_password = #{managerPassword} where manager_id = #{managerId}
+    </update>
 </mapper>

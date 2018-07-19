@@ -14,3 +14,14 @@ function editManager(){
         content: 'editManager.jsp'
     });
 }
+
+function editPassword(){
+    layer.open({
+        type: 2,
+        title: '管理员密码修改',
+        shadeClose: true,
+        shade: 0.8,
+        area: ['450px', '80%'],
+        content: 'editPassword.jsp'
+    });
+}

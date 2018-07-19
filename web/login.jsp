@@ -16,7 +16,7 @@
             <div>小米商城后台管理员登陆</div>
         </div>
         <div class="login_card_body">
-            <form class="layui-form" action="managerLogin" method="post" accept-charset="utf-8">
+            <form class="layui-form" action="login.action" method="post" accept-charset="utf-8">
                 <div class="layui-inline" style="margin-bottom: 30px">
                     <label class="layui-input-inline layui-icon layui-icon-username login_label"></label>
                     <div class="layui-input-inline">
@@ -48,11 +48,4 @@
         </div>
     </div>
 </body>
-<script>
-//Demo
-layui.use('form', function() {
-    var form = layui.form;
-});
-</script>
-
 </html>

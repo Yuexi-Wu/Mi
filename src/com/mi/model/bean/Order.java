@@ -10,7 +10,7 @@ import java.util.List;
  * @description 订单
  */
 public class Order {
-    private int orderId;//主键
+    private String orderId;//主键
     private double total;//总价
     private int orderStatus;//订单状态:1.未付款 2.已付款 3.已收货 4.已评价 5.已取消(只有未付款才能取消) 6.拼团成功
     private int orderType;//订单类型:1.正常购物 2.秒杀 3.团购
@@ -28,11 +28,11 @@ public class Order {
         }
     }
 
-    public int getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(int orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 

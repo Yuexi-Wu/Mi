@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="layui/css/layui.css">
   <script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/backstage.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquerysession.js" type="text/javascript" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -44,15 +45,21 @@
         <a href="" style="color: #000"><i class="layui-icon layui-icon-notice"></i><span class="layui-badge-dot"></span></a>
       </li>
       <li class="layui-nav-item">
-        <a href="" style="color: #000"><img src="http://t.cn/RCzsdCq" class="layui-nav-img">Alexander</a>
+        <a href="" style="color: #000"><img src="http://t.cn/RCzsdCq" class="layui-nav-img">${manager.managerName}</a>
         <dl class="layui-nav-child">
           <dd><a href="#" onclick="editManager()">资料管理</a></dd>
-          <dd><a href="#">修改密码</a></dd>
-          <dd><a href="javascript:;">注销</a></dd>
+          <dd><a href="#" onclick="editPassword()">修改密码</a></dd>
+          <dd><a href="#" onclick="logout()">注销</a></dd>
         </dl>
       </li>
     </ul>
   </div>
 </div>
 </body>
+<script>
+  function logout() {
+      window.location.href = "login.jsp";
+      $.session.clear();
+  }
+</script>
 </html>
