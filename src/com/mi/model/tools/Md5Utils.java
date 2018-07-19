@@ -1,4 +1,4 @@
-package com.mi.model.utils;
+package com.mi.model.tools;
 
 import java.security.MessageDigest;
 

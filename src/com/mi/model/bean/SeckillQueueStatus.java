@@ -3,12 +3,12 @@ package com.mi.model.bean;
 import java.util.Date;
 
 public class SeckillQueueStatus {
-	int sqsId;
-	Account account;
-	SeckillProduct seckill_product;
-	int sqsStatus;
-	int sqsWaitCount;
-	Date sqsAcceptedTime;
+	private int sqsId;
+	private Account account;
+	private SeckillProduct seckill_product;
+	private int sqsStatus;
+	private int sqsWaitCount;
+	private Date sqsAcceptedTime;
 	
 	public int getSqsId() {
 		return sqsId;

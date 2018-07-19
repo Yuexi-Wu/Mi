@@ -2,7 +2,7 @@ package com.mi.controller;
 
 import com.mi.model.bean.Manager;
 import com.mi.model.service.ManagerService;
-import com.mi.model.utils.Md5Utils;
+import com.mi.model.tools.Md5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
