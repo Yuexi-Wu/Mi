@@ -10,7 +10,7 @@ import java.util.Map;
 public class Product {
 
     private int productId;//商品ID
-    private String prodcutName;//商品名称
+    private String productName;//商品名称
     private String productIntro;//商品简介
     private double productPrice;//商品价格
     private String productColor;//商品颜色
@@ -33,11 +33,11 @@ public class Product {
     }
 
     public String getProdcutName() {
-        return prodcutName;
+        return productName;
     }
 
     public void setProdcutName(String prodcutName) {
-        this.prodcutName = prodcutName;
+        this.productName = prodcutName;
     }
 
     public String getProductIntro() {
