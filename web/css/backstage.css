@@ -17,7 +17,7 @@
 }
 .login_card_body{
 	margin-top: 30px;
-	height: 270px;
+	height: 300px;
 }
 .login_card_footer{
 	text-align: center;
@@ -35,4 +35,99 @@
 	margin-left: 30px;
 	margin-right: 30px;
 	width: 300px;
+}
+.login_tip{
+	color: #FD482C;
+}
+.edit_page{
+	background-color: #eee
+}
+.edit_card{
+	width: 400px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.edit_card_head{
+	height: 80px;
+	text-align: center;
+	color: #aaa;
+	font-size: 15px;
+}
+.edit_card_body{
+	margin-top: 30px;
+	height: 400px;
+}
+.edit_card_footer{
+	text-align: center;
+	color: #757575;
+	font-size: 15px;
+}
+.edit_form_item{
+	background-color: #fff;
+}
+.edit_label{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.edit_btn{
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 300px;
+}
+.edit_tip{
+	color: #FD482C;
+}
+.edit_label_tip{
+	width: 50px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.editp_page{
+	background-color: #eee
+}
+.editp_card{
+	width: 400px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.editp_card_head{
+	height: 80px;
+	text-align: center;
+	color: #aaa;
+	font-size: 15px;
+}
+.editp_card_body{
+	margin-top: 30px;
+	height: 270px;
+}
+.editp_card_footer{
+	text-align: center;
+	color: #757575;
+	font-size: 15px;
+}
+.editp_form_item{
+	background-color: #fff;
+}
+.editp_label{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.editp_btn{
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 270px;
+}
+.editp_tip{
+	color: #FD482C;
+}
+.editp_label_tip{
+	width: 70px;
+	margin-left: 5px;
+	margin-right: 5px;
 }

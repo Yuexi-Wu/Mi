@@ -37,7 +37,7 @@ public class Manager {
         this.managerPassword = managerPassword;
     }
 
-    public boolean isManagerSex() {
+    public boolean getManagerSex() {
         return managerSex;
     }
 

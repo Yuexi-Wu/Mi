@@ -13,6 +13,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="layui/css/layui.css">
   <script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/backstage.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -45,8 +46,8 @@
       <li class="layui-nav-item">
         <a href="" style="color: #000"><img src="http://t.cn/RCzsdCq" class="layui-nav-img">Alexander</a>
         <dl class="layui-nav-child">
-          <dd><a href="javascript:;">资料管理</a></dd>
-          <dd><a href="javascript:;">修改密码</a></dd>
+          <dd><a href="#" onclick="editManager()">资料管理</a></dd>
+          <dd><a href="#">修改密码</a></dd>
           <dd><a href="javascript:;">注销</a></dd>
         </dl>
       </li>
@@ -54,10 +55,4 @@
   </div>
 </div>
 </body>
-<script>
-    layui.use('element', function() {
-        var element = laui.element;
-    });
-</script>
-
 </html>
