@@ -14,14 +14,14 @@ public class Account {
     }
 
     private String accountName;
-    private int telephone;
+    private String telephone;
     private String password;
     private String realName;
     private String avatarUrl;
     private String gender;
     private String birthday;
 
-    private List<Product> favourite;
+    private List<FavouriteItem> favourite;
     private List<Order> orders;
     private List<Notification> notes;
 
@@ -35,11 +35,11 @@ public class Account {
 
     private List<Confiditiality> qa;
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -123,11 +123,11 @@ public class Account {
         this.cart = cart;
     }
 
-    public List<Product> getFavourite() {
+    public List<FavouriteItem> getFavourite() {
         return favourite;
     }
 
-    public void setFavourite(List<Product> favourite) {
+    public void setFavourite(List<FavouriteItem> favourite) {
         this.favourite = favourite;
     }
 

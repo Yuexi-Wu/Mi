@@ -3,9 +3,67 @@ package com.mi.model.bean;
 public class Comment {
     private int commentId;
     private Account account;
-    private String context;
-    private String photourl;
-    private int level;
+    private String content;
+    private String photoUrl;
+    private int totalLevel;
+    private String commentTime;
+    private int descriptionLevel;
+    private int logisticsLevel;
+    private int serviceLevel;
+    private Order order;
+    private Product product;
+
+    public int getTotalLevel() {
+        return totalLevel;
+    }
+
+    public void setTotalLevel(int totalLevel) {
+        this.totalLevel = totalLevel;
+    }
+
+    public int getDescriptionLevel() {
+        return descriptionLevel;
+    }
+
+    public void setDescriptionLevel(int descriptionLevel) {
+        this.descriptionLevel = descriptionLevel;
+    }
+
+    public int getLogisticsLevel() {
+        return logisticsLevel;
+    }
+
+    public void setLogisticsLevel(int logisticsLevel) {
+        this.logisticsLevel = logisticsLevel;
+    }
+
+    public int getServiceLevel() {
+        return serviceLevel;
+    }
+
+    public void setServiceLevel(int serviceLevel) {
+        this.serviceLevel = serviceLevel;
+    }
+
+
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+
 
     public int getCommentId() {
         return commentId;
@@ -24,28 +82,22 @@ public class Comment {
     }
 
     public String getContext() {
-        return context;
+        return content;
     }
 
-    public void setContext(String context) {
-        this.context = context;
+    public void setContext(String content) {
+        this.content = content;
     }
 
-    public String getPhotourl() {
-        return photourl;
+    public String getPhotoUrl() {
+        return photoUrl;
     }
 
-    public void setPhotourl(String photourl) {
-        this.photourl = photourl;
+    public void setPhotoUrl(String photourl) {
+        this.photoUrl = photourl;
     }
 
-    public int getLevel() {
-        return level;
-    }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     public String getCommentTime() {
         return commentTime;
@@ -55,29 +107,7 @@ public class Comment {
         this.commentTime = commentTime;
     }
 
-    public int getProductScore() {
-        return productScore;
-    }
 
-    public void setProductScore(int productScore) {
-        this.productScore = productScore;
-    }
-
-    public int getLigisticScore() {
-        return ligisticScore;
-    }
-
-    public void setLigisticScore(int ligisticScore) {
-        this.ligisticScore = ligisticScore;
-    }
-
-    public int getServiceScore() {
-        return serviceScore;
-    }
-
-    public void setServiceScore(int serviceScore) {
-        this.serviceScore = serviceScore;
-    }
 
     public Order getOrder() {
         return order;
@@ -87,9 +117,5 @@ public class Comment {
         this.order = order;
     }
 
-    private String commentTime;
-    private int productScore;
-    private int ligisticScore;
-    private int serviceScore;
-    private Order order;
+
 }

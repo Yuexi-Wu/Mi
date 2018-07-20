@@ -131,3 +131,39 @@
 	margin-left: 5px;
 	margin-right: 5px;
 }
+.main_footer{
+	color: #969696;
+	text-align: center;
+}
+.main_body{
+	padding: 30px;
+	background-color: #eee;
+}
+.main_content{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+	padding-top: 20px;
+}
+.main_logo{
+	width: 600px;
+	height: 150px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.main_logo_container{
+	background-color: #eee;
+	height: 150px;
+}
+.main_intro{
+	padding: 50px;
+	color: #969696;
+}
+.main_intro p{
+	padding-bottom: 5px;
+}
+.main_intro h2{
+	padding-bottom: 3px;
+}

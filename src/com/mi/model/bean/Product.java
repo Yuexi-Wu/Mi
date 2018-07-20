@@ -20,7 +20,7 @@ public class Product {
     private int productMax;//商品最大购买量
     private String productUrl;//商品主要图片url
     private Date productTime;//商品上架时间
-    private SecondClassification sc;//商品所属二级分类Comment.java
+    private int scId;//商品所属二级分类ID
     private Map<String, String> details;//商品概述图片url和参数
     private List<Comment> comments;//商品所有的评论集合
 
@@ -32,12 +32,12 @@ public class Product {
         this.productId = productId;
     }
 
-    public String getProdcutName() {
+    public String getProductName() {
         return productName;
     }
 
-    public void setProdcutName(String prodcutName) {
-        this.productName = prodcutName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public String getProductIntro() {
@@ -112,12 +112,12 @@ public class Product {
         this.productTime = productTime;
     }
 
-    public SecondClassification getSc() {
-        return sc;
+    public int getScId() {
+        return scId;
     }
 
-    public void setSc(SecondClassification sc) {
-        this.sc = sc;
+    public void setScId(int scId) {
+        this.scId = scId;
     }
 
     public Map<String, String> getDetails() {
@@ -134,5 +134,25 @@ public class Product {
 
     public void setDetails(Map<String, String> details) {
         this.details = details;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productIntro='" + productIntro + '\'' +
+                ", productPrice=" + productPrice +
+                ", productColor='" + productColor + '\'' +
+                ", productVersion='" + productVersion + '\'' +
+                ", productSize='" + productSize + '\'' +
+                ", productSales=" + productSales +
+                ", productMax=" + productMax +
+                ", productUrl='" + productUrl + '\'' +
+                ", productTime=" + productTime +
+                ", scId=" + scId +
+                ", details=" + details +
+                ", comments=" + comments +
+                '}';
     }
 }

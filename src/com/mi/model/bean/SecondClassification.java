@@ -11,7 +11,7 @@ public class SecondClassification {
     private String scName;//二级分类名称
     private String scDescription;//二级分类描述
     private String scUrl;//二级分类图片url
-    private FirstClassification fc;//所属一级分类
+    private int fcId;//所属一级分类Id
     private List<Product> products;//该二级分类下所有的商品集合
 
     public int getScId() {
@@ -46,12 +46,12 @@ public class SecondClassification {
         this.scUrl = scUrl;
     }
 
-    public FirstClassification getFc() {
-        return fc;
+    public int getFcId() {
+        return fcId;
     }
 
-    public void setFc(FirstClassification fc) {
-        this.fc = fc;
+    public void setFcId(int fcId) {
+        this.fcId = fcId;
     }
 
     public List<Product> getProducts() {

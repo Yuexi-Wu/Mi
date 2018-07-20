@@ -12,7 +12,7 @@ public class Notification {
     private String notificationTitle;//通知标题
     private String notificationContent;//通知内容
     private int notificationStatus;//通知状态
-    private Account account;//通知所属用户
+    private int accountId;//通知所属用户
 
     public int getNotificationId() {
         return notificationId;
@@ -46,11 +46,11 @@ public class Notification {
         this.notificationStatus = notificationStatus;
     }
 
-    public Account getAccount() {
-        return account;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setAccountId(Account account) {
+        this.accountId = accountId;
     }
 }

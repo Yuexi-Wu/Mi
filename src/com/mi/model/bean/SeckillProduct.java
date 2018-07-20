@@ -9,7 +9,7 @@ public class SeckillProduct {
     private Product product;//秒杀商品项目商品
     private int spAmount;//秒杀商品项目数量
     private double spPrice;//秒杀商品项目价格
-    private Seckill seckill;//所属秒杀活动
+    private int seckillId;//所属秒杀活动ID
 
     public int getSpId() {
         return spId;
@@ -43,11 +43,11 @@ public class SeckillProduct {
         this.spPrice = spPrice;
     }
 
-    public Seckill getSeckill() {
-        return seckill;
+    public int getSeckillId() {
+        return seckillId;
     }
 
-    public void setSeckill(Seckill seckill) {
-        this.seckill = seckill;
+    public void setSeckillId(int seckillId) {
+        this.seckillId = seckillId;
     }
 }

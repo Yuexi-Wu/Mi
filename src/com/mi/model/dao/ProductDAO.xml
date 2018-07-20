@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mi.model.dao.ProductDAO">
+
+    <select id="selectAllProducts" resultMap="productMaps">
+        select
+          product_id, product_name, product_intro, product_price, product_color, product_version,
+          product_size, product_sales, product_max, product_url, product_time, sc_id
+        from
+          product
+    </select>
+    <resultMap id="productMaps" type="Product">
+        <result column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_intro" property="productIntro"/>
+        <result column="product_price" property="productPrice"/>
+        <result column="product_color" property="productColor"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="product_size" property="productSize"/>
+        <result column="product_sales" property="productSales"/>
+        <result column="product_max" property="productMax"/>
+        <result column="product_url" property="productUrl"/>
+        <result column="product_time" property="productTime"/>
+        <result column="sc_id" property="scId"/>
+        <collection property="comments" ofType="Comment" select="selectComments" column="product_id"></collection>
+    </resultMap>
+    <select id="selectComments" parameterType="int" resultType="Comment">
+        select
+          comment_id, content
+        from
+          comment
+        where
+          product_id=#{product_id}
+    </select>
+</mapper>

@@ -3,7 +3,7 @@ package com.mi.model.bean;
 public class Receiver {
     private int receiverId;
     private String receiverName;
-    private int receiverPhone;
+    private String receiverPhone;
     private String adProvince;
     private String adCity;
     private String adDetail;
@@ -28,11 +28,11 @@ public class Receiver {
         this.receiverName = receiverName;
     }
 
-    public int getReceiverPhone() {
+    public String getReceiverPhone() {
         return receiverPhone;
     }
 
-    public void setReceiverPhone(int receiverPhone) {
+    public void setReceiverPhone(String receiverPhone) {
         this.receiverPhone = receiverPhone;
     }
 

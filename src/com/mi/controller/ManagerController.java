@@ -39,6 +39,12 @@ public class ManagerController {
         }
     }
 
+    @RequestMapping("logout")
+    public String logout(HttpSession session){
+        session.removeAttribute("manager");
+        return "redirect:login.jsp";
+    }
+
     @RequestMapping("getManagerInfo")
     public Manager getManagerInfo(int managerId){
         Manager manager = service.selectManagerById(managerId);
@@ -89,7 +95,6 @@ public class ManagerController {
             default:
                 break;
         }
-        System.out.println(response+ "---------------------------");
         model.addAttribute("tip", response);
         return "editPassword";
     }
