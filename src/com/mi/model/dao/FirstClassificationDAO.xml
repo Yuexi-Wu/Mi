@@ -4,5 +4,39 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mi.model.dao.FirstClassificationDAO">
 
+    <select id="selectAllFcsCount" parameterType="String" resultType="int">
+        select
+          count(*)
+        from
+          first_classification
+        <where>
+            fc_status = 1
+            <if test="fcName != null and fcName != ''">
+                and fc_name like CONCAT(CONCAT('%',#{fcName},'%'))
+            </if>
+        </where>
+    </select>
 
+    <select id="selectAllFcs" parameterType="Map" resultType="FirstClassification">
+        select
+          fc_id, fc_name, fc_description
+        from
+          first_classification
+        <where>
+            fc_status = 1
+            <if test="fcName != null and fcName != ''">
+                and fc_name like CONCAT(CONCAT('%',#{fcName},'%'))
+            </if>
+        </where>
+        limit #{index}, #{limit}
+    </select>
+
+    <update id="deleteFc" parameterType="int">
+        update
+          first_classification
+        set
+          fc_status = 0
+        where
+          fc_id = #{fcId}
+    </update>
 </mapper>

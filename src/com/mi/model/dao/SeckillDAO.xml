@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mi.model.dao.SeckillDAO">
+
+    <select id="selectAllSeckills" parameterType="Map" resultType="Seckill">
+        select
+          seckill_id, seckill_name, seckill_description, seckill_start, seckill_end
+        from
+          seckill
+        <where>
+            seckill_status = 1
+            <if test="startTime != null and startTime != ''">
+                and seckill_start &gt;= #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                and seckill_end &lt;= #{endTime}
+            </if>
+        </where>
+        limit #{index}, #{limit}
+    </select>
+
+    <select id="selectAllSeckillsCount" parameterType="Map" resultType="int">
+        select
+          count(*)
+        from
+          seckill
+        <where>
+            seckill_status = 1
+            <if test="startTime != null and startTime != ''">
+                and seckill_start &gt;= #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                and seckill_end &lt;= #{endTime}
+            </if>
+        </where>
+    </select>
+
+    <update id="deleteSeckill" parameterType="int">
+        update
+          seckill
+        set
+          seckill_status = 0
+        where
+          seckill_id = #{seckillId}
+    </update>
+</mapper>

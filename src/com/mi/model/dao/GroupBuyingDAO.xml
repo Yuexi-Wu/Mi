@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mi.model.dao.GroupBuyingDAO">
+
+    <select id="selectAllGbs" parameterType="Map" resultType="GroupBuying">
+        select
+          gb_id, gb_name, gb_description, gb_start, gb_end
+        from
+          group_buying
+        <where>
+            gb_status = 1
+            <if test="startTime != null and startTime != ''">
+                and gb_start &gt;= #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                and gb_end &lt;= #{endTime}
+            </if>
+        </where>
+        limit #{index}, #{limit}
+    </select>
+
+    <select id="selectAllGbsCount" parameterType="Map" resultType="int">
+        select
+          count(*)
+        from
+          group_buying
+        <where>
+            gb_status = 1
+            <if test="startTime != null and startTime != ''">
+                and gb_start &gt;= #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                and gb_end &lt;= #{endTime}
+            </if>
+        </where>
+    </select>
+
+    <update id="deleteGb" parameterType="int">
+        update
+          group_buying
+        set
+          gb_status = 0
+        where
+          gb_id = #{gbId}
+    </update>
+</mapper>

@@ -12,7 +12,7 @@ public class Seckill {
     public static final int SECKILL_STATUS_RUNNING = 2;//活动进行中状态
     public static final int SECKILL_STATUS_OVER = 3;//活动已结束状态
 
-    private int scekillId;//秒杀活动ID
+    private int seckillId;//秒杀活动ID
     private String seckillName;//秒杀活动名称
     private String seckillDescription;//秒杀活动描述
     private Date seckillStart;//秒杀活动开始时间
@@ -20,12 +20,12 @@ public class Seckill {
     private int seckillStatus;//秒杀活动状态
     private List<SeckillProduct> seckillProducts;//秒杀所有的商品项目集合
 
-    public int getScekillId() {
-        return scekillId;
+    public int getSeckillId() {
+        return seckillId;
     }
 
-    public void setScekillId(int scekillId) {
-        this.scekillId = scekillId;
+    public void setSeckillId(int seckillId) {
+        this.seckillId = seckillId;
     }
 
     public String getSeckillName() {

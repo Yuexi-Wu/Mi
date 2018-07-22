@@ -21,6 +21,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
          <typeAlias type="mybatis.bean.Department" alias="Department"/> -->
          <package name="com.mi.model.bean"/>
      </typeAliases>
+    
+
 	 
 	 
 </configuration>  

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mi.model.dao.SecondClassificationDAO">
+
+    <select id="selectAllScsCount" parameterType="Map" resultType="int">
+        select
+          count(*)
+        from
+          second_classification
+        <where>
+            sc_status = 1
+            <if test="fcId != null">
+                and fc_id = #{fcId}
+            </if>
+            <if test="scName != null and scName != ''">
+                and sc_name like CONCAT(CONCAT('%',#{scName},'%'))
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAllScs" parameterType="Map" resultType="SecondClassification">
+        select
+          sc_id, sc_name, sc_description, sc_url, fc_id
+        from
+          second_classification
+        <where>
+            sc_status = 1
+            <if test="fcId != null">
+                and fc_id = #{fcId}
+            </if>
+            <if test="scName != null and scName != ''">
+                and sc_name like CONCAT(CONCAT('%',#{scName},'%'))
+            </if>
+        </where>
+        limit #{index}, #{limit}
+    </select>
+
+    <update id="deleteSc" parameterType="int">
+        update
+          second_classification
+        set
+          sc_status = 0
+        where
+          sc_id = #{scId}
+    </update>
+</mapper>

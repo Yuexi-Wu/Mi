@@ -2,12 +2,17 @@ package com.mi.controller;
 
 import com.mi.model.bean.Product;
 import com.mi.model.dao.ProductDAO;
+import com.mi.model.service.ProductService;
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Alexander on 2018/7/20 下午2:21
@@ -17,12 +22,25 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductDAO dao;
+    private ProductService service;
 
     @RequestMapping("getAllProducts")
-    public String getAllProducts(Model model){
-        List<Product> list = dao.selectAllProducts();
-        model.addAttribute("list", list);
-        return "test";
+    @ResponseBody
+    public Map<String, Object> getAllProducts(String productName, String scId, String page, String limit){
+        System.out.println(productName + "---" + scId + "---" + page + "---" + limit);
+        Map<String, Object> result = new HashMap<>();
+        result.put("code", 0);
+        result.put("msg", "");
+        result.put("count", service.selectAllProductsCount(productName, scId));
+        List<Product> products = service.selectAllProducts(productName, scId, page, limit);
+        result.put("data", products);
+        return result;
+    }
+
+    @RequestMapping("deleteProduct")
+    @ResponseBody
+    public String deleteProduct(int productId){
+        service.deleteProduct(productId);
+        return "success";
     }
 }

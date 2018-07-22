@@ -4,12 +4,18 @@ import com.mi.model.bean.Manager;
 import com.mi.model.service.ManagerService;
 import com.mi.model.tools.Md5Utils;
 import com.mi.model.tools.ParameterCheck;
+import net.sf.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Alexander on 2018/7/18 下午7:04
@@ -97,5 +103,37 @@ public class ManagerController {
         }
         model.addAttribute("tip", response);
         return "editPassword";
+    }
+
+    @RequestMapping("getAllManager")
+    @ResponseBody
+    public Map<String, Object> getAllManager(){
+        Map<String, Object> result = new HashMap<>();
+        result.put("code", 0);
+        result.put("msg", "");
+        result.put("count", 21);
+        Manager manager = new Manager();
+        manager.setManagerName("xiaohua");
+        manager.setManagerPassword("1234567");
+        manager.setManagerAddress("辽宁省沈阳市");
+        List<Manager> managers = new ArrayList<>();
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        managers.add(manager);
+        JSONArray array = JSONArray.fromObject(managers);
+        result.put("data", array);
+        return result;
     }
 }

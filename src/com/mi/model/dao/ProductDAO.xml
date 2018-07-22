@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mi.model.dao.ProductDAO">
 
-    <select id="selectAllProducts" resultMap="productMaps">
+    <select id="selectAllProductss" resultMap="productMaps">
         select
           product_id, product_name, product_intro, product_price, product_color, product_version,
           product_size, product_sales, product_max, product_url, product_time, sc_id
@@ -34,4 +34,47 @@
         where
           product_id=#{product_id}
     </select>
+    
+    <select id="selectAllProducts" parameterType="Map" resultType="Product">
+        select
+          product_id, product_name, product_intro, product_price, product_color, product_version,
+          product_size, product_sales, product_max, product_url, product_time, sc_id
+        from
+          product
+        <where>
+            product_status = 1
+            <if test="scId != null">
+                and sc_id = #{scId}
+            </if>
+            <if test="productName != null and productName != ''">
+                and product_name like CONCAT(CONCAT('%',#{productName},'%'))
+            </if>
+        </where>
+        limit #{index}, #{limit}
+    </select>
+
+    <select id="selectAllProductsCount" parameterType="Map" resultType="int">
+        select
+          count(*)
+        from
+        product
+        <where>
+            product_status = 1
+            <if test="scId != null">
+                and sc_id = #{scId}
+            </if>
+            <if test="productName != null and productName != ''">
+                and product_name like CONCAT(CONCAT('%',#{productName},'%'))
+            </if>
+        </where>
+    </select>
+
+    <update id="deleteProduct" parameterType="int">
+        update
+          product
+        set
+          product_status = 0
+        where
+          product_id = #{productId}
+    </update>
 </mapper>

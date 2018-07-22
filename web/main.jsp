@@ -9,7 +9,7 @@
 <html>
 
 <head>
-  <title>小米后台</title>
+  <title>小米后台主页</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="layui/css/layui.css">
   <link rel="stylesheet" href="css/backstage.css">
@@ -21,8 +21,8 @@
 <body class="layui-layout-body">
 <div class="layui-layout-admin">
   <!-- 顶部 -->
-  <div class="layui-header" style="background-color: #fff; box-shadow: 0px 2px 2px #888">
-    <img src="img/logo.jpg" class="layui-logo" lay-href="home/console.html">
+  <div class="layui-header" style="background-color: #fff; box-shadow: 0px 1px 2px #888">
+    <img src="img/logo-black-orange.jpg" class="layui-logo" lay-href="home/console.html">
     </img>
     <ul class="layui-nav layui-layout-right" style="background-color: #fff">
       <li class="layui-nav-item">
@@ -41,28 +41,26 @@
   <!-- 侧边栏 -->
   <div class="layui-side" style="background-color: #393D49">
     <ul class="layui-nav layui-nav-tree">
-      <li class="layui-nav-item layui-this"><a href=""><i class="layui-icon layui-icon-home" style="margin-right: 5px"></i>后台主页</a></li>
-      <li class="layui-nav-item"><a href=""><i class="layui-icon layui-icon-file" style="margin-right: 5px"></i>一级分类管理</a></li>
-      <li class="layui-nav-item"><a href=""><i class="layui-icon layui-icon-list" style="margin-right: 5px"></i>二级分类管理</a></li>
-      <li class="layui-nav-item"><a href=""><i class="layui-icon layui-icon-component" style="margin-right: 5px"></i>商品管理</a></li>
-      <li class="layui-nav-item">
-        <a href="javascript:;"><i class="layui-icon layui-icon-date" style="margin-right: 5px"></i>活动管理</a>
-        <dl class="layui-nav-child">
-          <dd><a href="javascript:;"><i class="layui-icon layui-icon-rmb" style="margin-right: 5px"></i>秒杀活动管理</a></dd>
-          <dd><a href="javascript:;"><i class="layui-icon layui-icon-dollar" style="margin-right: 5px"></i>团购活动管理</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"><a href=""><i class="layui-icon layui-icon-engine" style="margin-right: 5px"></i>统计分析</a></li>
+      <li class="layui-nav-item layui-this"><a href="main.jsp"><i class="layui-icon layui-icon-home" style="margin-right: 5px"></i>后台主页</a></li>
+      <li class="layui-nav-item"><a href="fcManage.jsp"><i class="layui-icon layui-icon-file" style="margin-right: 5px"></i>一级分类管理</a></li>
+      <li class="layui-nav-item"><a href="scManage.jsp"><i class="layui-icon layui-icon-list" style="margin-right: 5px"></i>二级分类管理</a></li>
+      <li class="layui-nav-item"><a href="productManage.jsp"><i class="layui-icon layui-icon-component" style="margin-right: 5px"></i>商品管理</a></li>
+      <li class="layui-nav-item"><a href="seckillManage.jsp"><i class="layui-icon layui-icon-rmb" style="margin-right: 5px"></i>秒杀活动管理</a></li>
+      <li class="layui-nav-item"><a href="gbManage.jsp"><i class="layui-icon layui-icon-dollar" style="margin-right: 5px"></i>团购活动管理</a></li>
+      <li class="layui-nav-item"><a href="analysis.jsp"><i class="layui-icon layui-icon-engine" style="margin-right: 5px"></i>统计分析</a></li>
     </ul>
   </div>
   <!-- 主体内容 -->
   <div class="layui-body main_body">
+    <!-- 白色主面板 -->
     <div class="main_content">
+      <!-- logo -->
       <div class="main_logo_container">
         <img src="img/home-logo.jpg" class="main_logo">
       </div>
+      <!-- 小米公司介绍 -->
       <div class="main_intro">
-        <h2>小米名字的由来</h2>
+        <h2><span>小米</span>名字的由来</h2>
         <p>小米的LOGO是一个“MI”形，是Mobile Internet的缩写，代表小米是一家移动互联网公司。 另外，小米的LOGO倒过来是一个心字，少一个点，意味着小米要让我们的用户省一点心。</p>
         <p> </p>
         <p>小米公司正式成立于2010年4月，是一家专注于高端智能手机、互联网电视以及智能家居生态链建设的创新型科技企业。</p>

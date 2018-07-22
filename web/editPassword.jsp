@@ -69,8 +69,12 @@
     $(document).ready(function(){
         var tip = $("#tip").val();
         if(tip == "修改成功"){
-            parent.layer.closeAll();
-            parent.layer.msg("修改成功");
+            parent.layer.msg('修改成功', {
+                icon: 1,
+                time: 1500 //2秒关闭（如果不配置，默认是3秒）
+            }, function(){
+                parent.layer.closeAll();
+            });
         }
     });
 </script>
