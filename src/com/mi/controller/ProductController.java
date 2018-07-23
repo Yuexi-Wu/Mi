@@ -7,6 +7,7 @@ import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -42,5 +43,50 @@ public class ProductController {
     public String deleteProduct(int productId){
         service.deleteProduct(productId);
         return "success";
+    }
+
+    @RequestMapping("addProduct")
+    @ResponseBody
+    public String addProduct(Product product){
+        if (product.getScId() == 0){
+            return "sc";
+        }else if (product.getProductName() == null || product.getProductName().equals("")){
+            return "name";
+        }else if (product.getProductPrice() == null || product.getProductPrice().equals("")){
+            return "price";
+        }else if (product.getProductMax() == null || product.getProductMax().equals("")){
+            return "max";
+        }else if (product.getProductUrl() == null || product.getProductUrl().equals("")){
+            return "url";
+        }
+        service.addProduct(product);
+        return "success";
+
+    }
+
+    @RequestMapping("getProductById")
+    public String getProductById(int productId, Model model){
+        Product product = service.selectProductById(productId);
+        model.addAttribute("product", product);
+        return "productEdit";
+    }
+
+    @RequestMapping("updateProduct")
+    @ResponseBody
+    public String updateProduct(Product product){
+        if (product.getScId() == 0){
+            return "sc";
+        }else if (product.getProductName() == null || product.getProductName().equals("")){
+            return "name";
+        }else if (product.getProductPrice() == null || product.getProductPrice().equals("")){
+            return "price";
+        }else if (product.getProductMax() == null || product.getProductMax().equals("")){
+            return "max";
+        }else if (product.getProductUrl() == null || product.getProductUrl().equals("")){
+            return "url";
+        }
+        service.updateProduct(product);
+        return "success";
+
     }
 }

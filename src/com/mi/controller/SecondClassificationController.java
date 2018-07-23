@@ -1,9 +1,11 @@
 package com.mi.controller;
 
+import com.mi.model.bean.FirstClassification;
 import com.mi.model.bean.SecondClassification;
 import com.mi.model.service.SecondClassificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -38,5 +40,40 @@ public class SecondClassificationController {
     public String deleteFc(String scId){
         service.deleteSc(Integer.parseInt(scId));
         return "success";
+    }
+
+    @RequestMapping("addSc")
+    @ResponseBody
+    public String addSc(SecondClassification sc){
+        if (sc.getFcId() == 0){
+            return "fc";
+        }else if (sc.getScName() == null || sc.getScName().equals("")){
+            return "name";
+        }else if (sc.getScUrl() == null || sc.getScUrl().equals("")){
+            return "url";
+        }
+        service.addSc(sc);
+        return "success";
+    }
+
+    @RequestMapping("updateSc")
+    @ResponseBody
+    public String updateSc(SecondClassification sc){
+        if (sc.getFcId() == 0){
+            return "fc";
+        }else if (sc.getScName() == null || sc.getScName().equals("")){
+            return "name";
+        }else if (sc.getScUrl() == null || sc.getScUrl().equals("")){
+            return "url";
+        }
+        service.updateSc(sc);
+        return "success";
+    }
+
+    @RequestMapping("getScById")
+    public String getScById(int scId, Model model){
+        SecondClassification sc = service.selectScById(scId);
+        model.addAttribute("sc", sc);
+        return "scEdit";
     }
 }

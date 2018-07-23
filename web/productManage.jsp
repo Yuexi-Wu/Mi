@@ -73,7 +73,7 @@
                             <button id="search" data-type="reload" class="layui-btn layui-btn-warm" style="border-radius: 100%; width: 40px; height: 40px;"><i class="layui-icon layui-icon-search" style="margin-left: -6px"></i></button>
                         </div>
                         <div class="layui-inline" style="position:absolute; right: 100px">
-                            <button class="layui-btn layui-btn-normal layui-btn-radius"><i class="layui-icon layui-icon-add-circle"></i>添加商品</button>
+                            <button id="add_btn" class="layui-btn layui-btn-normal layui-btn-radius"><i class="layui-icon layui-icon-add-circle"></i>添加商品</button>
                         </div>
                     </div>
                 </div>
@@ -100,6 +100,17 @@
                 }
                 $('#scId').append(result);
             }
+        });
+
+        $('#add_btn').click(function () {
+            layer.open({
+                type: 2,
+                title: '添加商品',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['400px', '80%'],
+                content: 'productAdd.html'
+            });
         });
     });
 
@@ -182,7 +193,14 @@
                     }
                 );
             } else if (layEvent == 'edit'){
-
+                layer.open({
+                    type: 2,
+                    title: '编辑商品',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['400px', '80%'],
+                    content: 'getProductById.action?productId=' + data.productId,
+                });
             }
         });
     });

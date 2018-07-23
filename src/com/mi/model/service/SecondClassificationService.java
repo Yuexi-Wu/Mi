@@ -47,4 +47,16 @@ public class SecondClassificationService {
     public void deleteSc(int fcId){
         dao.deleteSc(fcId);
     }
+
+    public void addSc(SecondClassification sc) {
+        dao.addSc(sc);
+    }
+
+    public SecondClassification selectScById(int scId) {
+        return dao.selectScById(scId);
+    }
+
+    public void updateSc(SecondClassification sc) {
+        dao.updateSc(sc);
+    }
 }

@@ -16,4 +16,10 @@ public interface SecondClassificationDAO {
     public List<SecondClassification> selectAllScs(Map<String, Object> map);
     //通过二级分类ID删除一级分类
     public void deleteSc(int scId);
+    //添加二级分类
+    public void addSc(SecondClassification sc);
+    //通过ID获取二级分类
+    public SecondClassification selectScById(int scId);
+    //修改二级分类信息
+    public void updateSc(SecondClassification sc);
 }

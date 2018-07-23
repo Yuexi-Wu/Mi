@@ -65,7 +65,7 @@
                             <button id="search" data-type="reload" class="layui-btn layui-btn-warm" style="border-radius: 100%; width: 40px; height: 40px;"><i class="layui-icon layui-icon-search" style="margin-left: -6px"></i></button>
                         </div>
                         <div class="layui-inline" style="position:absolute; right: 100px">
-                            <button class="layui-btn layui-btn-normal layui-btn-radius"><i class="layui-icon layui-icon-add-circle"></i>添加一级分类</button>
+                            <button id="add_btn" class="layui-btn layui-btn-normal layui-btn-radius"><i class="layui-icon layui-icon-add-circle"></i>添加一级分类</button>
                         </div>
                     </div>
                 </div>
@@ -80,9 +80,11 @@
 </div>
 </body>
 <script>
-    layui.use(['table', 'util', 'form'], function(){
+    layui.use(['table', 'util', 'form', 'layer'], function(){
         var table = layui.table;
         var util = layui.util;
+        var form = layui.form;
+        var layer = layui.layer;
         //第一个实例
         table.render({
             id: 'idTest'
@@ -119,6 +121,17 @@
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
         });
+        
+        $('#add_btn').click(function () {
+            layer.open({
+                type: 2,
+                title: '添加一级分类',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['400px', '80%'],
+                content: 'fcAdd.html'
+            });
+        });
 
         table.on('tool(test)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
             var data = obj.data; //获得当前行数据
@@ -150,7 +163,14 @@
                     }
                 );
             } else if (layEvent == 'edit'){
-
+                layer.open({
+                    type: 2,
+                    title: '编辑一级分类',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['400px', '80%'],
+                    content: 'getFcById.action?fcId=' + data.fcId,
+                });
             }
         });
     });

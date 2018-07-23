@@ -39,4 +39,30 @@
         where
           fc_id = #{fcId}
     </update>
+
+    <insert id="addFc" parameterType="FirstClassification">
+        insert into
+          first_classification(fc_name, fc_description, fc_status)
+        values
+          (#{fcName}, #{fcDescription}, 1)
+    </insert>
+
+    <select id="selectFcById" parameterType="int" resultType="FirstClassification">
+        select
+          *
+        from
+          first_classification
+        where
+          fc_id = #{fcId}
+    </select>
+
+    <update id="updateFc" parameterType="FirstClassification">
+        update
+          first_classification
+        set
+          fc_name = #{fcName},
+          fc_description = #{fcDescription}
+        where
+          fc_id = #{fcId}
+    </update>
 </mapper>

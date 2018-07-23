@@ -45,4 +45,32 @@
         where
           sc_id = #{scId}
     </update>
+
+    <insert id="addSc" parameterType="SecondClassification">
+        insert into
+          second_classification(sc_name, sc_description, sc_url, fc_id, sc_status)
+        values
+          (#{scName}, #{scDescription}, #{scUrl}, #{fcId}, 1)
+    </insert>
+
+    <select id="selectScById" parameterType="int" resultType="SecondClassification">
+        select
+          *
+        from
+          second_classification
+        where
+          sc_id = #{scId}
+    </select>
+
+    <update id="updateSc" parameterType="SecondClassification">
+        update
+          second_classification
+        set
+          fc_id = #{fcId},
+          sc_name = #{scName},
+          sc_description = #{scDescription},
+          sc_url = #{scUrl}
+        where
+          sc_id = #{scId}
+    </update>
 </mapper>

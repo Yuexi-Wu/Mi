@@ -37,4 +37,16 @@ public class FirstClassificationService {
     public void deleteFc(int fcId){
         dao.deleteFc(fcId);
     }
+
+    public void addFc(FirstClassification fc){
+        dao.addFc(fc);
+    }
+
+    public FirstClassification selectFcById(int fcId) {
+        return dao.selectFcById(fcId);
+    }
+
+    public void updateFc(FirstClassification fc) {
+        dao.updateFc(fc);
+    }
 }

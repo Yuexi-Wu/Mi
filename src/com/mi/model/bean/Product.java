@@ -12,12 +12,12 @@ public class Product {
     private int productId;//商品ID
     private String productName;//商品名称
     private String productIntro;//商品简介
-    private double productPrice;//商品价格
+    private Double productPrice;//商品价格
     private String productColor;//商品颜色
     private String productVersion;//商品版本
     private String productSize;//商品尺寸
     private int productSales;//商品销量
-    private int productMax;//商品最大购买量
+    private Integer productMax;//商品最大购买量
     private String productUrl;//商品主要图片url
     private Date productTime;//商品上架时间
     private int scId;//商品所属二级分类ID
@@ -48,11 +48,11 @@ public class Product {
         this.productIntro = productIntro;
     }
 
-    public double getProductPrice() {
+    public Double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(Double productPrice) {
         this.productPrice = productPrice;
     }
 
@@ -88,11 +88,11 @@ public class Product {
         this.productSales = productSales;
     }
 
-    public int getProductMax() {
+    public Integer getProductMax() {
         return productMax;
     }
 
-    public void setProductMax(int productMax) {
+    public void setProductMax(Integer productMax) {
         this.productMax = productMax;
     }
 

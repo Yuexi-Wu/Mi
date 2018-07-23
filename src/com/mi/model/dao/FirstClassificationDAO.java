@@ -18,4 +18,8 @@ public interface FirstClassificationDAO {
     public FirstClassification selectFcById(int fcId);
     //通过一级分类ID删除一级分类
     public void deleteFc(int fcId);
+    //添加一级分类
+    public void addFc(FirstClassification fc);
+    //修改一级分类信息
+    void updateFc(FirstClassification fc);
 }

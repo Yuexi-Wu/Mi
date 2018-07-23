@@ -77,4 +77,41 @@
         where
           product_id = #{productId}
     </update>
+
+    <insert id="addProduct" parameterType="Product">
+        insert into
+          product(product_id, product_name, product_intro, product_price, product_color,
+          product_version, product_size, sc_id, product_time, product_max, product_url,
+          product_status)
+        values
+          (#{productId}, #{productName}, #{productIntro}, #{productPrice}, #{productColor},
+          #{productVersion}, #{productSize}, #{scId}, #{productTime}, #{productMax}, #{productUrl}, 1)
+
+    </insert>
+
+    <select id="selectProductById" parameterType="int" resultType="Product">
+        select
+          *
+        from
+          product
+        where
+          product_id = #{productId}
+    </select>
+
+    <update id="updateProduct" parameterType="Product">
+        update
+          product
+        set
+          sc_id = #{scId},
+          product_name = #{productName},
+          product_intro = #{productIntro},
+          product_price = #{productPrice},
+          product_color = #{productColor},
+          product_version = #{productVersion},
+          product_size = #{productSize},
+          product_max = #{productMax},
+          product_url = #{productUrl}
+        where
+          product_id = #{productId}
+    </update>
 </mapper>

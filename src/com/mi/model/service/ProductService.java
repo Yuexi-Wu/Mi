@@ -5,6 +5,7 @@ import com.mi.model.dao.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,5 +47,18 @@ public class ProductService {
 
     public void deleteProduct(int productId) {
         dao.deleteProduct(productId);
+    }
+
+    public void addProduct(Product product) {
+        product.setProductTime(new Date());
+        dao.addProduct(product);
+    }
+
+    public Product selectProductById(int productId) {
+        return dao.selectProductById(productId);
+    }
+
+    public void updateProduct(Product product) {
+        dao.updateProduct(product);
     }
 }

@@ -5,6 +5,7 @@ import com.mi.model.bean.Product;
 import com.mi.model.service.FirstClassificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -38,6 +39,33 @@ public class FirstClassificationController {
     @ResponseBody
     public String deleteFc(String fcId){
         service.deleteFc(Integer.parseInt(fcId));
+        return "success";
+    }
+
+    @RequestMapping("addFc")
+    @ResponseBody
+    public String addFc(FirstClassification fc){
+        if (fc.getFcName() == null || fc.getFcName().equals("")){
+            return "name";
+        }
+        service.addFc(fc);
+        return "success";
+    }
+
+    @RequestMapping("getFcById")
+    public String getFcById(int fcId, Model model){
+        FirstClassification fc = service.selectFcById(fcId);
+        model.addAttribute("fc", fc);
+        return "fcEdit";
+    }
+
+    @RequestMapping("updateFc")
+    @ResponseBody
+    public String updateFc(FirstClassification fc){
+        if (fc.getFcName() == null || fc.getFcName().equals("")){
+            return "name";
+        }
+        service.updateFc(fc);
         return "success";
     }
 }

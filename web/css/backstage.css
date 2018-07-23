@@ -173,3 +173,34 @@
 .main_intro h2 span{
 	color: #ff6700;
 }
+.add_page{
+	background-color: #eee
+}
+.add_btn{
+	width: 200px;
+}
+.add_card{
+	width: auto;
+	height: 400px;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, 0);
+}
+.add_card_head{
+	height: 80px;
+	text-align: center;
+	color: #aaa;
+	font-size: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.add_card_body{
+	text-align: center;
+	margin-bottom: 30px;
+}
+.add_card_footer{
+	text-align: center;
+	color: #757575;
+	font-size: 15px;
+	margin-bottom: 20px;
+}

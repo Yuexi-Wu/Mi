@@ -5,7 +5,7 @@ import java.util.Date;
 public class SeckillQueueStatus {
 	private int sqsId;
 	private Account account;
-	private SeckillProduct seckill_product;
+	private SeckillProduct seckillProduct;
 	private int sqsStatus;
 	private int sqsWaitCount;
 	private Date sqsAcceptedTime;
@@ -22,11 +22,11 @@ public class SeckillQueueStatus {
 	public void setAccount(Account account) {
 		this.account = account;
 	}
-	public SeckillProduct getSeckill_product() {
-		return seckill_product;
+	public SeckillProduct getSeckillProduct() {
+		return seckillProduct;
 	}
-	public void setSeckill_product(SeckillProduct seckill_product) {
-		this.seckill_product = seckill_product;
+	public void setSeckillProduct(SeckillProduct seckillProduct) {
+		this.seckillProduct = seckillProduct;
 	}
 	public int getSqsStatus() {
 		return sqsStatus;
