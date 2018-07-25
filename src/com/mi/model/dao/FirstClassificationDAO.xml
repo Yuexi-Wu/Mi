@@ -43,7 +43,7 @@
     <insert id="addFc" parameterType="FirstClassification">
         insert into
           first_classification(fc_name, fc_description, fc_status)
-        values
+        value
           (#{fcName}, #{fcDescription}, 1)
     </insert>
 

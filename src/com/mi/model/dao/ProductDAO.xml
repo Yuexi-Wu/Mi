@@ -4,43 +4,43 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mi.model.dao.ProductDAO">
 
-    <select id="selectAllProductss" resultMap="productMaps">
-        select
-          product_id, product_name, product_intro, product_price, product_color, product_version,
-          product_size, product_sales, product_max, product_url, product_time, sc_id
-        from
-          product
-    </select>
-    <resultMap id="productMaps" type="Product">
-        <result column="product_id" property="productId"/>
-        <result column="product_name" property="productName"/>
-        <result column="product_intro" property="productIntro"/>
-        <result column="product_price" property="productPrice"/>
-        <result column="product_color" property="productColor"/>
-        <result column="product_version" property="productVersion"/>
-        <result column="product_size" property="productSize"/>
-        <result column="product_sales" property="productSales"/>
-        <result column="product_max" property="productMax"/>
-        <result column="product_url" property="productUrl"/>
-        <result column="product_time" property="productTime"/>
-        <result column="sc_id" property="scId"/>
-        <collection property="comments" ofType="Comment" select="selectComments" column="product_id"></collection>
-    </resultMap>
-    <select id="selectComments" parameterType="int" resultType="Comment">
-        select
-          comment_id, content
-        from
-          comment
-        where
-          product_id=#{product_id}
-    </select>
-    
+    <!--<select id="selectAllProductss" resultMap="productMaps">-->
+    <!--select-->
+    <!--product_id, product_name, product_intro, product_price, product_color, product_version,-->
+    <!--product_size, product_sales, product_max, product_url, product_time, sc_id-->
+    <!--from-->
+    <!--product-->
+    <!--</select>-->
+    <!--<resultMap id="productMaps" type="Product">-->
+    <!--<result column="product_id" property="productId"/>-->
+    <!--<result column="product_name" property="productName"/>-->
+    <!--<result column="product_intro" property="productIntro"/>-->
+    <!--<result column="product_price" property="productPrice"/>-->
+    <!--<result column="product_color" property="productColor"/>-->
+    <!--<result column="product_version" property="productVersion"/>-->
+    <!--<result column="product_size" property="productSize"/>-->
+    <!--<result column="product_sales" property="productSales"/>-->
+    <!--<result column="product_max" property="productMax"/>-->
+    <!--<result column="product_url" property="productUrl"/>-->
+    <!--<result column="product_time" property="productTime"/>-->
+    <!--<result column="sc_id" property="scId"/>-->
+    <!--<collection property="comments" ofType="Comment" select="selectComments" column="product_id"></collection>-->
+    <!--</resultMap>-->
+    <!--<select id="selectComments" parameterType="int" resultType="Comment">-->
+    <!--select-->
+    <!--comment_id, content-->
+    <!--from-->
+    <!--comment-->
+    <!--where-->
+    <!--product_id=#{product_id}-->
+    <!--</select>-->
+
     <select id="selectAllProducts" parameterType="Map" resultType="Product">
         select
-          product_id, product_name, product_intro, product_price, product_color, product_version,
-          product_size, product_sales, product_max, product_url, product_time, sc_id
+        product_id, product_name, product_intro, product_price, product_color, product_version,
+        product_size, product_sales, product_max, product_url, product_time, sc_id
         from
-          product
+        product
         <where>
             product_status = 1
             <if test="scId != null">
@@ -55,7 +55,7 @@
 
     <select id="selectAllProductsCount" parameterType="Map" resultType="int">
         select
-          count(*)
+        count(*)
         from
         product
         <where>
@@ -83,7 +83,7 @@
           product(product_id, product_name, product_intro, product_price, product_color,
           product_version, product_size, sc_id, product_time, product_max, product_url,
           product_status)
-        values
+        value
           (#{productId}, #{productName}, #{productIntro}, #{productPrice}, #{productColor},
           #{productVersion}, #{productSize}, #{scId}, #{productTime}, #{productMax}, #{productUrl}, 1)
 
@@ -114,4 +114,80 @@
         where
           product_id = #{productId}
     </update>
+
+    <select id="selectProductsByName" parameterType="String" resultMap="productMaps">
+        select
+          *
+        from
+          product
+    </select>
+    <resultMap id="productMaps" type="Product">
+        <result column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_intro" property="productIntro"/>
+        <result column="product_price" property="productPrice"/>
+        <result column="product_color" property="productColor"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="product_size" property="productSize"/>
+        <result column="product_sales" property="productSales"/>
+        <result column="product_max" property="productMax"/>
+        <result column="product_url" property="productUrl"/>
+        <result column="product_time" property="productTime"/>
+        <result column="sc_id" property="scId"/>
+        <collection property="details" ofType="Detail" select="selectDetails" column="product_id"></collection>
+    </resultMap>
+    <select id="selectDetails" parameterType="int" resultType="Detail">
+        select
+          *
+        from
+          detail
+        where product_id = #{product_id}
+    </select>
+
+    <select id="selectProductByNCVS" parameterType="Product" resultType="Product">
+        select
+          *
+        from
+          product
+        where
+          product_name = #{productName},
+          and product_color = #{productColor},
+          and product_version = #{productVersion},
+          and product_size = #{productSize}
+    </select>
+
+    <select id="selectProductsByNFC" parameterType="Map" resultMap="productNFCMaps">
+        select
+          p.*, f.*, s.*
+        from
+          product p, first_classification f, second_classification s
+        <where>
+            product_status = 1
+            and p.sc_id = s.sc_id
+            and f.fc_id = s.fc_id
+            <if test="fcId != null">
+                and f.fc_id = #{fcId}
+            </if>
+            <if test="scId != null">
+                and s.sc_id = #{scId}
+            </if>
+            <if test="productName != null and productName != ''">
+                and p.product_name like CONCAT(CONCAT('%',#{productName},'%'))
+            </if>
+        </where>
+    </select>
+    <resultMap id="productNFCMaps" type="Product">
+        <result column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_intro" property="productIntro"/>
+        <result column="product_price" property="productPrice"/>
+        <result column="product_color" property="productColor"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="product_size" property="productSize"/>
+        <result column="product_sales" property="productSales"/>
+        <result column="product_max" property="productMax"/>
+        <result column="product_url" property="productUrl"/>
+        <result column="product_time" property="productTime"/>
+        <result column="sc_id" property="scId"/>
+    </resultMap>
 </mapper>

@@ -48,4 +48,8 @@ public class SeckillService {
         dao.deleteSeckill(seckillId);
     }
 
+    public void addSeckill(Seckill seckill){
+        dao.addSeckill(seckill);
+    }
+
 }

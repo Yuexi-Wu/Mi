@@ -1,6 +1,7 @@
 package com.mi.model.bean;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,8 +22,8 @@ public class Product {
     private String productUrl;//商品主要图片url
     private Date productTime;//商品上架时间
     private int scId;//商品所属二级分类ID
-    private Map<String, String> details;//商品概述图片url和参数
-    private List<Comment> comments;//商品所有的评论集合
+    private List<Detail> details;//商品细节
+    private Map<String, String> detailMap;//商品概述图片url和参数
 
     public int getProductId() {
         return productId;
@@ -120,39 +121,23 @@ public class Product {
         this.scId = scId;
     }
 
-    public Map<String, String> getDetails() {
+    public Map<String, String> getDetailMap() {
+        return detailMap;
+    }
+
+    public void setDetailMap(Map<String, String> detailMap) {
+        this.detailMap = detailMap;
+    }
+
+    public List<Detail> getDetails() {
         return details;
     }
 
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setDetails(Map<String, String> details) {
+    public void setDetails(List<Detail> details) {
         this.details = details;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productIntro='" + productIntro + '\'' +
-                ", productPrice=" + productPrice +
-                ", productColor='" + productColor + '\'' +
-                ", productVersion='" + productVersion + '\'' +
-                ", productSize='" + productSize + '\'' +
-                ", productSales=" + productSales +
-                ", productMax=" + productMax +
-                ", productUrl='" + productUrl + '\'' +
-                ", productTime=" + productTime +
-                ", scId=" + scId +
-                ", details=" + details +
-                ", comments=" + comments +
-                '}';
+        detailMap = new HashMap<>();
+        for (Detail d: details ) {
+            detailMap.put(d.getDetailKey(), d.getDetailVlaue());
+        }
     }
 }

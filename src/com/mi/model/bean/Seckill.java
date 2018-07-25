@@ -1,5 +1,7 @@
 package com.mi.model.bean;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +17,9 @@ public class Seckill {
     private int seckillId;//秒杀活动ID
     private String seckillName;//秒杀活动名称
     private String seckillDescription;//秒杀活动描述
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date seckillStart;//秒杀活动开始时间
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date seckillEnd;//秒杀活动结束时间
     private int seckillStatus;//秒杀活动状态
     private List<SeckillProduct> seckillProducts;//秒杀所有的商品项目集合

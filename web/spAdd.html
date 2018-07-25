@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"></head>
+    <title>选择商品</title>
+    <link rel="stylesheet" href="css/backstage.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
+</head>
+
+<body class="add_page">
+<div class="add_card">
+    <div class="add_card_body">
+        <div class="layui-form">
+            <div style="margin-bottom: 20px">
+                <div class="layui-input-inline" style="width: 280px; margin-top: 50px">
+                    <select id="fcId" name="fcId" lay-verify="required" lay-filter="fc">
+                        <option value="0">请选择一级分类</option>
+                    </select>
+                </div>
+            </div>
+            <div style="margin-bottom: 20px">
+                <div class="layui-input-inline" style="width: 280px">
+                    <select id="scId" name="scId" lay-verify="required" lay-filter="sc">
+                        <option value="0">请选择二级分类</option>
+                    </select>
+                </div>
+            </div>
+            <div style="margin-bottom: 20px">
+                <div class="layui-input-inline" style="width: 280px"s>
+                    <select id="pid" name="pid" lay-verify="required">
+                        <option value="0">请选择商品</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button id="submit" class="layui-btn add_btn">确 定</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: 'getAllFcs.action',
+            type: 'POST',
+            data: {page: 1, limit: 100},
+            success: function (data) {
+                var result = '';
+                for (var i = 0; i < data.data.length; i++){
+                    result += '<option value="' + data.data[i].fcId + '">' + data.data[i].fcName + '</option>';
+                }
+                $('#fcId').append(result);
+            }
+        });
+
+        $('#submit').click(function () {
+            var pid = $('#pid').val();
+            var pinfo = $('#pid').find("option:selected").text();
+            parent.$('#backId').val(pid);
+            parent.$('#backInfo').val(pinfo);
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+        });
+
+    });
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        form.on('select(fc)', function (data) {
+            $.ajax({
+                url: 'getAllScs.action',
+                type: 'POST',
+                data: {
+                    fcId: data.value,
+                    page: 1,
+                    limit: 100
+                },
+                success: function (data) {
+                    var result = '<option value="0">请选择二级分类</option>';
+                    for (var i = 0; i < data.data.length; i++){
+                        result += '<option value="' + data.data[i].scId + '">' + data.data[i].scName + '</option>';
+                    }
+                    $('#scId').html(result);
+                    form.render();
+                }
+            });
+        });
+
+        form.on('select(sc)', function (data){
+            $.ajax({
+                url: 'getAllProducts.action',
+                type: 'POST',
+                data: {
+                    scId: data.value,
+                    page: 1,
+                    limit: 100
+                },
+                success: function (data) {
+                    var result = '<option value="0">请选择商品</option>';
+                    for (var i = 0; i < data.data.length; i++){
+                        result += '<option value="' + data.data[i].productId + '">' +
+                             data.data[i].productName + '-' + data.data[i].productColor + ' ' + data.data[i].productVersion
+                            + ' ' + data.data[i].productSize + '</option>';
+                    }
+                    $('#pid').html(result);
+                    form.render();
+                }
+            });
+        });
+    });
+</script>
+
+</html>

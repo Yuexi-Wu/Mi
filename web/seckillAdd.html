@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>添加秒杀活动</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/backstage.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js" type="text/javascript"></script>
+</head>
+
+<body class="add_page">
+<div class="add_card">
+    <div class="add_card_head">
+        <img src="img/logo-color.png" alt="logo">
+        <p>添加秒杀活动</p>
+    </div>
+    <div class="add_card_body">
+        <div class="layui-form">
+            <!-- 秒杀活动名称 -->
+            <div style="margin-bottom: 20px">
+                <div class="layui-input-inline">
+                    <input id="seckillName" type="text" name="seckillName" autocomplete="off" class="layui-input" style="width: 300px" placeholder="请输入秒杀活动名称">
+                </div>
+            </div>
+            <!-- 秒杀活动描述 -->
+            <div style="margin-bottom: 20px">
+                <div class="layui-input-inline">
+                    <textarea id="seckillDescription" name="seckillDescription" style="width: 300px" required lay-verify="required" placeholder="请输入秒杀活动描述" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <!-- 秒杀活动开始时间 -->
+            <div style="margin-bottom: 20px">
+                <div class="layui-input-inline">
+                    <label class="layui-input-inline" style="color: #757575">开始时间:</label>
+                    <input id="seckillStart" class="layui-input layui-input-inline" style="width: 200px; margin-left: 30px">
+                </div>
+            </div>
+            <!-- 秒杀活动结束时间 -->
+            <div style="margin-bottom: 20px">
+                <div class="layui-input-inline">
+                    <label class="layui-input-inline" style="color: #757575">结束时间:</label>
+                    <input id="seckillEnd" class="layui-input-inline layui-input" style="width: 200px; margin-left: 30px">
+                </div>
+            </div>
+            <!-- 商品设置 -->
+            <div id="products" class="seckill_product">
+                <div style="color: #757575">添加秒杀活动商品</div>
+                <div id="productAdd" class="seckill_product_item_add">
+                    <i class="layui-icon layui-icon-add-circle"></i>
+                </div>
+            </div>
+            <div>
+                <input id="backId" class="layui-input-inline layui-input" style="width: 200px; margin-left: 30px; display: none">
+                <input id="backInfo" class="layui-input-inline layui-input" style="width: 200px; margin-left: 30px; display: none">
+                <div>
+                <button id="add_btn" class="layui-btn add_btn">添 加</button>
+            </div>
+        </div>
+    </div>
+    <div class="add_card_footer">
+        <p>@小米商城项目</p>
+        制作者：Java班第五组
+    </div>
+</div>
+</body>
+<script>
+    //Demo
+    layui.use(['form', 'laydate'], function() {
+        var form = layui.form;
+        var laydate = layui.laydate
+
+        laydate.render({
+            elem: '#seckillStart',
+            type: 'datetime'
+        });
+        laydate.render({
+            elem: '#seckillEnd',
+            type: 'datetime'
+        });
+
+        $ = layui.$;
+        $('#productAdd').click(function() {
+            $('#productAdd').before('<div class="seckill_product_item"><i class="layui-icon layui-icon-close""></i><div style="margin-bottom: 10px; display: none"><label class="layui-input-inline" style="color: #757575">商品ID:</label><input name="productId" type="text" class="layui-input layui-input-inline product-id" style="width: 150px; margin-top: 10px; margin-left: 30px"></div><div style="margin-bottom: 10px"><label class="layui-input-inline" style="color: #757575">商品&nbsp&nbsp&nbsp:</label><input name="productInfo" type="text" class="layui-input layui-input-inline product-info" style="width: 150px; margin-top: 10px; margin-left: 30px"></div><div style="margin-bottom: 10px"><label class="layui-input-inline" style="color: #757575">数量:&nbsp&nbsp&nbsp</label><input name="spAmount" type="number" class="layui-input layui-input-inline" style="width: 150px; margin-left: 30px"></div><div style="margin-bottom: 10px"><label class="layui-input-inline" style="color: #757575">秒杀价:</label><input name="spPrice" type="number" class="layui-input layui-input-inline" style="width: 150px; margin-left: 30px"></div></div>');
+        });
+
+        $('#products').on('click', '.seckill_product_item .layui-icon-close', function() {
+            $(this).parent().remove();
+        });
+
+        $("#products").on('click', '.seckill_product_item .product-info', function(){
+            var index = $(this);
+            layer.open({
+                type: 2,
+                title: '选择商品',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['380px', '80%'],
+                content: 'spAdd.html',
+                end: function() {
+                    var resultId = $('#backId').val();
+                    var resultInfo = $('#backInfo').val();
+                    index.val(resultInfo);
+                    // alert(index.parent().prev().children("input").html());
+                    index.parent().prev().children("input").val(resultId);
+                }
+            });
+        });
+
+        $('#add_btn').click(function () {
+            var productIds = new Array();
+            $("input[name='productId']").each(function () {
+                productIds.push($(this).val())
+            });
+            var spAmounts = new Array();
+            $("input[name='spAmount']").each(function () {
+                spAmounts.push($(this).val())
+            })
+            var spPrices = new Array();
+            $("input[name='spPrice']").each(function () {
+                spPrices.push($(this).val())
+            })
+            var seckill = '{"seckillName":"' + $('#seckillName').val() + '","seckillDescription":"'
+                + $('#seckillDescription').val() + '","seckillStart":"' + $('#seckillStart').val()
+                + '","seckillEnd":"' + $('#seckillEnd').val() + '"}';
+            var sps = '[';
+            $.each(productIds, function (index, value) {
+                if (index == (productIds.length - 1)) {
+                    sps += '{"productId":"' + productIds[index] + '","spAmount":"' +
+                        spAmounts[index] + '","spPrice":"' + spPrices[index] + '"}';
+                } else {
+                    sps += '{"productId":"' + productIds[index] + '","spAmount":"' +
+                        spAmounts[index] + '","spPrice":"' + spPrices[index] + '"},';
+                }
+            });
+            sps += ']';
+            $.ajax({
+                url: 'addSeckill.action',
+                type: 'POST',
+                data: {
+                    seckill: seckill,
+                    sps: sps,
+                },
+                success: function (data) {
+                    if (data == 'success'){
+                        layer.msg("添加成功", {icon: 6})
+                        setTimeout(function () {
+                            parent.layer.closeAll();
+                        }, 1000);
+                    } else if (data == 'name'){
+                        layer.msg("秒杀活动名称不能为空", {icon: 2});
+                    } else if (data == 'start'){
+                        layer.msg("秒杀活动开始时间不能为空", {icon: 2});
+                    } else if (data == 'end'){
+                        layer.msg("秒杀活动结束时间不能为空", {icon: 2});
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</html>

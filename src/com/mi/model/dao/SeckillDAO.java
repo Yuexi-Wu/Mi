@@ -16,4 +16,6 @@ public interface SeckillDAO {
     public int selectAllSeckillsCount(Map<String, Object> map);
     //通过秒杀活动ID删除秒杀活动
     public void deleteSeckill(int seckillId);
+    //添加秒杀活动
+    void addSeckill(Seckill seckill);
 }

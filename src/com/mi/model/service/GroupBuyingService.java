@@ -47,4 +47,8 @@ public class GroupBuyingService {
     public void deleteGb(int gbId){
         dao.deleteGb(gbId);
     }
+
+    public void addGb(GroupBuying gb) {
+        dao.addGb(gb);
+    }
 }

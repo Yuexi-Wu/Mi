@@ -45,4 +45,11 @@
         where
           gb_id = #{gbId}
     </update>
+
+    <insert id="addGb" parameterType="GroupBuying">
+        insert into
+          group_buying(gb_id, gb_name, gb_description, gb_start, gb_end)
+        value
+          (#{gbId}, #{gbName}, #{gbDescription},#{gbStart}, #{gbEnd})
+    </insert>
 </mapper>

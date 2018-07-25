@@ -45,4 +45,11 @@
         where
           seckill_id = #{seckillId}
     </update>
+
+    <insert id="addSeckill" parameterType="Seckill">
+        insert into
+          seckill(seckill_id, seckill_name, seckill_description, seckill_start, seckill_end)
+        value
+          (#{seckillId}, #{seckillName}, #{seckillDescription},#{seckillStart}, #{seckillEnd})
+    </insert>
 </mapper>

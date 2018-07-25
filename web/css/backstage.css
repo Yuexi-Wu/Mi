@@ -204,3 +204,33 @@
 	font-size: 15px;
 	margin-bottom: 20px;
 }
+.seckill_product, .gb_product{
+	border-color: #aaa;
+	border-style: dotted;
+	margin-bottom: 30px;
+}
+.seckill_product_item, .gb_product_item{
+	background-color: #fff;
+	width: 280px;
+	margin-top: 20px;
+	margin-left: 7px;
+	padding: 5px;
+}
+.seckill_product_item, .gb_product_item i{
+	color: #ff6700;
+}
+.seckill_product_item_add, .gb_product_item_add{
+	border-color: #ff6700;
+	border-width: 1px;
+	border-style: solid;
+	width: 280px;
+	height: 100px;
+	margin-top: 20px;
+	margin-left: 7px;
+}
+#productAdd i{
+	position: relative;
+	top: 35%;
+	color: #ff6700;
+	font-size: 35px;
+}

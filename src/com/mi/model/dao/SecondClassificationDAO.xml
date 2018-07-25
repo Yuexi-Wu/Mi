@@ -49,7 +49,7 @@
     <insert id="addSc" parameterType="SecondClassification">
         insert into
           second_classification(sc_name, sc_description, sc_url, fc_id, sc_status)
-        values
+        value
           (#{scName}, #{scDescription}, #{scUrl}, #{fcId}, 1)
     </insert>
 
