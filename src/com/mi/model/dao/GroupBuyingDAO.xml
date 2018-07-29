@@ -52,4 +52,41 @@
         value
           (#{gbId}, #{gbName}, #{gbDescription},#{gbStart}, #{gbEnd})
     </insert>
+
+    <select id="selectGbById" parameterType="int" resultMap="gbMaps">
+        select
+          *
+        from
+          group_buying
+        where
+          gb_id = #{gbId}
+    </select>
+    <resultMap id="gbMaps" type="GroupBuying">
+        <result column="gb_id" property="gbId"/>
+        <result column="gb_name" property="gbName"/>
+        <result column="gb_description" property="gbDescription"/>
+        <result column="gb_start" property="gbStart"/>
+        <result column="gb_end" property="gbEnd"/>
+        <collection property="gbProducts" ofType="GroupBuyingProduct" select="selectGbps" column="gb_id"></collection>
+    </resultMap>
+    <select id="selectGbps" parameterType="int" resultMap="gbpMaps">
+        select
+          gbp.*, p.*
+        from
+          group_buying_product gbp, product p
+        where
+          gb_id = #{gb_id}
+          and gbp.product_id = p.product_id
+    </select>
+    <resultMap id="gbpMaps" type="GroupBuyingProduct">
+        <result column="gbp_amount" property="gbpAmount"/>
+        <result column="gbp_price" property="gbpPrice"/>
+        <association property="product" javaType="Product">
+            <result column="product_id" property="productId"/>
+            <result column="product_name" property="productName"/>
+            <result column="product_color" property="productColor"/>
+            <result column="product_version" property="productVersion"/>
+            <result column="product_size" property="productSize"/>
+        </association>
+    </resultMap>
 </mapper>

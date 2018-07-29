@@ -51,4 +51,8 @@ public class GroupBuyingService {
     public void addGb(GroupBuying gb) {
         dao.addGb(gb);
     }
+
+    public GroupBuying selectGbById(int gbId) {
+        return dao.selectGbById(gbId);
+    }
 }

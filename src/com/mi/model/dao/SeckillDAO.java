@@ -18,4 +18,6 @@ public interface SeckillDAO {
     public void deleteSeckill(int seckillId);
     //添加秒杀活动
     void addSeckill(Seckill seckill);
+    //通过秒杀活动Id获取秒杀活动对象
+    Seckill selectSeckillById(int seckillId);
 }

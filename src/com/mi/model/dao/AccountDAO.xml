@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 准备和接口成对匹配 -->
+<mapper namespace="com.mi.model.dao.AccountDAO">
+
+    <!-- //注册之前先绑定一个手机号
+    public void addTelephone(String telephone,int accountId); -->
+    <insert id="addTelephone" parameterType="Account">
+        insert into mi_account (account_id,telephone) values (#{accountId},#{telephone})
+    </insert>
+
+    <!--  //注册账户名和密码
+    public void addAccount(Account account); -->
+    <update id="addAccount" parameterType="Account">
+        UPDATE mi_account set account_name=#{accountName},password=#{password}
+        where account_id=#{accountId}
+    </update>
+
+    <!-- //注册个人信息
+    public void addInfo(Account account); -->
+    <update id="addInfo" parameterType="Account">
+        update mi_account set real_name=#{realName},gender=#{gender},birthday=#{birthday}
+        where account_id = #{accountId}
+    </update>
+
+    <!-- //注册账户头像
+    public void addAvatar(Account account); -->
+    <update id="addAvatar" parameterType="Account">
+        update mi_account set avatar_url=#{avatarUrl}
+        where account_id=#{accountId}
+    </update>
+
+    <!-- 注册新用户 -->
+    <insert id="registAccount" parameterType="Account">
+        insert into mi_account values (#{accountId},#{telephone},#{accountName},#{password},#{realName},#{gender},#{birthday},#{avatarUrl},#{email},#{securityLevel})
+    </insert>
+
+    <!-- //修改密码时验证原密码是否正确
+    public Account verifyPassword(int password, int accountId); -->
+    <select id="verifyPassword" parameterType="Account" resultType="Account">
+        select * from mi_account where account_id=#{accountId} and password=#{password}
+    </select>
+
+    <!-- 通过id得到账户
+    public Account getAccountById(int accountId); -->
+    <select id="getAccountById" parameterType="int" resultType="Account">
+        select * from mi_account where account_id=#{accountId}
+    </select>
+
+    <!-- //查看喜欢的商品
+    public Account checkFavouriteById(int accountId); -->
+    <select id="checkFavouriteById" parameterType="int" resultMap="favourMap">
+        select * from favorite,product,mi_account where mi_account.account_id=#{accountId} and mi_account.account_id=favorite.account_id and favorite.product_id=product.product_id
+    </select>
+
+    <resultMap id="favourMap" type="FavouriteItem">
+        <result column="favorite_id" property="favourId"/>
+        <association property="product" javaType="Product" resultMap="productMap">
+        </association>
+    </resultMap>
+    <resultMap id="productMap" type="Product">
+        <result column="product_name" property="productName"/>
+        <result column="product_url" property="productUrl"/>
+        <result column="product_size" property="productSize"/>
+        <result column="product_intro" property="productIntro"/>
+        <result column="product_price" property="productPrice"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="product_color" property="productColor"/>
+    </resultMap>
+
+    <!-- //登录时验证用户名密码是否有效
+    public Account validateAccount(int telephone, String accountName, String email, String password); -->
+    <select id="validateAccount" parameterType="Account" resultType="Account">
+        select * from mi_account where password=#{password}
+        <if test="accountName != null and accountName != ''">and account_name=#{accountName}</if>
+        <if test="telephone != null and telephone != ''">and telephone=#{telephone}</if>
+        <if test="email != null and email != ''">and email=#{email}</if>
+    </select>
+
+    <!-- //绑定新邮箱
+    public void updateEmail(Account account); -->
+    <insert id="updateEmail" parameterType="Account">
+        update mi_account set email = #{email} where account_id=#{accountId}
+    </insert>
+
+    <!-- //更改密码
+    // public void updatePassword(int accountId, String password);
+    public void updatePassword(Account account); -->
+    <update id="updatePassword" parameterType="Account">
+        <include refid="updatecontent"/>
+        <set>
+            <if test="password!=null and password!=''">password=#{password}</if>
+        </set>
+        where account_id = #{accountId}
+    </update>
+
+    <sql id="updatecontent">update mi_account</sql>
+
+    <!-- //更改账户信息
+    public void updateAccountInfo(Account account); -->
+    <update id="updateAccountInfo" parameterType="Account">
+        <include refid="updatecontent"/>
+        <set>
+            <if test="accountName!=null and accountName!=''">account_name=#{accountName},</if>
+            <if test="telephone!=null and telephone!=''">telephone=#{telephone},</if>
+            <if test="realName!=null and realName!=''">real_name=#{realName},</if>
+            <if test="avatarUrl!=null and avatarUrl!=''">avatar_url=#{avatarUrl},</if>
+            <if test="gender!=null and gender!=''">gender=#{gender},</if>
+            <if test="birthday!=null and birthday!=''">birthday=#{birthday},</if>
+            <if test="email!=null and email!=''">email=#{email}</if>
+        </set>
+        where account_id = #{accountId}
+    </update>
+
+    <!--  //删除喜欢的商品
+    public void deleteFavourite(FavouriteItem favouriteItem); -->
+    <delete id="deleteFavourite" parameterType="int">
+        delete from favorite where favorite_id=#{favourId}
+    </delete>
+
+    <!-- //检验是否存在此电话号码
+    public String findTelephone(String telephone); -->
+    <select id="findTelephone" resultType="string" parameterType="string">
+        select telephone from mi_account m where m.telephone=#{telephone}
+    </select>
+
+    <!-- //检验是否存在此邮箱
+    public String findEmail(String email); -->
+    <select id="findEmail" resultType="string" parameterType="string">
+        select email from mi_account m where m.email=#{email}
+    </select>
+
+
+    <!-- //检验是否存在此用户名
+    public String findAccountName(String accountName); -->
+    <select id="findAccountName" parameterType="string" resultType="string">
+        select account_name from mi_account m where m.account_name=#{accountName}
+    </select>
+
+    <!-- //检验用户名是否重复
+    public String validateAccountName(String accountName); -->
+    <select id="validateAccountName" parameterType="string" resultType="string">
+        select account_name from mi_account m where m.account_name=#{accountName}
+    </select>
+
+    <!-- //得到所有账户ID
+    public List<String> getAllAccountId(); -->
+    <select id="getAllAccountId" resultType="string">
+        select account_id from mi_account
+    </select>
+
+    <!-- //设置密保问题
+    public void addConfiditiality(Confiditiality confiditiality); -->
+    <insert id="addConfiditiality" parameterType="Confiditiality">
+        <selectKey keyProperty="confidentialityId" resultType="int" order="BEFORE">
+            select nullif(max(confidentiality_id),0)+1 from confidentiality
+        </selectKey>
+        insert into confidentiality VALUES
+        (#{confidentialityId},#{account.accountId},#{familyQuestion},#{familyAnswer},#{firstQuestion},#{firstAnswer},#{schoolQuestion},#{schoolAnswer},#{selfQuestion},#{selfAnswer})
+    </insert>
+
+    <!-- //得到所有账户id
+    public List<Integer> selectAllAccountsId(); -->
+    <select id="selectAllAccountsId" resultType="Integer">
+    select
+    account_id
+    from
+    mi_account
+    </select>
+
+    <select id="getAllAccountsCount" resultType="int">
+        select
+          count(*)
+        from
+          mi_account
+    </select>
+
+
+</mapper>

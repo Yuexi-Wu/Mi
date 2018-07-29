@@ -50,7 +50,7 @@ public class Notification {
         return accountId;
     }
 
-    public void setAccountId(Account account) {
+    public void setAccountId(int accountId) {
         this.accountId = accountId;
     }
 }

@@ -3,6 +3,7 @@ package com.mi.controller;
 import com.mi.model.bean.FirstClassification;
 import com.mi.model.bean.SecondClassification;
 import com.mi.model.service.SecondClassificationService;
+import com.mi.model.tools.CusMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,6 +53,7 @@ public class SecondClassificationController {
         }else if (sc.getScUrl() == null || sc.getScUrl().equals("")){
             return "url";
         }
+        sc.setScId(CusMethod.randomId());
         service.addSc(sc);
         return "success";
     }

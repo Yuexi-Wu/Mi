@@ -17,6 +17,24 @@
     <mvc:annotation-driven></mvc:annotation-driven>
 
 
+    <!-- 配置拦截器 -->
+    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">-->
+        <!--<property name="interceptors">-->
+            <!--<list>-->
+                <!--<ref bean="backstageInterceptor"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="backstageInterceptor" class="com.mi.web.BackstageInterceptor"></bean>-->
+
+
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.mi.web.BackstageInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+
+    <!--</mvc:interceptors>-->
 
 
     <!-- 响应的配置 -->

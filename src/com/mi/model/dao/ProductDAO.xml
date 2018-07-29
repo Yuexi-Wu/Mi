@@ -120,6 +120,8 @@
           *
         from
           product
+        where
+          product_name = #{productName},
     </select>
     <resultMap id="productMaps" type="Product">
         <result column="product_id" property="productId"/>
@@ -190,4 +192,24 @@
         <result column="product_time" property="productTime"/>
         <result column="sc_id" property="scId"/>
     </resultMap>
+
+    <update id="updateProductSales" parameterType="Map">
+        update
+          product
+        set
+          product_sales = product_sales + #{amount}
+        where
+          product_id = #{productId}
+    </update>
+
+    <select id="getProductsOrderedBySale" parameterType="Map" resultType="Product">
+        select
+          *
+        from
+          product
+        where
+          product_status = 1
+        order by product_sales desc
+        limit #{index}, #{limit}
+    </select>
 </mapper>

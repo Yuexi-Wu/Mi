@@ -19,4 +19,6 @@ public interface GroupBuyingDAO {
     public void deleteGb(int gbId);
     //添加团购活动
     void addGb(GroupBuying gb);
+    //通过团购活动ID获取团购活动
+    public GroupBuying selectGbById(int gbId);
 }

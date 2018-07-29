@@ -48,9 +48,9 @@
 
     <insert id="addSc" parameterType="SecondClassification">
         insert into
-          second_classification(sc_name, sc_description, sc_url, fc_id, sc_status)
+          second_classification(sc_id, sc_name, sc_description, sc_url, fc_id, sc_status)
         value
-          (#{scName}, #{scDescription}, #{scUrl}, #{fcId}, 1)
+          (#{scId}, #{scName}, #{scDescription}, #{scUrl}, #{fcId}, 1)
     </insert>
 
     <select id="selectScById" parameterType="int" resultType="SecondClassification">

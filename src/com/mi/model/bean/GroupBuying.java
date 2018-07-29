@@ -1,5 +1,6 @@
 package com.mi.model.bean;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -48,12 +49,22 @@ public class GroupBuying {
         return gbStart;
     }
 
+    public String getGbStartString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdf.format(gbStart);
+    }
+
     public void setGbStart(Date gbStart) {
         this.gbStart = gbStart;
     }
 
     public Date getGbEnd() {
         return gbEnd;
+    }
+
+    public String getGbEndString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdf.format(gbEnd);
     }
 
     public void setGbEnd(Date gbEnd) {

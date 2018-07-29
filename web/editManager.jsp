@@ -96,9 +96,10 @@
         if(tip == "success"){
             parent.layer.msg('保存成功', {
                 icon: 1,
-                    time: 1500 //2秒关闭（如果不配置，默认是3秒）
+                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
             }, function(){
                 parent.layer.closeAll();
+                parent.location.reload();
             });
         }
     });

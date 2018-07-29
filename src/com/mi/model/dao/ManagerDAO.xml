@@ -29,6 +29,9 @@
             <if test="managerAddress != null and managerAddress != ''">
                 manager_address = #{managerAddress},
             </if>
+            <if test="managerUrl != null and managerUrl != ''">
+                manager_url = #{managerUrl},
+            </if>
         </set>
         where manager_id = #{managerId}
     </update>

@@ -8,7 +8,7 @@ public class Detail {
     private int detailId;
     private int productId;
     private String detailKey;
-    private String detailVlaue;
+    private String detailValue;
 
     public int getDetailId() {
         return detailId;
@@ -34,11 +34,11 @@ public class Detail {
         this.detailKey = detailKey;
     }
 
-    public String getDetailVlaue() {
-        return detailVlaue;
+    public String getDetailValue() {
+        return detailValue;
     }
 
-    public void setDetailVlaue(String detailVlaue) {
-        this.detailVlaue = detailVlaue;
+    public void setDetailValue(String detailValue) {
+        this.detailValue = detailValue;
     }
 }

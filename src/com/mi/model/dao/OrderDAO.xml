@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ 	@author daiqibin
+ 	@version 1.2.1
+ 	@date 2018/7/25
+ -->
+<mapper namespace="com.mi.model.dao.OrderDAO">
+
+    <insert id="addOrder" parameterType="map">
+		INSERT INTO
+		`order`(`order_id`,`order_status`,`order_type`,`order_deliver_time`,`receiver_id`,`account_id`)
+		VALUES(#{k_order.orderId},#{k_order.orderStatus},#{k_order.orderType},#{k_order.orderDeliverTime},#{k_order.receiver.receiverId},#{k_account,jdbcType=NUMERIC})
+	</insert>
+
+    <update id="editStatus" parameterType="Order">
+		UPDATE `order` SET `order_status` = #{orderStatus} WHERE `order_id` = #{orderId}
+	</update>
+
+    <update id="addOrderItem" parameterType="map">
+		INSERT INTO
+		`orderitem`(`orderitem_id`,`order_id`,`product_id`,`orderitem_price`,`orderitem_quantity`)
+		VALUES(#{k_orderitem.orderitemId},#{k_order},#{k_orderitem.product.productId},#{k_orderitem.orderitemPrice},#{k_orderitem.orderitemQuantity})
+	</update>
+
+    <update id="updateOrder" parameterType="Order">
+        UPDATE `order`
+        <set>
+            <if test="orderDeliverTime !=null and orderDeliverTime !=0">
+                `order_deliver_time` = #{orderDeliverTime} ,
+            </if>
+            <if test="receiver !=null and receiver.receiverId !=0">
+                `receiver_id` = #{receiver.receiverId} ,
+            </if>
+            <if test="orderReachTime !=null and orderReachTime !=''">
+                `order_reach_time` = #{orderReachTime} ,
+            </if>
+            <if test="orderPayTime !=null and orderPayTime !=''">
+                `order_pay_time` = #{orderPayTime} ,
+            </if>
+        </set>
+        WHERE `order_id` = #{orderId}
+    </update>
+
+    <update id="updateTime" parameterType="Order">
+        UPDATE `order` SET `order_deliver_time` = #{orderDeliverTime} , `receiver_id` = #{receiver.receiverId} WHERE `order_id` = #{orderId}
+    </update>
+
+    <select id="selectOrder" parameterType="Order" resultMap="orderResult">
+        SELECT * FROM `order`,`orderitem` ,`receiver`,`product`
+        <where>
+            `order`.order_id = #{orderId} AND `order`.order_id = `orderitem`.order_id AND `receiver`.receiver_id =
+            `order`.receiver_id AND `product`.product_id = `orderitem`.product_id
+            <if test=" orderType != null and orderType != 0">
+                AND `order_type`=#{orderType}
+            </if>
+            <if test=" orderStatus != null and orderStatus != ''">
+                AND `order_status`=#{orderStatus}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectOrderByMap" parameterType="map" resultMap="orderResult">
+        SELECT * FROM `order`,`orderitem` ,`receiver`,`product`
+        <where>
+            `order`.order_id = `orderitem`.order_id AND `receiver`.receiver_id = `order`.receiver_id AND
+            `product`.product_id = `orderitem`.product_id
+            <if test="k_order != null">
+                <if test=" k_order.orderId != null and k_order.orderId !='' ">
+                    AND `order`.order_id = #{k_order.orderId}
+                </if>
+                <if test=" k_order.orderType != null and k_order.orderType != 0">
+                    AND `order_type`=#{k_order.orderType}
+                </if>
+                <if test=" k_order.orderStatus != null and k_order. orderStatus != ''">
+                    AND `order_status`=#{k_order.orderStatus}
+                </if>
+            </if>
+            <if test="k_product != null">
+                <if test=" k_product.productId != null and k_product.productId != 0">
+                    AND `product`.product_id = #{k_product.productId}
+                </if>
+                <if test=" k_product.productName != null and k_product.productName != ''">
+                    AND `product`.productName = #{k_product.productName}
+                </if>
+            </if>
+            <if test=" k_startTime != null and k_startTime != ''">
+                AND `order`.order_generation_time &gt;= #{k_startTime}
+            </if>
+            <if test=" k_finishTime != null and k_finishTime != ''">
+                AND `order`.order_generation_time &lt;= #{k_finishTime}
+            </if>
+            <if test="k_account != null and k_account !=0">
+                AND `order`.account_id = #{k_account}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectOrderByAccount" parameterType="map" resultMap="orderResult">
+        SELECT * FROM `order`,`orderitem`,`receiver`,`product`
+        <where>
+            `order`.account_id = #{k_account} AND `order`.order_id = `orderitem`.order_id AND `receiver`.receiver_id =
+            `order`.receiver_id AND `product`.product_id = `orderitem`.product_id
+            <if test=" k_order.orderType != null and k_order.orderType != 0">
+                AND `order_type`=#{k_order.orderType}
+            </if>
+            <if test=" k_order.orderStatus != null and k_order.orderStatus != ''">
+                AND `order_status`=#{k_order.orderStatus}
+            </if>
+        </where>
+    </select>
+
+    <select id="getNeedCommentProduct" parameterType="String" resultType="int">
+        SELECT orderitem_id FROM `order`,`orderitem` WHERE `order`.order_id = `orderitem`.order_id AND `orderitem`.commented = 0 AND `order`.order_id = #{orderId};
+    </select>
+
+
+    <resultMap id="orderResult" type="Order">
+        <id column="order_id" property="orderId"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="order_type" property="orderType"/>
+        <result column="order_deliver_time" property="orderDeliverTime"/>
+        <result column="order_generation_time" property="orderGenerationTime"/>
+        <result column="order_pay_time" property="orderPayTime"/>
+        <result column="order_reach_time" property="orderReachTime"/>
+        <association property="receiver" column="receiver_id" javaType="Receiver" resultMap="receiverResult"/>
+        <collection property="items" ofType="OrderItem">
+            <result column="orderitem_id" property="orderitemId"/>
+            <result column="orderitem_quantity" property="orderitemQuantity"/>
+            <result column="orderitem_price" property="orderitemPrice"/>
+            <result column="commented" property="commented"/>
+            <association property="product" column="product_id" javaType="Product" resultMap="productResult"/>
+        </collection>
+    </resultMap>
+    <resultMap id="productResult" type="Product">
+        <id column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_color" property="productColor"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="product_size" property="productSize"/>
+        <result column="product_sales" property="productSales"/>
+        <result column="product_max" property="productMax"/>
+        <result column="product_url" property="productUrl"/>
+        <result column="product_price" property="productPrice"/>
+    </resultMap>
+
+    <resultMap id="receiverResult" type="Receiver">
+        <id column="receiver_id" property="receiverId"/>
+        <result column="receiver_name" property="receiverName"/>
+        <result column="receiver_phone" property="receiverPhone"/>
+        <result column="ad_province" property="adProvince"/>
+        <result column="ad_city" property="adCity"/>
+        <result column="ad_detail" property="adDetail"/>
+        <result column="postcode" property="postcode"/>
+        <result column="ad_label" property="adLabel"/>
+    </resultMap>
+
+    <select id="selectAllOrdersCounts" parameterType="String" resultType="Integer">
+        select
+        count(*)
+        from
+        (
+        select
+        *
+        from
+        `order`
+        <where>
+            `order_status` = 6
+            <if test="orderId != null and orderId != ''">
+                and `order_id` = #{orderId}
+            </if>
+        </where>
+        union
+        select
+        *
+        from
+        `order`
+        <where>
+            `order_status` = 2
+            and (`order_type` = 1 or `order_type` = 2)
+            <if test="orderId != null and orderId != ''">
+                and `order_id` = #{orderId}
+            </if>
+        </where>
+        )
+        as count
+    </select>
+
+    <select id="selectAllOrders" parameterType="Map" resultMap="orderMapZ">
+        select
+          *
+        from
+          `order`, orderitem
+        <where>
+          `order_status` = 6
+          and `order`.order_id = orderitem.order_id
+          <if test="orderId != null and orderId != ''">
+              and `order`.order_id = #{orderId}
+          </if>
+        </where>
+        union
+        select
+          *
+        from
+          `order`, orderitem
+        <where>
+          `order_status` = 2
+          and (`order_type` = 1 or `order_type` = 2)
+          and `order`.order_id = orderitem.order_id
+            <if test="orderId != null and orderId != ''">
+                and `order`.order_id = #{orderId}
+            </if>
+        </where>
+        limit #{index}, #{limit}
+    </select>
+    <resultMap id="orderMapZ" type="Order">
+        <id column="order_id" property="orderId"/>
+        <result column="order_type" property="orderType"/>
+        <result column="order_generation_time" property="orderGenerationTime"/>
+        <collection property="items" ofType="OrderItem">
+            <result column="orderitem_id" property="orderitemId"/>
+            <result column="orderitem_quantity" property="orderitemQuantity"/>
+            <result column="orderitem_price" property="orderitemPrice"/>
+            <result column="commented" property="commented"/>
+            <association property="product" column="product_id" javaType="Product" resultMap="productResult"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectAccountsCount" parameterType="Map" resultType="int">
+        select
+          count(*)
+        from
+          (
+          select
+            *
+          from
+            `order`
+          <where>
+              <if test="k_startTime != null and k_startTime !=''">
+                  and order_generation_time &gt;= #{k_startTime}
+              </if>
+              <if test="k_finishTime != null and k_finishTime !=''">
+                  and order_generation_time &lt;= #{k_finishTime}
+              </if>
+          </where>
+          group by account_id
+          )
+        as count
+    </select>
+
+    <select id="selectOrdersByTime" parameterType="Map" resultMap="orderMapZ">
+        select
+          *
+        from
+          `order`, orderitem
+        where
+          `order`.order_id = orderitem.order_id
+          and `order`.order_generation_time &gt;= #{k_startTime}
+          and `order`.order_generation_time &lt;= #{k_finishTime}
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+

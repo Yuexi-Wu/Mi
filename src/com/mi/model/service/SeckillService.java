@@ -52,4 +52,7 @@ public class SeckillService {
         dao.addSeckill(seckill);
     }
 
+    public Seckill selectSeckillById(int seckillId) {
+        return dao.selectSeckillById(seckillId);
+    }
 }

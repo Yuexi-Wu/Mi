@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>二级分类管理</title>
+    <title>订单状态修改</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="css/backstage.css">
@@ -48,11 +48,11 @@
         <ul class="layui-nav layui-nav-tree">
             <li class="layui-nav-item"><a href="main.jsp"><i class="layui-icon layui-icon-home" style="margin-right: 5px"></i>后台主页</a></li>
             <li class="layui-nav-item"><a href="fcManage.jsp"><i class="layui-icon layui-icon-file" style="margin-right: 5px"></i>一级分类管理</a></li>
-            <li class="layui-nav-item layui-this"><a href="scManage.jsp"><i class="layui-icon layui-icon-survey" style="margin-right: 5px"></i>二级分类管理</a></li>
+            <li class="layui-nav-item"><a href="scManage.jsp"><i class="layui-icon layui-icon-survey" style="margin-right: 5px"></i>二级分类管理</a></li>
             <li class="layui-nav-item"><a href="productManage.jsp"><i class="layui-icon layui-icon-component" style="margin-right: 5px"></i>商品管理</a></li>
             <li class="layui-nav-item"><a href="seckillManage.jsp"><i class="layui-icon layui-icon-rmb" style="margin-right: 5px"></i>秒杀活动管理</a></li>
             <li class="layui-nav-item"><a href="gbManage.jsp"><i class="layui-icon layui-icon-dollar" style="margin-right: 5px"></i>团购活动管理</a></li>
-            <li class="layui-nav-item"><a href="orderManage.jsp"><i class="layui-icon layui-icon-set" style="margin-right: 5px"></i>订单状态修改</a></li>
+            <li class="layui-nav-item layui-this"><a href="orderManage.jsp"><i class="layui-icon layui-icon-set" style="margin-right: 5px"></i>订单状态修改</a></li>
             <li class="layui-nav-item"><a href="analysis.jsp"><i class="layui-icon layui-icon-engine" style="margin-right: 5px"></i>统计分析</a></li>
         </ul>
     </div>
@@ -63,28 +63,17 @@
                 <div class="layui-form table-search">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label" style="width: auto">二级分类名称</label>
+                            <label class="layui-form-label">订单ID</label>
                             <div class="layui-input-inline" style="width: 100px;">
-                                <input id="scName" type="text" name="scName" autocomplete="off" class="layui-input">
+                                <input id="orderId" type="text" name="orderId" autocomplete="off" class="layui-input" style="width: 150px">
                             </div>
                         </div>
-                        <div class="layui-inline">
-                            <label class="layui-form-label">一级分类</label>
-                            <div class="layui-input-block">
-                                <select id="fcId" name="fcId" lay-verify="required">
-                                    <option value=""></option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="layui-inline" style="margin-left: 30px">
+                        <div class="layui-inline" style="margin-left: 60px">
                             <button id="search" data-type="reload" class="layui-btn layui-btn-warm" style="border-radius: 100%; width: 40px; height: 40px;"><i class="layui-icon layui-icon-search" style="margin-left: -6px"></i></button>
-                        </div>
-                        <div class="layui-inline" style="position:absolute; right: 100px">
-                            <button id="add_btn" class="layui-btn layui-btn-normal layui-btn-radius"><i class="layui-icon layui-icon-add-circle"></i>添加二级分类</button>
                         </div>
                     </div>
                 </div>
-                <table id="sc_table" lay-filter="test"></table>
+                <table id="order_table" lay-filter="test"></table>
             </div>
         </div>
     </div>
@@ -95,53 +84,49 @@
 </div>
 </body>
 <script>
-    $(document).ready(function () {
-        $.ajax({
-            url: 'getAllFcs.action',
-            type: 'POST',
-            data: {page: 1, limit: 100},
-            success: function (data) {
-                var result = '';
-                for (var i = 0; i < data.data.length; i++){
-                    result += '<option value="' + data.data[i].fcId + '">' + data.data[i].fcName + '</option>';
-                }
-                $('#fcId').append(result);
-            }
-        });
-    });
-
-    layui.use(['table', 'util', 'form', 'element'], function(){
+    layui.use(['table', 'util', 'layer'], function(){
         var table = layui.table;
         var util = layui.util;
-        var element = layui.element;
+        var layer = layui.layer;
         //第一个实例
         table.render({
             id: 'idTest'
-            ,elem: '#sc_table'
+            ,elem: '#order_table'
             ,height: 'full-270'
-            ,url: 'getAllScs.action' //数据接口
+            ,url: 'getAllOrders.action' //数据接口
             ,page: true //开启分页
             ,skin: 'nob' //行边框风格
             ,size: 'lg'
             ,even: true //开启隔行背景
             ,cols: [[ //表头
-                {field: 'scId', title: 'ID', width:'10%', sort: true}
-                ,{field: 'fcId', title: '一级分类ID', width:'10%', sort: true}
-                ,{field: 'scName', title: '二级分类名称', width:'15%'}
-                ,{field: 'scDescription', title: '二级分类描述', width:'30%'}
-                ,{field: 'scUrl', title: '二级分类图片url', width: '15%'}
-                ,{title: '操作', fixed: 'right', width:'20%', minWidth:100, align:'center', toolbar: '#barDemo'}
+                {field: 'orderId', title: 'ID', width:'20%', sort: true}
+                ,{field: 'total', title: '订单总价', width:'15%'}
+                ,{field: 'orderType', title: '订单类型', width:'20%',
+                    templet: function (row) {
+                        switch (row.orderType) {
+                            case 1:
+                                return "普通订单";
+                                break;
+                            case 2:
+                                return "秒杀订单";
+                            case 3:
+                                return "团购订单";
+                        }
+                    }}
+                ,{field: 'orderGenerationTime', title: '订单生成时间', width:'30%',
+                    templet: function (row) {
+                        return util.toDateString(row.orderGenerationTime, "yyyy-MM-dd HH:mm:ss");
+                    }}
+                ,{title: '操作', fixed: 'right', width:'15%', minWidth:100, align:'center', toolbar: '#barDemo'}
             ]]
         });
 
         var $ = layui.$, active = {
             reload: function(){
-                var scName = $("#scName").val();
-                var fcId = $("#fcId").val();
+                var orderId = $("#orderId").val();
                 table.reload('idTest', {
                     where: {
-                        scName: scName
-                        ,fcId: fcId
+                        orderId: orderId
                     }
                     ,page: {
                         curr: 1
@@ -155,63 +140,29 @@
             active[type] ? active[type].call(this) : '';
         });
 
-        $('#add_btn').click(function () {
-            layer.open({
-                type: 2,
-                title: '添加二级分类',
-                shadeClose: true,
-                shade: 0.8,
-                area: ['400px', '80%'],
-                content: 'scAdd.html'
-            });
-        });
-
         table.on('tool(test)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
             var data = obj.data; //获得当前行数据
             var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
             var tr = obj.tr; //获得当前行 tr 的DOM对象
 
-            if (layEvent == 'del') {
-                layer.confirm('确定删除该二分类么么？',
-                    {btn :['确定', '取消']},
-                    function(index){
-                        $.ajax({
-                            url: 'deleteSc.action',
-                            type: 'POST',
-                            data: {'scId': data.scId},
-                            success: function (data) {
-                                if (data == 'success'){
-                                    obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
-                                    layer.close(index);
-                                    layer.msg("删除成功", {icon: 6});
-                                } else {
-                                    layer.close(index);
-                                    layer.msg("删除成功", {icon: 5});
-                                }
-                            }
-                        });
-                    },
-                    function (index) {
-                        layer.close(index);
+            if (layEvent == 'set'){
+                var index = layer.load(0, {shade: false});
+                $.ajax({
+                    url: 'updateOrderStatus.action',
+                    data: {'orderId': data.orderId },
+                    success: function (data) {
+                        if (data == 'success'){
+                            obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+                            layer.close(index);
+                            layer.msg("修改状态成功", {icon: 6});
+                        }
                     }
-                );
-            } else if (layEvent == 'edit'){
-                layer.open({
-                    type: 2,
-                    title: '编辑二级分类',
-                    shadeClose: true,
-                    shade: 0.8,
-                    area: ['400px', '80%'],
-                    content: 'getScById.action?scId=' + data.scId,
                 });
             }
         });
     });
-
-
 </script>
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="edit" style="border-radius: 100%"><i class="layui-icon layui-icon-edit"  style="margin-right: 0px"></i> </a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" style="border-radius: 100%"><i class="layui-icon layui-icon-delete"  style="margin-right: 0px"></i>   </a>
+    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="set"style="height: 30px; margin-top:5px; padding-top:4px"><i class="layui-icon layui-icon-util" style="margin-right: 0px"></i>修改状态</a>
 </script>
 </html>

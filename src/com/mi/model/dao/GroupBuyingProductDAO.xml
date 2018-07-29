@@ -6,10 +6,10 @@
 
     <insert id="addGbps" parameterType="ArrayList">
         insert into
-        group_buying_product(product_id, gbp_amount, gbp_price, gb_id)
+        group_buying_product(product_id, gbp_id, gbp_amount, gbp_price, gb_id)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.product.productId}, #{item.gbpAmount}, #{item.gbpPrice}, #{item.gbId})
+            (#{item.product.productId}, #{item.gbpId}, #{item.gbpAmount}, #{item.gbpPrice}, #{item.gbId})
         </foreach>
     </insert>
 </mapper>

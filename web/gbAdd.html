@@ -153,10 +153,16 @@
                         }, 1000);
                     } else if (data == 'name') {
                         layer.msg("团购活动名称不能为空", {icon: 2});
+                    } else if (data == 'startWrong') {
+                        layer.msg("团购活动开始时间必须大于当前时间1小时", {icon: 2});
                     } else if (data == 'start') {
                         layer.msg("团购活动开始时间不能为空", {icon: 2});
                     } else if (data == 'end') {
                         layer.msg("团购活动结束时间不能为空", {icon: 2});
+                    } else if (data == 'endWrong') {
+                        layer.msg("团购活动结束时间必须大于开始时间5小时", {icon: 2});
+                    } else if (data == 'product') {
+                        layer.msg("团购活动商品不能为空", {icon: 2});
                     }
                 }
             });

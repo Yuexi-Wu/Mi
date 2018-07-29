@@ -27,6 +27,7 @@ public class ManagerController {
 
     @RequestMapping("login")
     public String login(String name, String password, Model model, HttpSession session){
+        name = name.toLowerCase();
         password = Md5Utils.md5(password);
         String result = service.login(name, password);
         if (result.contains("success")){
@@ -78,7 +79,6 @@ public class ManagerController {
         }
         service.updateManager(manager);
         Manager managerNew = service.selectManagerById(manager.getManagerId());
-        System.out.println(managerNew.getManagerSex());
         session.setAttribute("manager", managerNew);
         model.addAttribute("tip", "success");
         return "editManager";

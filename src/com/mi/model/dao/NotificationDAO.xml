@@ -4,4 +4,30 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mi.model.dao.NotificationDAO">
 
+    <insert id="addNotifications" parameterType="ArrayList">
+        insert into
+          notification(notification_title, notification_content, notification_status, account_id)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.notificationTitle}, #{item.notificationContent}, #{item.notificationStatus}, #{item.accountId})
+        </foreach>
+    </insert>
+
+    <select id="selectNotificationById" parameterType="int" resultType="Notification">
+        select
+          *
+        from
+          notificaiton
+        where
+          notification_id = #{notificationId}
+    </select>
+
+    <update id="updateNotificationStatus" parameterType="int">
+        update
+          notification
+        set
+          notification_status = 1
+        where
+          notification_id = #{notificationId}
+    </update>
 </mapper>

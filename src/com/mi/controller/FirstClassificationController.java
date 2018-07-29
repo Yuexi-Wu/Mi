@@ -3,6 +3,7 @@ package com.mi.controller;
 import com.mi.model.bean.FirstClassification;
 import com.mi.model.bean.Product;
 import com.mi.model.service.FirstClassificationService;
+import com.mi.model.tools.CusMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,6 +49,7 @@ public class FirstClassificationController {
         if (fc.getFcName() == null || fc.getFcName().equals("")){
             return "name";
         }
+        fc.setFcId(CusMethod.randomId());
         service.addFc(fc);
         return "success";
     }

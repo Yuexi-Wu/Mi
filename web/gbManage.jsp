@@ -14,7 +14,13 @@
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="css/backstage.css">
     <script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/backstage.js" type="text/javascript" charset="UTF-8"></script>
     <script src="js/jquery.js"></script>
+    <style>
+        .layui-nav{
+            background-color: #1F2129;
+        }
+    </style>
 </head>
 
 <body class="layui-layout-body">
@@ -28,7 +34,7 @@
                 <a href="" style="color: #000"><i class="layui-icon layui-icon-notice"></i><span class="layui-badge-dot"></span></a>
             </li>
             <li class="layui-nav-item">
-                <a href="" style="color: #000"><img src="http://t.cn/RCzsdCq" class="layui-nav-img">${manager.managerName}</a>
+                <a href="" style="color: #000"><img src="${manager.managerUrl}" class="layui-nav-img">${manager.managerName}</a>
                 <dl class="layui-nav-child">
                     <dd><a href="#" onclick="editManager()">资料管理</a></dd>
                     <dd><a href="#" onclick="editPassword()">修改密码</a></dd>
@@ -38,14 +44,15 @@
         </ul>
     </div>
     <!-- 侧边栏 -->
-    <div class="layui-side" style="background-color: #393D49">
+    <div class="layui-side" style="background-color: #1F2129">
         <ul class="layui-nav layui-nav-tree">
             <li class="layui-nav-item"><a href="main.jsp"><i class="layui-icon layui-icon-home" style="margin-right: 5px"></i>后台主页</a></li>
             <li class="layui-nav-item"><a href="fcManage.jsp"><i class="layui-icon layui-icon-file" style="margin-right: 5px"></i>一级分类管理</a></li>
-            <li class="layui-nav-item"><a href="scManage.jsp"><i class="layui-icon layui-icon-list" style="margin-right: 5px"></i>二级分类管理</a></li>
+            <li class="layui-nav-item"><a href="scManage.jsp"><i class="layui-icon layui-icon-survey" style="margin-right: 5px"></i>二级分类管理</a></li>
             <li class="layui-nav-item"><a href="productManage.jsp"><i class="layui-icon layui-icon-component" style="margin-right: 5px"></i>商品管理</a></li>
             <li class="layui-nav-item"><a href="seckillManage.jsp"><i class="layui-icon layui-icon-rmb" style="margin-right: 5px"></i>秒杀活动管理</a></li>
             <li class="layui-nav-item layui-this"><a href="gbManage.jsp"><i class="layui-icon layui-icon-dollar" style="margin-right: 5px"></i>团购活动管理</a></li>
+            <li class="layui-nav-item"><a href="orderManage.jsp"><i class="layui-icon layui-icon-set" style="margin-right: 5px"></i>订单状态修改</a></li>
             <li class="layui-nav-item"><a href="analysis.jsp"><i class="layui-icon layui-icon-engine" style="margin-right: 5px"></i>统计分析</a></li>
         </ul>
     </div>
@@ -85,10 +92,12 @@
 </body>
 <script>
 
-    layui.use(['table', 'util', 'form', 'laydate'], function(){
+    layui.use(['table', 'util', 'form', 'laydate', 'element'], function(){
         var table = layui.table;
         var util = layui.util;
+        var form = layui.form;
         var laydate = layui.laydate;
+        var element = layui.element;
 
         laydate.render({
             elem: '#startTime' //指定元素
@@ -186,6 +195,15 @@
                         layer.close(index);
                     }
                 );
+            } else if (layEvent == 'detail'){
+                layer.open({
+                    type: 2,
+                    title: '团购活动信息',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['450px', '80%'],
+                    content: 'getGbById.action?gbId=' + data.gbId,
+                });
             }
         });
     });

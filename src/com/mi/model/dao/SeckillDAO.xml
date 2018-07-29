@@ -52,4 +52,41 @@
         value
           (#{seckillId}, #{seckillName}, #{seckillDescription},#{seckillStart}, #{seckillEnd})
     </insert>
+
+    <select id="selectSeckillById" parameterType="int" resultMap="seckillMaps">
+        select
+          *
+        from
+          seckill
+        where
+          seckill_id = #{seckillId}
+    </select>
+    <resultMap id="seckillMaps" type="Seckill">
+        <result column="seckill_id" property="seckillId"/>
+        <result column="seckill_name" property="seckillName"/>
+        <result column="seckill_description" property="seckillDescription"/>
+        <result column="seckill_start" property="seckillStart"/>
+        <result column="seckill_end" property="seckillEnd"/>
+        <collection property="seckillProducts" ofType="SeckillProduct" select="selectSps" column="seckill_id"></collection>
+    </resultMap>
+    <select id="selectSps" parameterType="int" resultMap="spMaps">
+        select
+          sp.*, p.*
+        from
+          seckill_product sp, product p
+        where
+          seckill_id = #{seckill_id}
+          and sp.product_id = p.product_id
+    </select>
+    <resultMap id="spMaps" type="SeckillProduct">
+        <result column="sp_amount" property="spAmount"/>
+        <result column="sp_price" property="spPrice"/>
+        <association property="product" javaType="Product">
+            <result column="product_id" property="productId"/>
+            <result column="product_name" property="productName"/>
+            <result column="product_color" property="productColor"/>
+            <result column="product_version" property="productVersion"/>
+            <result column="product_size" property="productSize"/>
+        </association>
+    </resultMap>
 </mapper>

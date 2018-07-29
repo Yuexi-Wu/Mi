@@ -42,9 +42,9 @@
 
     <insert id="addFc" parameterType="FirstClassification">
         insert into
-          first_classification(fc_name, fc_description, fc_status)
+          first_classification(fc_id, fc_name, fc_description, fc_status)
         value
-          (#{fcName}, #{fcDescription}, 1)
+          (#{fcId}, #{fcName}, #{fcDescription}, 1)
     </insert>
 
     <select id="selectFcById" parameterType="int" resultType="FirstClassification">

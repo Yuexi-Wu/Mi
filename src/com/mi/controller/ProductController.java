@@ -3,6 +3,7 @@ package com.mi.controller;
 import com.mi.model.bean.Product;
 import com.mi.model.dao.ProductDAO;
 import com.mi.model.service.ProductService;
+import com.mi.model.tools.CusMethod;
 import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -59,6 +60,7 @@ public class ProductController {
         }else if (product.getProductUrl() == null || product.getProductUrl().equals("")){
             return "url";
         }
+        product.setProductId(CusMethod.randomId());
         service.addProduct(product);
         return "success";
 

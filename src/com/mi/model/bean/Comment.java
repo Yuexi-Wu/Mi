@@ -2,7 +2,6 @@ package com.mi.model.bean;
 
 public class Comment {
     private int commentId;
-    private Account account;
     private String content;
     private String photoUrl;
     private int totalLevel;
@@ -10,8 +9,8 @@ public class Comment {
     private int descriptionLevel;
     private int logisticsLevel;
     private int serviceLevel;
-    private Order order;
-    private Product product;
+    private OrderItem orderItem;
+    private Account account;
 
     public int getTotalLevel() {
         return totalLevel;
@@ -45,8 +44,6 @@ public class Comment {
         this.serviceLevel = serviceLevel;
     }
 
-
-
     public String getContent() {
         return content;
     }
@@ -55,22 +52,12 @@ public class Comment {
         this.content = content;
     }
 
-    public Product getProduct() {
-        return product;
+    public OrderItem getOrderItem() {
+        return orderItem;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-
-
-    public int getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
+    public void setOrderItem(OrderItem orderItem) {
+        this.orderItem = orderItem;
     }
 
     public Account getAccount() {
@@ -79,6 +66,14 @@ public class Comment {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public int getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(int commentId) {
+        this.commentId = commentId;
     }
 
     public String getContext() {
@@ -97,24 +92,12 @@ public class Comment {
         this.photoUrl = photourl;
     }
 
-
-
     public String getCommentTime() {
         return commentTime;
     }
 
     public void setCommentTime(String commentTime) {
         this.commentTime = commentTime;
-    }
-
-
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
     }
 
 

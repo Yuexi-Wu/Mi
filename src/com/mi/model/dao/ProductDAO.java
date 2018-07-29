@@ -27,4 +27,8 @@ public interface ProductDAO {
     Product selectProductById(int productId);
     //通过商品名称，颜色，版本，尺寸来获取商品 戴
     public Product selectProductByNCVS(Product product);
+    //通过商品ID增加商品销量
+    public void updateProductSales(Map<String, Object> map);
+    //通过index和limit两个属性来获取按照销量排行的商品集合
+    List<Product> getProductsOrderedBySale(Map<String,Integer> map);
 }

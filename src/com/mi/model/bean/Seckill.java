@@ -2,6 +2,7 @@ package com.mi.model.bean;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -52,12 +53,22 @@ public class Seckill {
         return seckillStart;
     }
 
+    public String getSeckillStartString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdf.format(seckillStart);
+    }
+
     public void setSeckillStart(Date seckillStart) {
         this.seckillStart = seckillStart;
     }
 
     public Date getSeckillEnd() {
         return seckillEnd;
+    }
+
+    public String getSeckillEndString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdf.format(seckillEnd);
     }
 
     public void setSeckillEnd(Date seckillEnd) {

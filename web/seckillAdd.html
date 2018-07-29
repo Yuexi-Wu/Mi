@@ -19,27 +19,31 @@
             <!-- 秒杀活动名称 -->
             <div style="margin-bottom: 20px">
                 <div class="layui-input-inline">
-                    <input id="seckillName" type="text" name="seckillName" autocomplete="off" class="layui-input" style="width: 300px" placeholder="请输入秒杀活动名称">
+                    <input id="seckillName" type="text" name="seckillName" autocomplete="off" class="layui-input"
+                           style="width: 300px" placeholder="请输入秒杀活动名称">
                 </div>
             </div>
             <!-- 秒杀活动描述 -->
             <div style="margin-bottom: 20px">
                 <div class="layui-input-inline">
-                    <textarea id="seckillDescription" name="seckillDescription" style="width: 300px" required lay-verify="required" placeholder="请输入秒杀活动描述" class="layui-textarea"></textarea>
+                    <textarea id="seckillDescription" name="seckillDescription" style="width: 300px" required
+                              lay-verify="required" placeholder="请输入秒杀活动描述" class="layui-textarea"></textarea>
                 </div>
             </div>
             <!-- 秒杀活动开始时间 -->
             <div style="margin-bottom: 20px">
                 <div class="layui-input-inline">
                     <label class="layui-input-inline" style="color: #757575">开始时间:</label>
-                    <input id="seckillStart" class="layui-input layui-input-inline" style="width: 200px; margin-left: 30px">
+                    <input id="seckillStart" class="layui-input layui-input-inline"
+                           style="width: 200px; margin-left: 30px">
                 </div>
             </div>
             <!-- 秒杀活动结束时间 -->
             <div style="margin-bottom: 20px">
                 <div class="layui-input-inline">
                     <label class="layui-input-inline" style="color: #757575">结束时间:</label>
-                    <input id="seckillEnd" class="layui-input-inline layui-input" style="width: 200px; margin-left: 30px">
+                    <input id="seckillEnd" class="layui-input-inline layui-input"
+                           style="width: 200px; margin-left: 30px">
                 </div>
             </div>
             <!-- 商品设置 -->
@@ -50,22 +54,25 @@
                 </div>
             </div>
             <div>
-                <input id="backId" class="layui-input-inline layui-input" style="width: 200px; margin-left: 30px; display: none">
-                <input id="backInfo" class="layui-input-inline layui-input" style="width: 200px; margin-left: 30px; display: none">
+                <input id="backId" class="layui-input-inline layui-input"
+                       style="width: 200px; margin-left: 30px; display: none">
+                <input id="backInfo" class="layui-input-inline layui-input"
+                       style="width: 200px; margin-left: 30px; display: none">
                 <div>
-                <button id="add_btn" class="layui-btn add_btn">添 加</button>
+                    <button id="add_btn" class="layui-btn add_btn">添 加</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="add_card_footer">
-        <p>@小米商城项目</p>
-        制作者：Java班第五组
+        <div class="add_card_footer">
+            <p>@小米商城项目</p>
+            制作者：Java班第五组
+        </div>
     </div>
 </div>
 </body>
 <script>
     //Demo
-    layui.use(['form', 'laydate'], function() {
+    layui.use(['form', 'laydate'], function () {
         var form = layui.form;
         var laydate = layui.laydate
 
@@ -79,15 +86,15 @@
         });
 
         $ = layui.$;
-        $('#productAdd').click(function() {
+        $('#productAdd').click(function () {
             $('#productAdd').before('<div class="seckill_product_item"><i class="layui-icon layui-icon-close""></i><div style="margin-bottom: 10px; display: none"><label class="layui-input-inline" style="color: #757575">商品ID:</label><input name="productId" type="text" class="layui-input layui-input-inline product-id" style="width: 150px; margin-top: 10px; margin-left: 30px"></div><div style="margin-bottom: 10px"><label class="layui-input-inline" style="color: #757575">商品&nbsp&nbsp&nbsp:</label><input name="productInfo" type="text" class="layui-input layui-input-inline product-info" style="width: 150px; margin-top: 10px; margin-left: 30px"></div><div style="margin-bottom: 10px"><label class="layui-input-inline" style="color: #757575">数量:&nbsp&nbsp&nbsp</label><input name="spAmount" type="number" class="layui-input layui-input-inline" style="width: 150px; margin-left: 30px"></div><div style="margin-bottom: 10px"><label class="layui-input-inline" style="color: #757575">秒杀价:</label><input name="spPrice" type="number" class="layui-input layui-input-inline" style="width: 150px; margin-left: 30px"></div></div>');
         });
 
-        $('#products').on('click', '.seckill_product_item .layui-icon-close', function() {
+        $('#products').on('click', '.seckill_product_item .layui-icon-close', function () {
             $(this).parent().remove();
         });
 
-        $("#products").on('click', '.seckill_product_item .product-info', function(){
+        $("#products").on('click', '.seckill_product_item .product-info', function () {
             var index = $(this);
             layer.open({
                 type: 2,
@@ -96,7 +103,7 @@
                 shade: 0.8,
                 area: ['380px', '80%'],
                 content: 'spAdd.html',
-                end: function() {
+                end: function () {
                     var resultId = $('#backId').val();
                     var resultInfo = $('#backInfo').val();
                     index.val(resultInfo);
@@ -141,17 +148,23 @@
                     sps: sps,
                 },
                 success: function (data) {
-                    if (data == 'success'){
+                    if (data == 'success') {
                         layer.msg("添加成功", {icon: 6})
                         setTimeout(function () {
                             parent.layer.closeAll();
                         }, 1000);
-                    } else if (data == 'name'){
+                    } else if (data == 'name') {
                         layer.msg("秒杀活动名称不能为空", {icon: 2});
-                    } else if (data == 'start'){
+                    } else if (data == 'start') {
                         layer.msg("秒杀活动开始时间不能为空", {icon: 2});
-                    } else if (data == 'end'){
+                    } else if (data == 'startWrong') {
+                        layer.msg("秒杀活动开始时间必须大于当前时间1小时", {icon: 2});
+                    } else if (data == 'end') {
                         layer.msg("秒杀活动结束时间不能为空", {icon: 2});
+                    } else if (data == 'endWrong') {
+                        layer.msg("秒杀活动结束时间必须大于开始时间30分钟", {icon: 2});
+                    } else if (data == 'product') {
+                        layer.msg("秒杀活动商品不能为空", {icon: 2});
                     }
                 }
             });

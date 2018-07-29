@@ -6,10 +6,10 @@
 
     <insert id="addSps" parameterType="ArrayList">
         insert into
-          seckill_product(product_id, sp_amount, sp_price, seckill_id)
+          seckill_product(product_id, sp_id, sp_amount, sp_price, seckill_id)
         values
           <foreach collection="list" item="item" index="index" separator=",">
-              (#{item.product.productId}, #{item.spAmount}, #{item.spPrice}, #{item.seckillId})
+              (#{item.product.productId}, #{item.spId}, #{item.spAmount}, #{item.spPrice}, #{item.seckillId})
           </foreach>
     </insert>
 </mapper>

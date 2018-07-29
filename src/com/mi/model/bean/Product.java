@@ -137,7 +137,7 @@ public class Product {
         this.details = details;
         detailMap = new HashMap<>();
         for (Detail d: details ) {
-            detailMap.put(d.getDetailKey(), d.getDetailVlaue());
+            detailMap.put(d.getDetailKey(), d.getDetailValue());
         }
     }
 }
