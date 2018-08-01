@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
+ * 后台拦截器
  * Created by Alexander on 2018/7/25 上午10:50
  */
 public class BackstageInterceptor implements HandlerInterceptor {

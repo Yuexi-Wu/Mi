@@ -118,7 +118,7 @@
             ,size: 'lg'
             ,even: true //开启隔行背景
             ,cols: [[ //表头
-                {field: 'seckillId', title: 'ID', width:'7%', sort: true}
+                {field: 'seckillId', title: 'ID', width:'12%', sort: true}
                 ,{field: 'seckillName', title: '秒杀活动名称', width:'13%'}
                 ,{field: 'seckillDescription', title: '秒杀活动描述', width:'20%'}
                 ,{field: 'seckillStart', title: '开始时间', width:'20%', sort: true,
@@ -129,7 +129,7 @@
                     templet: function (row) {
                         return util.toDateString(row.seckillEnd, "yyyy-MM-dd HH:mm:ss");
                     }}
-                ,{title: '操作', fixed: 'right', width:'20%', minWidth:100, align:'center', toolbar: '#barDemo'}
+                ,{title: '操作', fixed: 'right', width:'15%', minWidth:100, align:'center', toolbar: '#barDemo'}
             ]]
         });
 
@@ -160,7 +160,7 @@
                 title: '添加秒杀活动',
                 shadeClose: true,
                 shade: 0.8,
-                area: ['450px', '80%'],
+                area: ['700px', '80%'],
                 content: 'seckillAdd.html'
             });
         });
@@ -171,7 +171,7 @@
             var tr = obj.tr; //获得当前行 tr 的DOM对象
 
             if (layEvent == 'del') {
-                layer.confirm('确定删除该商品么？',
+                layer.confirm('确定删除该秒杀活动么？',
                     {btn :['确定', '取消']},
                     function(index){
                         $.ajax({
@@ -200,7 +200,7 @@
                     title: '秒杀活动信息',
                     shadeClose: true,
                     shade: 0.8,
-                    area: ['450px', '80%'],
+                    area: ['700px', '80%'],
                     content: 'getSeckillById.action?seckillId=' + data.seckillId,
                 });
             }

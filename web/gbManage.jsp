@@ -119,7 +119,7 @@
             ,size: 'lg'
             ,even: true //开启隔行背景
             ,cols: [[ //表头
-                {field: 'gbId', title: 'ID', width:'7%', sort: true}
+                {field: 'gbId', title: 'ID', width:'12%', sort: true}
                 ,{field: 'gbName', title: '团购活动名称', width:'13%'}
                 ,{field: 'gbDescription', title: '团购活动描述', width:'20%'}
                 ,{field: 'gbStart', title: '开始时间', width:'20%', sort: true,
@@ -130,7 +130,7 @@
                     templet: function (row) {
                         return util.toDateString(row.gbEnd, "yyyy-MM-dd HH:mm:ss");
                     }}
-                ,{title: '操作', fixed: 'right', width:'20%', minWidth:100, align:'center', toolbar: '#barDemo'}
+                ,{title: '操作', fixed: 'right', width:'15%', minWidth:100, align:'center', toolbar: '#barDemo'}
             ]]
         });
 
@@ -161,7 +161,7 @@
                 title: '添加团购活动',
                 shadeClose: true,
                 shade: 0.8,
-                area: ['450px', '80%'],
+                area: ['700px', '80%'],
                 content: 'gbAdd.html'
             });
         });
@@ -172,7 +172,7 @@
             var tr = obj.tr; //获得当前行 tr 的DOM对象
 
             if (layEvent == 'del') {
-                layer.confirm('确定删除该商品么？',
+                layer.confirm('确定删除该团购活动么？',
                     {btn :['确定', '取消']},
                     function(index){
                         $.ajax({
@@ -201,7 +201,7 @@
                     title: '团购活动信息',
                     shadeClose: true,
                     shade: 0.8,
-                    area: ['450px', '80%'],
+                    area: ['700px', '80%'],
                     content: 'getGbById.action?gbId=' + data.gbId,
                 });
             }

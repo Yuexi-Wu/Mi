@@ -1,16 +1,18 @@
 package com.mi.model.bean;
 
+import java.util.Date;
+
 public class Comment {
     private int commentId;
+    private Account account;
     private String content;
     private String photoUrl;
-    private int totalLevel;
-    private String commentTime;
-    private int descriptionLevel;
-    private int logisticsLevel;
-    private int serviceLevel;
+    private int totalLevel;//1-差评，2-中评，3-好评
+    private Date commentTime;
+    private int descriptionLevel;//1，2，3，4，5星
+    private int logisticsLevel;//1，2，3，4，5星
+    private int serviceLevel;//1，2，3，4，5星
     private OrderItem orderItem;
-    private Account account;
 
     public int getTotalLevel() {
         return totalLevel;
@@ -44,6 +46,8 @@ public class Comment {
         this.serviceLevel = serviceLevel;
     }
 
+
+
     public String getContent() {
         return content;
     }
@@ -60,20 +64,20 @@ public class Comment {
         this.orderItem = orderItem;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
     public int getCommentId() {
         return commentId;
     }
 
     public void setCommentId(int commentId) {
         this.commentId = commentId;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public String getContext() {
@@ -92,13 +96,11 @@ public class Comment {
         this.photoUrl = photourl;
     }
 
-    public String getCommentTime() {
+    public Date getCommentTime() {
         return commentTime;
     }
 
-    public void setCommentTime(String commentTime) {
+    public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
     }
-
-
 }

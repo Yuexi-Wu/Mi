@@ -73,7 +73,7 @@
             </div>
             <div>
                 <c:if test="${not empty tip}">
-                    <div style="color: red; padding-left: 50px; margin-top: 10px">
+                    <div style="color: red; width: 100%; text-align: center; margin-top: 10px">
                         <i class="layui-icon layui-icon-tips" style="color: red; padding-right: 5px"></i>
                         <c:out value="${tip}"></c:out>
                     </div>

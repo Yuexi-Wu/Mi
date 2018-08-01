@@ -136,7 +136,7 @@
                 title: '添加一级分类',
                 shadeClose: true,
                 shade: 0.8,
-                area: ['400px', '80%'],
+                area: ['700px', '80%'],
                 content: 'fcAdd.html'
             });
         });
@@ -176,7 +176,7 @@
                     title: '编辑一级分类',
                     shadeClose: true,
                     shade: 0.8,
-                    area: ['400px', '80%'],
+                    area: ['700px', '80%'],
                     content: 'getFcById.action?fcId=' + data.fcId,
                 });
             }

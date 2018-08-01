@@ -100,7 +100,10 @@
 </div>
 </body>
 <script>
-    $(document).ready(function () {
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
         $.ajax({
             url: 'getAllScs.action',
             type: 'POST',
@@ -116,12 +119,9 @@
                     }
                 }
                 $('#scId').append(result);
+                form.render('select');
             }
         });
-    });
-    //Demo
-    layui.use('form', function () {
-        var form = layui.form;
 
         $('#update').click(function () {
             $.ajax({

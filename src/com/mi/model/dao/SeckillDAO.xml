@@ -10,7 +10,7 @@
         from
           seckill
         <where>
-            seckill_status = 1
+            seckill_status != 0
             <if test="startTime != null and startTime != ''">
                 and seckill_start &gt;= #{startTime}
             </if>
@@ -27,7 +27,7 @@
         from
           seckill
         <where>
-            seckill_status = 1
+            seckill_status != 0
             <if test="startTime != null and startTime != ''">
                 and seckill_start &gt;= #{startTime}
             </if>

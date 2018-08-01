@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
+ * 设置拦截器，避免用户在未登陆的状态下使用登陆后才能使用的方法
  * Created by Alexander on 2018/7/29 9:30 AM
  */
 public class LoginFilter implements Filter {

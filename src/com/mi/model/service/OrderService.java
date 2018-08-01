@@ -150,6 +150,8 @@ public class OrderService {
         order.setOrderId(orderId);
         order.setOrderStatus(3);
         orderDAO.editStatus(order);
+        order.setOrderReachTime(new Date());
+        orderDAO.updateOrder(order);
         return "success";
     }
 }

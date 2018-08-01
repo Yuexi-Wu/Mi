@@ -94,19 +94,20 @@
                         class="layui-inline layui-icon layui-icon-dollar"></i></span>
             </div>
         </div>
-        <div class="layui-card" style="width: 940px;">
+        <div class="layui-card" style="width: 940px; margin-top: 20px; margin-bottom: 35px;">
             <div class="layui-card-body">
                 <div id="chart1" style="width: 900px; height:500px;"></div>
             </div>
         </div>
-        <div class="layui-card" style="width: 940px;">
+        <div class="layui-card layui-inline" style="width: 450px; margin-bottom: 0px;">
             <div class="layui-card-body">
-                <div id="chart2" style="width: 900px;height:500px;"></div>
+                <div id="chart2" style="width: 400px;height:300px;"></div>
             </div>
         </div>
-        <div class="layui-card" style="width: 940px;">
+        <div class="layui-inline" style="width: 30px"></div>
+        <div class="layui-card layui-inline" style="width: 450px;">
             <div class="layui-card-body">
-                <div id="chart3" style="width: 900px;height:500px;"></div>
+                <div id="chart3" style="width: 400px;height:300px;"></div>
             </div>
         </div>
     </div>
@@ -117,10 +118,12 @@
 </div>
 
 <script>
-    var chart1 = echarts.init(document.getElementById("chart1"));
-    var chart2 = echarts.init(document.getElementById("chart2"));
-    var chart3 = echarts.init(document.getElementById("chart3"));
-    $(document).ready(function () {
+    layui.use('element', function () {
+        var element = layui.element;
+        var chart1 = echarts.init(document.getElementById("chart1"));
+        var chart2 = echarts.init(document.getElementById("chart2"));
+        var chart3 = echarts.init(document.getElementById("chart3"));
+
         $.ajax({
             url: 'panelData.action',
             dataType: 'json',
@@ -168,6 +171,11 @@
                     series: [{
                         name: '销量',
                         type: 'bar',
+                        itemStyle:{
+                            normal:{
+                                color:'#EACAA1'
+                            }
+                        },
                         data: data.value
                     }]
                 });
@@ -224,13 +232,13 @@
                             stack: '总量',
                             areaStyle: {
                                 normal: {
-                                    color: '#00ccff'
+                                    color: '#8CC2D1'
                                 }
                             },
                             lineStyle: {
                                 normal: {
                                     width: 1,
-                                    color: '#3366ff'
+                                    color: '#5D8691'
                                 }
                             },
                             data: data.value
@@ -239,9 +247,6 @@
                 });
             }
         });
-    });
-    layui.use('element', function () {
-        var element = layui.element;
     });
 </script>
 </body>

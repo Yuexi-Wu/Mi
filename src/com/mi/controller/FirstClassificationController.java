@@ -18,7 +18,7 @@ import java.util.Map;
  * Created by Alexander on 2018/7/22 上午9:39
  */
 @Controller
-public class FirstClassificationController {
+public class  FirstClassificationController {
 
     @Autowired
     private FirstClassificationService service;

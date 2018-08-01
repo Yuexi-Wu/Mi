@@ -95,31 +95,6 @@
 </div>
 </body>
 <script>
-    $(document).ready(function () {
-        $.ajax({
-            url: 'getAllScs.action',
-            type: 'POST',
-            data: {page: 1, limit: 100},
-            success: function (data) {
-                var result = '';
-                for (var i = 0; i < data.data.length; i++){
-                    result += '<option value="' + data.data[i].scId + '">' + data.data[i].scName + '</option>';
-                }
-                $('#scId').append(result);
-            }
-        });
-
-        $('#add_btn').click(function () {
-            layer.open({
-                type: 2,
-                title: '添加商品',
-                shadeClose: true,
-                shade: 0.8,
-                area: ['400px', '80%'],
-                content: 'productAdd.html'
-            });
-        });
-    });
 
     layui.use(['table', 'util', 'form', 'element'], function(){
         var table = layui.table;
@@ -139,15 +114,15 @@
             ,cols: [[ //表头
                 {field: 'productId', title: 'ID', width:'8%', sort: true}
                 ,{field: 'productName', title: '商品名', width:'20%'}
-                ,{field: 'productPrice', title: '价格', width:'8%', sort: true}
-                ,{field: 'productColor', title: '颜色', width:'8%'}
-                ,{field: 'productVersion', title: '版本', width: '8%'}
+                ,{field: 'productPrice', title: '价格', width:'9%', sort: true}
+                ,{field: 'productColor', title: '颜色', width:'10%'}
+                ,{field: 'productVersion', title: '版本', width: '10%'}
                 ,{field: 'productSize', title: '尺寸', width: '8%'}
                 ,{field: 'productTime', title: '上架时间', width: '20%', sort: true,
                     templet: function (row) {
                         return util.toDateString(row.productTime, "yyyy-MM-dd HH:mm:ss");
                     }}
-                ,{title: '操作', fixed: 'right', width:'20%', minWidth:100, align:'center', toolbar: '#barDemo'}
+                ,{title: '操作', fixed: 'right', width:'15%', minWidth:100, align:'center', toolbar: '#barDemo'}
             ]]
         });
 
@@ -166,6 +141,31 @@
                 });
             }
         };
+
+        $.ajax({
+            url: 'getAllScs.action',
+            type: 'POST',
+            data: {page: 1, limit: 100},
+            success: function (data) {
+                var result = '';
+                for (var i = 0; i < data.data.length; i++){
+                    result += '<option value="' + data.data[i].scId + '">' + data.data[i].scName + '</option>';
+                }
+                $('#scId').append(result);
+                form.render('select');
+            }
+        });
+
+        $('#add_btn').click(function () {
+            layer.open({
+                type: 2,
+                title: '添加商品',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['700px', '80%'],
+                content: 'productAdd.html'
+            });
+        });
 
         $('#search').on('click', function(){
             var type = $(this).data('type');
@@ -207,7 +207,7 @@
                     title: '编辑商品',
                     shadeClose: true,
                     shade: 0.8,
-                    area: ['400px', '80%'],
+                    area: ['700px', '80%'],
                     content: 'getProductById.action?productId=' + data.productId,
                 });
             }

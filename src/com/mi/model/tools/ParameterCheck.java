@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * 特定输入检验工具类
  * Created by Alexander on 2018/7/19 下午3:10
  */
 public class ParameterCheck {

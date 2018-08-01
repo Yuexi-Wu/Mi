@@ -105,15 +105,17 @@
                     templet: function (row) {
                         switch (row.orderType) {
                             case 1:
-                                return "普通订单";
+                                return '<span class="layui-badge" style="margin-top: 8px; padding: 5px; height: 25px;">普通订单</span>';
                                 break;
                             case 2:
-                                return "秒杀订单";
+                                return '<span class="layui-badge layui-bg-green" style="margin-top: 8px; padding: 5px; height: 25px;">秒杀订单</span>';
+                                break;
                             case 3:
-                                return "团购订单";
+                                return '<span class="layui-badge layui-bg-blue" style="margin-top: 8px; padding: 5px; height: 25px;">团购订单</span>';
+                                break;
                         }
                     }}
-                ,{field: 'orderGenerationTime', title: '订单生成时间', width:'30%',
+                ,{field: 'orderGenerationTime', title: '订单生成时间', width:'30%',sort: true,
                     templet: function (row) {
                         return util.toDateString(row.orderGenerationTime, "yyyy-MM-dd HH:mm:ss");
                     }}

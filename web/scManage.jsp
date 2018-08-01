@@ -71,7 +71,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">一级分类</label>
                             <div class="layui-input-block">
-                                <select id="fcId" name="fcId" lay-verify="required">
+                                <select id="fcId" name="fcId" lay-filter="fc">
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -95,25 +95,12 @@
 </div>
 </body>
 <script>
-    $(document).ready(function () {
-        $.ajax({
-            url: 'getAllFcs.action',
-            type: 'POST',
-            data: {page: 1, limit: 100},
-            success: function (data) {
-                var result = '';
-                for (var i = 0; i < data.data.length; i++){
-                    result += '<option value="' + data.data[i].fcId + '">' + data.data[i].fcName + '</option>';
-                }
-                $('#fcId').append(result);
-            }
-        });
-    });
 
     layui.use(['table', 'util', 'form', 'element'], function(){
         var table = layui.table;
         var util = layui.util;
         var element = layui.element;
+        var form = layui.form;
         //第一个实例
         table.render({
             id: 'idTest'
@@ -126,10 +113,9 @@
             ,even: true //开启隔行背景
             ,cols: [[ //表头
                 {field: 'scId', title: 'ID', width:'10%', sort: true}
-                ,{field: 'fcId', title: '一级分类ID', width:'10%', sort: true}
-                ,{field: 'scName', title: '二级分类名称', width:'15%'}
+                ,{field: 'fcId', title: '一级分类ID', width:'20%', sort: true}
+                ,{field: 'scName', title: '二级分类名称', width:'20%'}
                 ,{field: 'scDescription', title: '二级分类描述', width:'30%'}
-                ,{field: 'scUrl', title: '二级分类图片url', width: '15%'}
                 ,{title: '操作', fixed: 'right', width:'20%', minWidth:100, align:'center', toolbar: '#barDemo'}
             ]]
         });
@@ -150,6 +136,20 @@
             }
         };
 
+        $.ajax({
+            url: 'getAllFcs.action',
+            type: 'POST',
+            data: {page: 1, limit: 100},
+            success: function (data) {
+                var result = '';
+                for (var i = 0; i < data.data.length; i++){
+                    result += '<option value="' + data.data[i].fcId + '">' + data.data[i].fcName + '</option>';
+                }
+                $('#fcId').append(result);
+                form.render('select');
+            }
+        });
+
         $('#search').on('click', function(){
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
@@ -161,7 +161,7 @@
                 title: '添加二级分类',
                 shadeClose: true,
                 shade: 0.8,
-                area: ['400px', '80%'],
+                area: ['700px', '80%'],
                 content: 'scAdd.html'
             });
         });
@@ -172,7 +172,7 @@
             var tr = obj.tr; //获得当前行 tr 的DOM对象
 
             if (layEvent == 'del') {
-                layer.confirm('确定删除该二分类么么？',
+                layer.confirm('确定删除该二级分类么？',
                     {btn :['确定', '取消']},
                     function(index){
                         $.ajax({
@@ -201,7 +201,7 @@
                     title: '编辑二级分类',
                     shadeClose: true,
                     shade: 0.8,
-                    area: ['400px', '80%'],
+                    area: ['700px', '80%'],
                     content: 'getScById.action?scId=' + data.scId,
                 });
             }

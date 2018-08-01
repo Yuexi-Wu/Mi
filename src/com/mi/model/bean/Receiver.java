@@ -6,8 +6,9 @@ public class Receiver {
     private String receiverPhone;
     private String adProvince;
     private String adCity;
+    private String adDistrict;
     private String adDetail;
-    private int postcode;
+    private String postcode;
     private String adLabel;
     private Account account;
 
@@ -52,6 +53,14 @@ public class Receiver {
         this.adCity = adCity;
     }
 
+    public String getAdDistrict() {
+        return adDistrict;
+    }
+
+    public void setAdDistrict(String adDistrict) {
+        this.adDistrict = adDistrict;
+    }
+
     public String getAdDetail() {
         return adDetail;
     }
@@ -60,11 +69,11 @@ public class Receiver {
         this.adDetail = adDetail;
     }
 
-    public int getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(int postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 

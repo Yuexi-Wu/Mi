@@ -16,14 +16,14 @@
         <div class="layui-form">
             <div style="margin-bottom: 20px">
                 <div class="layui-input-inline" style="width: 280px; margin-top: 50px">
-                    <select id="fcId" name="fcId" lay-verify="required" lay-filter="fc">
+                    <select id="fcId" name="fcId" lay-filter="fc">
                         <option value="0">请选择一级分类</option>
                     </select>
                 </div>
             </div>
             <div style="margin-bottom: 20px">
                 <div class="layui-input-inline" style="width: 280px">
-                    <select id="scId" name="scId" lay-verify="required" lay-filter="sc">
+                    <select id="scId" name="scId" lay-filter="sc">
                         <option value="0">请选择二级分类</option>
                     </select>
                 </div>
@@ -43,7 +43,12 @@
 </div>
 </body>
 <script>
-    $(document).ready(function () {
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        $=layui.$;
+
         $.ajax({
             url: 'getAllFcs.action',
             type: 'POST',
@@ -54,6 +59,7 @@
                     result += '<option value="' + data.data[i].fcId + '">' + data.data[i].fcName + '</option>';
                 }
                 $('#fcId').append(result);
+                form.render('select');
             }
         });
 
@@ -65,11 +71,6 @@
             var index = parent.layer.getFrameIndex(window.name);
             parent.layer.close(index);
         });
-
-    });
-    //Demo
-    layui.use('form', function () {
-        var form = layui.form;
 
         form.on('select(fc)', function (data) {
             $.ajax({
@@ -86,7 +87,7 @@
                         result += '<option value="' + data.data[i].scId + '">' + data.data[i].scName + '</option>';
                     }
                     $('#scId').html(result);
-                    form.render();
+                    form.render('select');
                 }
             });
         });
@@ -108,7 +109,7 @@
                             + ' ' + data.data[i].productSize + '</option>';
                     }
                     $('#pid').html(result);
-                    form.render();
+                    form.render('select');
                 }
             });
         });

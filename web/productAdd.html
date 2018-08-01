@@ -76,7 +76,11 @@
 </div>
 </body>
 <script>
-    $(document).ready(function () {
+    //Demo
+    layui.use(['form','layer'], function() {
+        var form = layui.form;
+        var layer = layui.layer;
+
         $.ajax({
             url: 'getAllScs.action',
             type: 'POST',
@@ -87,13 +91,9 @@
                     result += '<option value="' + data.data[i].scId + '">' + data.data[i].scName + '</option>';
                 }
                 $('#scId').append(result);
+                form.render('select');
             }
         });
-    });
-    //Demo
-    layui.use(['form','layer'], function() {
-        var form = layui.form;
-        var layer = layui.layer;
 
         $('#add_btn').click(function () {
             $.ajax({

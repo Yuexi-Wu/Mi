@@ -25,7 +25,7 @@
         <div class="layui-form">
             <div style="margin-bottom: 20px">
                 <div class="layui-input-line">
-                    <select id="fcId" name="fcId" lay-verify="required" lay-search>
+                    <select id="fcId" name="fcId" lay-filter="fc" lay-search>
                         <option value="0">请选择所属一级分类</option>
                     </select>
                 </div>
@@ -70,7 +70,10 @@
 </div>
 </body>
 <script>
-    $(document).ready(function () {
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
         $.ajax({
             url: 'getAllFcs.action',
             type: 'POST',
@@ -86,12 +89,9 @@
                     }
                 }
                 $('#fcId').append(result);
+                form.render('select');
             }
         });
-    });
-    //Demo
-    layui.use('form', function () {
-        var form = layui.form;
 
         $('#update').click(function () {
             $.ajax({
