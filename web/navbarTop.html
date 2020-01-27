@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<script src="layui/layui.all.js"></script>
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function() {
+				layui.use('element', function() {
+					var element = layui.element;
+				});
+				//加载时判断是否已登录，如果是，则显示导航栏。
+				$.ajax({
+					type: "post",
+					url: "getCurrentAccount.action",
+					async: false,
+					dataType: 'json',
+					success: function() {
+						$("#AfterLogin").css("display", "block");
+						$("#BeforeLogin").css("display", "none");
+					}
+				});
+				setInterval('refreshMsgCount()', 1000);
+			});
+			function refreshMsgCount() {
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header">
+				<div class="layui-logo"></div>
+				<ul id="AfterLogin" class="layui-nav layui-layout-right" style="display: none;!important;">
+					<li class="layui-nav-item">
+						<a href="javascript:;"><img class="layui-nav-img" src="http://t.cn/RCzsdCq" />我</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="myPage.action">个人中心</a>
+							</dd>
+							<dd>
+								<a href="viewUncommentProduct.action">评价晒单</a>
+							</dd>
+							<dd>
+								<a href="viewFavourite.action">我的喜欢</a>
+							</dd>
+							<dd>
+								<a href="accountInfo.action">小米账户</a>
+							</dd>
+							<dd>
+								<a href="accountLogout.action">退出登录</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="allOrder.action">我的订单</a>
+					</li>
+					<li class="layui-nav-item topbar-cart topbar-cart-filled" id="J_miniCartTrigger">
+						<a href="" class="cart-mini">购物车</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="getNotification.action">消息通知<span id="MsgBadge" style="display: none;!important;" class="layui-badge">9</span></a>
+					</li>
+				</ul>
+				<ul id="BeforeLogin" class="layui-nav layui-layout-right">
+					<li class="layui-nav-item">
+						<a href="AccountLogin.jsp">登录</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">注册</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

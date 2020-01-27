@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -26,13 +27,9 @@ import java.util.*;
 public class GroupBuyingController {
 
     @Autowired
-    private GroupBuyingService service;
+    private GroupBuyingService groupBuyingService;
     @Autowired
-    private GroupBuyingProductDAO dao;
-    @Autowired
-    private AccountDAO aDao;
-    @Autowired
-    private NotificationDAO nDao;
+    private GroupBuyingProductDAO groupBuyingProductDAO;
 
     @RequestMapping("getAllGbs")
     @ResponseBody
@@ -40,8 +37,8 @@ public class GroupBuyingController {
         Map<String, Object> result = new HashMap<>();
         result.put("code", 0);
         result.put("msg", "");
-        result.put("count", service.selectAllGbsCount(startTime, endTime));
-        List<GroupBuying> gbs = service.selectAllGbs(startTime, endTime, page, limit);
+        result.put("count", groupBuyingService.selectAllGbsCount(startTime, endTime));
+        List<GroupBuying> gbs = groupBuyingService.selectAllGbs(startTime, endTime, page, limit);
         result.put("data", gbs);
         return result;
     }
@@ -49,7 +46,7 @@ public class GroupBuyingController {
     @RequestMapping("deleteGb")
     @ResponseBody
     public String deleteGb(int gbId){
-        service.deleteGb(gbId);
+        groupBuyingService.deleteGb(gbId);
         return "success";
     }
 
@@ -71,8 +68,6 @@ public class GroupBuyingController {
             return "end";
         }else if ((sdf.parse(json.getString("gbEnd")).getTime() - sdf.parse(json.getString("gbStart")).getTime()) < 18000){
             return "endWrong";
-        }else if (jsonArray.size() == 0){
-            return "product";
         }
         GroupBuying gb = new GroupBuying();
         gb.setGbId(CusMethod.randomId());
@@ -80,7 +75,6 @@ public class GroupBuyingController {
         gb.setGbDescription(json.getString("gbDescription"));
         gb.setGbStart(sdf.parse(json.getString("gbStart")));
         gb.setGbEnd(sdf.parse(json.getString("gbEnd")));
-        service.addGb(gb);
 //        System.out.println(seckill.getSeckillName());
 //        System.out.println(seckill.getSeckillDescription());
 //        System.out.println(seckill.getSeckillStart());
@@ -88,38 +82,141 @@ public class GroupBuyingController {
 
         List<GroupBuyingProduct> list = new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++){
+            String productId = jsonArray.getJSONObject(i).getString("productId");
+            String gbpAmount = jsonArray.getJSONObject(i).getString("gbpAmount");
+            String gbpPrice = jsonArray.getJSONObject(i).getString("gbpPrice");
+            if (productId == null || productId.equals("")){
+                return "productId";
+            }
+            if (gbpAmount == null || gbpAmount.equals("")){
+                return "gbpAmount";
+            }
+            if (gbpPrice == null || gbpPrice.equals("")){
+                return "gbpPrice";
+            }
             GroupBuyingProduct gbp = new GroupBuyingProduct();
             gbp.setGbId(gb.getGbId());
             gbp.setGbpId(CusMethod.randomId());
-            gbp.setGbpAmount(Integer.parseInt(jsonArray.getJSONObject(i).getString("gbpAmount")));
-            gbp.setGbpPrice(Double.parseDouble(jsonArray.getJSONObject(i).getString("gbpPrice")));
+            gbp.setGbpAmount(Integer.parseInt(gbpAmount));
+            gbp.setGbpPrice(Double.parseDouble(gbpPrice));
             Product product = new Product();
-            product.setProductId(Integer.parseInt(jsonArray.getJSONObject(i).getString("productId")));
+            product.setProductId(Integer.parseInt(productId));
             gbp.setProduct(product);
             list.add(gbp);
         }
-        dao.addGbps(list);
-        List<Integer> accountIds = aDao.selectAllAccountsId();
-        List<Notification> notifications = new ArrayList<>();
-        String title = gb.getGbName() + "开始！！！";
-        String content = gb.getGbDescription();
-        for (Integer accountId: accountIds){
-            Notification notification = new Notification();
-            notification.setNotificationStatus(Notification.NOTIFICATION_STATUS_NEW);
-            notification.setNotificationTitle(title);
-            notification.setNotificationContent(content);
-            notification.setAccountId(accountId);
-            notifications.add(notification);
-        }
-        nDao.addNotifications(notifications);
+        groupBuyingService.addGb(gb);
+        groupBuyingProductDAO.addGbps(list);
         return "success";
     }
 
     @RequestMapping("getGbById")
     public String getGbById(int gbId, Model model){
-        GroupBuying gb = service.selectGbById(gbId);
+        GroupBuying gb = groupBuyingService.selectGbById(gbId);
         model.addAttribute("gb", gb);
 
         return "gbInfo";
+    }
+
+    @RequestMapping(value="GroupBuyingController_getGroupActivity.action")
+    public String getGroupActivity (HttpServletRequest request){
+        GroupBuying gb = null;
+        List<GroupBuyingProduct> list = null;
+        Date date=new Date();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//格式化时间
+        String today = df.format(date);
+        gb = groupBuyingService.getGroupActivity(today);
+        list = groupBuyingService.getGroupProducts((int)gb.getGbId());
+        //剩余数量
+        Map<Integer, Integer> gbpAmounts = new HashMap<>();
+        for (GroupBuyingProduct gbp : list) {
+            gbpAmounts.put(gbp.getGbpId(), groupBuyingService.getBoughtGbpNum(gbp.getGbpId()));
+        }
+        request.setAttribute("gbpAmounts", gbpAmounts);
+//        list=gb.getGbProducts();
+        System.out.println("list.get(0).getGbId()"+list.get(0).getGbId());
+        request.setAttribute("gb",gb);
+        request.setAttribute("list",list);
+        return "forward:/GroupBuyingMain.jsp";
+    }
+
+
+    @RequestMapping(value="GroupBuyingController_getOneProduct.action")
+    public String getOneProduct (HttpServletRequest request){
+        int gbp_id = Integer.parseInt((String)request.getParameter("gbp_id"));
+        int account_id = Integer.parseInt(request.getParameter("account_id"));
+        GroupBuyingProduct gbp = groupBuyingService.getOneGbp(gbp_id);
+        ArrayList<Receiver> res = groupBuyingService.getReceivers(account_id);
+        System.out.println(res.get(0).getReceiverName());
+        request.setAttribute("gbp",gbp);
+        request.setAttribute("receivers",res);
+        return "forward:/payoff.jsp";
+    }
+
+    @RequestMapping(value="GroupBuyingController_addReceiver.action")
+    public String addReceiver (HttpServletRequest request){
+        int account_id = Integer.parseInt((String)request.getParameter("account_id"));
+        String postcode = request.getParameter("postcode");
+        String receiver_name = (String)request.getParameter("receiver_name");
+        String receiver_phone = (String)request.getParameter("receiver_phone");
+        System.out.println("receiver_phone"+receiver_phone);
+        String ad_province = (String)request.getParameter("ad_province");
+        System.out.println("ad_province"+ad_province);
+        String ad_city = (String)request.getParameter("ad_city");
+        System.out.println("ad_city"+ad_city);
+        String ad_district = (String)request.getParameter("ad_district");
+        System.out.println("ad_district"+ad_district);
+        String ad_detail = (String)request.getParameter("ad_detail");
+        System.out.println("ad_detail"+ad_detail);
+        String ad_label = (String)request.getParameter("ad_label");
+        Boolean isOK = groupBuyingService.addReceiver(account_id,postcode,receiver_name,receiver_phone,ad_province,ad_city,ad_detail,ad_label,ad_district);
+        return "forward:/GroupBuyingController_getOneProduct.action?account_id=" + account_id+"&gbp_id=" + request.getParameter("gbp_id");
+    }
+
+    //    @RequestMapping(value="GroupBuyingController_addGroupOrder.action")
+//    public String addGroupOrder (HttpServletRequest request){
+//        int product_id = Integer.parseInt((String)request.getParameter("product_id"));
+//        String order_id=(String)request.getParameter("order_id");
+//        Boolean isOK = service.addGroupOrder(order_id,product_id);
+//    }
+    @RequestMapping(value = "GroupBuyingController_addOrder.action")
+    public String addOrder(HttpServletRequest request, HttpSession session){
+        int accountId = Integer.parseInt(request.getParameter("accountId"));
+        int receiverId=Integer.parseInt(request.getParameter("receiverId"));
+        int orderDeliverTime= Integer.parseInt(request.getParameter("orderDeliverTime"));
+        int productId=Integer.parseInt(request.getParameter("productId"));
+        double gbpPrice=Double.parseDouble(request.getParameter("gbpPrice"));
+
+
+        String orderId=groupBuyingService.addOrder(accountId,receiverId,orderDeliverTime,productId,gbpPrice);
+        return "forward:/showOrder.action?method=orderView&orderId="+orderId;
+    }
+
+    /**
+     * get latest group buying activity
+     * @return latest group buying activity
+     * @author huang jiarui
+     * @version 1.2
+     */
+    @RequestMapping("/groupBuyingController/getLatestGroupBuying.action")
+    @ResponseBody
+    public GroupBuying getLatestGroupBuying(){
+        GroupBuying groupBuyingResult = groupBuyingService.getLatestGroupBuying();
+        return groupBuyingResult;
+
+    }
+
+
+    /**
+     * get current time of server
+     * @return the milliseconds between 1970/1/1 0:0 and current time of server
+     * @author huang jiarui
+     * @version 1.1
+     */
+    @RequestMapping("/groupBuyingController/getServerTime.action")
+    @ResponseBody
+    public Long getServerTime(){
+
+        return new Date().getTime();
+
     }
 }

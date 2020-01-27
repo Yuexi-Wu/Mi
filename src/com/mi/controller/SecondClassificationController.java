@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +23,7 @@ import java.util.Map;
 public class SecondClassificationController {
 
     @Autowired
-    private SecondClassificationService service;
+    private SecondClassificationService secondClassificationService;
 
     @RequestMapping("getAllScs")
     @ResponseBody
@@ -30,8 +32,8 @@ public class SecondClassificationController {
         Map<String, Object> result = new HashMap<>();
         result.put("code", 0);
         result.put("msg", "");
-        result.put("count", service.selectAllScsCount(scName, fcId));
-        List<SecondClassification> scs = service.selectAllScs(scName, fcId, page, limit);
+        result.put("count", secondClassificationService.selectAllScsCount(scName, fcId));
+        List<SecondClassification> scs = secondClassificationService.selectAllScs(scName, fcId, page, limit);
         result.put("data", scs);
         return result;
     }
@@ -39,7 +41,7 @@ public class SecondClassificationController {
     @RequestMapping("deleteSc")
     @ResponseBody
     public String deleteFc(String scId){
-        service.deleteSc(Integer.parseInt(scId));
+        secondClassificationService.deleteSc(Integer.parseInt(scId));
         return "success";
     }
 
@@ -54,7 +56,7 @@ public class SecondClassificationController {
             return "url";
         }
         sc.setScId(CusMethod.randomId());
-        service.addSc(sc);
+        secondClassificationService.addSc(sc);
         return "success";
     }
 
@@ -68,14 +70,47 @@ public class SecondClassificationController {
         }else if (sc.getScUrl() == null || sc.getScUrl().equals("")){
             return "url";
         }
-        service.updateSc(sc);
+        secondClassificationService.updateSc(sc);
         return "success";
     }
 
     @RequestMapping("getScById")
     public String getScById(int scId, Model model){
-        SecondClassification sc = service.selectScById(scId);
+        SecondClassification sc = secondClassificationService.selectScById(scId);
         model.addAttribute("sc", sc);
         return "scEdit";
+    }
+
+    /*根据一级分类返回全部二级分类*/
+    @RequestMapping("selectScByFc")
+    public @ResponseBody List<SecondClassification> selectScByFc(String fcId){
+        List<SecondClassification> scList = secondClassificationService.selectScByFc(fcId);
+        return scList;
+    }
+    /*根据一级分类返回全部二级分类跳转回去*/
+    @RequestMapping("selectScByFcRedirect")
+    public String selectScByFcRedirect(HttpSession session, String fcId, String scId,
+                                       String fcName){
+        List<SecondClassification> scList = secondClassificationService.selectScByFc(fcId);
+        session.setAttribute("scList",scList);
+        session.setAttribute("fcName",fcName);
+        session.setAttribute("scId",scId);
+        session.setAttribute("fcId",fcId);
+        return "redirect:productList.jsp";
+    }
+
+    /**
+     * get portion second classifications which contain the latest new products by id of first classification
+     * @param fcId id of first classification
+     * @param amount amount of products
+     * @return list of second classifications which contain the latest new products
+     * @author huang jiarui
+     * @version 1.1
+     */
+    @RequestMapping("/secondClassificationController/getLatestPortionSecondClassificationByFcId.action")
+    @ResponseBody
+    public List<SecondClassification> getLatestPortionSecondClassificationByFcId(Integer fcId, Integer amount){
+        System.out.println(fcId + " " + amount);
+        return secondClassificationService.getLatestPortionSecondClassificationByFcId(fcId,amount);
     }
 }

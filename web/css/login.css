@@ -1,0 +1,213 @@
+.login_page{
+    background-color: #eee
+}
+.login_card{
+    width: 350px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.login_card_head{
+    height: 80px;
+    text-align: center;
+    color: #aaa;
+    font-size: 15px;
+}
+.login_card_body{
+    margin-top: 30px;
+    height: 300px;
+}
+.login_card_footer{
+    text-align: center;
+    color: #757575;
+    font-size: 15px;
+}
+.login_form_item{
+    background-color: #fff;
+}
+.login_label{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.login_btn{
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 300px;
+}
+.login_tip{
+    color: #FD482C;
+}
+.edit_page{
+    background-color: #eee
+}
+.edit_card{
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.edit_card_head{
+    height: 80px;
+    text-align: center;
+    color: #aaa;
+    font-size: 15px;
+}
+.edit_card_body{
+    margin-top: 30px;
+    height: 400px;
+}
+.edit_card_footer{
+    text-align: center;
+    color: #757575;
+    font-size: 15px;
+}
+.edit_form_item{
+    background-color: #fff;
+}
+.edit_label{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.edit_btn{
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 300px;
+}
+.edit_tip{
+    color: #FD482C;
+}
+.edit_label_tip{
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.editp_page{
+    background-color: #eee
+}
+.editp_card{
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.editp_card_head{
+    height: 80px;
+    text-align: center;
+    color: #aaa;
+    font-size: 15px;
+}
+.editp_card_body{
+    margin-top: 30px;
+    height: 270px;
+}
+.editp_card_footer{
+    text-align: center;
+    color: #757575;
+    font-size: 15px;
+}
+.editp_form_item{
+    background-color: #fff;
+}
+.editp_label{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.editp_btn{
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 270px;
+}
+.editp_tip{
+    color: #FD482C;
+}
+.editp_label_tip{
+    width: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.main_footer{
+    color: #969696;
+    text-align: center;
+}
+.main_body{
+    padding: 30px;
+    background-color: #eee;
+}
+.main_content{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    padding-top: 20px;
+}
+.main_content_table{
+    margin: 0px 30px;
+}
+.main_logo{
+    width: 600px;
+    height: 150px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.main_logo_container{
+    margin-top: 30px;
+    background-color: #eee;
+}
+.main_intro{
+    padding: 50px;
+    color: #969696;
+}
+.main_intro p{
+    padding-bottom: 5px;
+}
+.main_intro h2{
+    padding-bottom: 3px;
+}
+.main_intro h2 span{
+    color: #ff6700;
+}
+.add_page{
+    background-color: #eee
+}
+.add_btn{
+    width: 200px;
+}
+.add_card{
+    width: auto;
+    height: 400px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+}
+.add_card_head{
+    height: 80px;
+    text-align: center;
+    color: #aaa;
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.add_card_body{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.add_card_footer{
+    text-align: center;
+    color: #757575;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.blank{
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+}

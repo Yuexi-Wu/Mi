@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mi.model.dao.SeckillQueueStatusDAO">
+    <select id="getSqsById" parameterType="int" resultMap="sqsResult">
+        select * from ((seckill_queue_status join seckill_product using (sp_id))
+          join product using (product_id))
+        where sqs_id = #{sqsId}
+    </select>
+
+    <select id="getCurrentSqsByAccountId" parameterType="int" resultMap="sqsResult">
+        select * from (((seckill_queue_status join seckill_product using (sp_id))
+        join seckill using (seckill_id))
+        join product using (product_id))
+        where seckill_status = 2
+        and account_id = #{accountId}
+        and sqs_status in (1, 2)
+    </select>
+
+    <resultMap id="sqsResult" type="SeckillQueueStatus">
+        <result property="sqsId" column="sqs_id"/>
+        <result property="sqsStatus" column="sqs_status"/>
+        <result property="sqsWaitCount" column="sqs_wait_count"/>
+        <result property="sqsAcceptedTime" column="sqs_accepted_time"/>
+        <result property="sqsReceivedTime" column="sqs_received_time"/>
+        <association property="account" column="account_id" javaType="Account" resultMap="accountResult"/>
+        <association property="seckillProduct" column="sp_id" javaType="SeckillProduct" resultMap="spResult"/>
+    </resultMap>
+
+    <resultMap id="accountResult" type="Account">
+        <result property="accountId" column="account_id"/>
+        <result property="accountName" column="account_name"/>
+        <!--private String accountName;-->
+    </resultMap>
+
+    <resultMap id="spResult" type="SeckillProduct">
+        <result property="spId" column="sp_id"/>
+        <result property="spAmount" column="sp_amount"/>
+        <result property="spPrice" column="sp_price"/>
+        <result property="seckillId" column="seckill_id"/>
+        <association property="product" column="product_id" javaType="Product" resultMap="productResult"/>
+    </resultMap>
+
+    <resultMap id="productResult" type="Product">
+        <result property="productId" column="product_id"/>
+        <result property="productName" column="product_name"/>
+        <result property="productIntro" column="product_intro"/>
+        <result property="productPrice" column="product_price"/>
+        <result property="productColor" column="product_color"/>
+        <result property="productVersion" column="product_version"/>
+        <result property="productSize" column="product_size"/>
+        <result property="productUrl" column="product_url"/>
+    </resultMap>
+
+    <insert id="addSeckillQueueStatus" parameterType="SeckillQueueStatus">
+        insert into seckill_queue_status (account_id, sp_id)
+        values (#{account.accountId}, #{seckillProduct.spId})
+    </insert>
+
+    <update id="updateWaitCount" parameterType="SeckillQueueStatus">
+        update seckill_queue_status
+        set sqs_wait_count = #{sqsWaitCount}
+        where sqs_id = #{sqsId};
+    </update>
+
+    <update id="updateSqsStatus" parameterType="SeckillQueueStatus">
+        update seckill_queue_status
+        set sqs_status = #{sqsStatus}
+        where sqs_id = #{sqsId};
+    </update>
+
+</mapper>

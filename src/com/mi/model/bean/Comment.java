@@ -1,6 +1,7 @@
 package com.mi.model.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Comment {
     private int commentId;
@@ -13,6 +14,7 @@ public class Comment {
     private int logisticsLevel;//1，2，3，4，5星
     private int serviceLevel;//1，2，3，4，5星
     private OrderItem orderItem;
+    private List<Reply> replies;
 
     public int getTotalLevel() {
         return totalLevel;
@@ -102,5 +104,13 @@ public class Comment {
 
     public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
+    }
+
+    public List<Reply> getReplies() {
+        return replies;
+    }
+
+    public void setReplies(List<Reply> replies) {
+        this.replies = replies;
     }
 }

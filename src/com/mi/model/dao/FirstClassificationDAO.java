@@ -21,5 +21,12 @@ public interface FirstClassificationDAO {
     //添加一级分类
     public void addFc(FirstClassification fc);
     //修改一级分类信息
-    void updateFc(FirstClassification fc);
+    public void updateFc(FirstClassification fc);
+    /**
+     * get all first classification
+     * @return list of first classification
+     * @author huang jiarui
+     * @version 1.0
+     */
+    public List<FirstClassification> getAllFirstClassification();
 }

@@ -29,13 +29,9 @@ import java.util.*;
 public class SeckillController {
 
     @Autowired
-    private SeckillService service;
+    private SeckillService seckillService;
     @Autowired
     private SeckillProductDAO spDao;
-    @Autowired
-    private AccountDAO aDao;
-    @Autowired
-    private NotificationDAO nDao;
 
     @RequestMapping("getAllSeckills")
     @ResponseBody
@@ -43,8 +39,8 @@ public class SeckillController {
         Map<String, Object> result = new HashMap<>();
         result.put("code", 0);
         result.put("msg", "");
-        result.put("count", service.selectAllSeckillsCount(startTime, endTime));
-        List<Seckill> seckills = service.selectAllSeckills(startTime, endTime, page, limit);
+        result.put("count", seckillService.selectAllSeckillsCount(startTime, endTime));
+        List<Seckill> seckills = seckillService.selectAllSeckills(startTime, endTime, page, limit);
         result.put("data", seckills);
         return result;
     }
@@ -52,7 +48,7 @@ public class SeckillController {
     @RequestMapping("deleteSeckill")
     @ResponseBody
     public String deleteSeckill(int seckillId){
-        service.deleteSeckill(seckillId);
+        seckillService.deleteSeckill(seckillId);
         return "success";
     }
 
@@ -74,8 +70,6 @@ public class SeckillController {
             return "end";
         }else if ((sdf.parse(json.getString("seckillEnd")).getTime() - sdf.parse(json.getString("seckillStart")).getTime()) < 1800){
             return "endWrong";
-        }else if (jsonArray.size() == 0){
-            return "product";
         }
         Seckill seckill = new Seckill();
         seckill.setSeckillId(CusMethod.randomId());
@@ -83,44 +77,67 @@ public class SeckillController {
         seckill.setSeckillDescription(json.getString("seckillDescription"));
         seckill.setSeckillStart(sdf.parse(json.getString("seckillStart")));
         seckill.setSeckillEnd(sdf.parse(json.getString("seckillEnd")));
-        service.addSeckill(seckill);
-//        System.out.println(seckill.getSeckillName());
-//        System.out.println(seckill.getSeckillDescription());
-//        System.out.println(seckill.getSeckillStart());
-//        System.out.println(seckill.getSeckillEnd());
         List<SeckillProduct> list = new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++){
+            String productId = jsonArray.getJSONObject(i).getString("productId");
+            String spAmount = jsonArray.getJSONObject(i).getString("spAmount");
+            String spPrice = jsonArray.getJSONObject(i).getString("spPrice");
+            if (productId == null || productId.equals("")){
+                return "productId";
+            }
+            if (spAmount == null || spAmount.equals("")){
+                return "spAmount";
+            }
+            if (spPrice == null || spPrice.equals("")){
+                return "spPrice";
+            }
             SeckillProduct sp = new SeckillProduct();
             sp.setSpId(CusMethod.randomId());
             sp.setSeckillId(seckill.getSeckillId());
-            sp.setSpAmount(Integer.parseInt(jsonArray.getJSONObject(i).getString("spAmount")));
-            sp.setSpPrice(Double.parseDouble(jsonArray.getJSONObject(i).getString("spPrice")));
+            sp.setSpAmount(Integer.parseInt(spAmount));
+            sp.setSpPrice(Double.parseDouble(spPrice));
             Product product = new Product();
-            product.setProductId(Integer.parseInt(jsonArray.getJSONObject(i).getString("productId")));
+            product.setProductId(Integer.parseInt(productId));
             sp.setProduct(product);
             list.add(sp);
         }
+        seckillService.addSeckill(seckill);
         spDao.addSps(list);
-        List<Integer> accountIds = aDao.selectAllAccountsId();
-        List<Notification> notifications = new ArrayList<>();
-        String title = seckill.getSeckillName() + "开始！！！";
-        String content = seckill.getSeckillDescription();
-        for (Integer accountId: accountIds){
-            Notification notification = new Notification();
-            notification.setNotificationStatus(Notification.NOTIFICATION_STATUS_NEW);
-            notification.setNotificationTitle(title);
-            notification.setNotificationContent(content);
-            notification.setAccountId(accountId);
-            notifications.add(notification);
-        }
-        nDao.addNotifications(notifications);
         return "success";
     }
 
-    @RequestMapping("getSeckillById")
+    @RequestMapping("getSeckillByIdBack")
     public String getSeckillById(int seckillId, Model model){
-        Seckill seckill = service.selectSeckillById(seckillId);
+        Seckill seckill = seckillService.selectSeckillById(seckillId);
         model.addAttribute("seckill", seckill);
         return "seckillInfo";
+    }
+
+    /**
+     * get latest second kill activity
+     * @return latest second kill activity
+     * @author huang jiarui
+     * @version 1.1
+     */
+    @RequestMapping("/seckillController/getLatestSeckill.action")
+    @ResponseBody
+    public Seckill getLatestSeckill(){
+
+        return seckillService.getLatestSeckill();
+
+    }
+
+    /**
+     * get current time of server
+     * @return the milliseconds between 1970/1/1 0:0 and current time of server
+     * @author huang jiarui
+     * @version 1.1
+     */
+    @RequestMapping("/seckillController/getServerTime.action")
+    @ResponseBody
+    public Long getServerTime(){
+
+        return new Date().getTime();
+
     }
 }

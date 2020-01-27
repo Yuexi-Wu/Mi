@@ -1,0 +1,40 @@
+.noNo{
+    font-size: 30px;
+    margin-left: 350px;
+    margin-right: auto;
+    margin-top: 100px;
+    color: #969696;
+}
+
+
+.single-note{
+
+    border: 1px solid #FF936A;
+    height: 80px;
+    width: 700px;
+    margin-top: 40px;
+    border-radius:15px;
+    background-color: #FFF9EC;
+    text-align: center;
+    font-size: 20px;
+    font-family: "calisto mt";
+    color: #3F3F3F;
+}
+
+.noTitle{
+    text-align: left;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.noContent{
+    margin-top: 8px;
+    font-size:18px ;
+    margin-left: 10px;
+}
+
+#dot{
+    position: absolute;
+    left: 294px;
+}

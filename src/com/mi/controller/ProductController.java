@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -90,5 +92,79 @@ public class ProductController {
         service.updateProduct(product);
         return "success";
 
+    }
+
+    /*根据商品的一二级分类精确查询或者商品名称模糊查询,若存在sortway，则对此商品列表进行排序
+    @param fcId scId productName 查询条件
+     */
+    @RequestMapping("selectData")
+    public @ResponseBody List<Product> selectData(String scId,String fcId, String productName, String sortway, String page, String limit) {
+        Integer fcIdOut;
+        Integer scIdOut;
+        try {
+            productName = URLDecoder.decode(productName,"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+        }
+        if(page==null || page.equals(" ")){
+            page="1";
+        }
+        if(limit==null || limit.equals(" ")){
+            limit="24";
+        }
+        if(fcId==null || fcId.equals("")){
+            fcIdOut = null;
+        }else{
+            fcIdOut=Integer.parseInt(fcId);
+        }
+        if(scId==null || scId.equals("")){
+            scIdOut = null;
+        }else{
+            scIdOut=Integer.parseInt(scId);
+        }
+        List<Product> productList = null;
+
+        if(sortway!=null && !sortway.equals("")) {
+            productList = service.selectProductSorted(fcIdOut, scIdOut, productName, sortway,page, limit);
+        }else{
+            productList = service.selectProductsByNFCPage(fcIdOut, scIdOut, productName, page, limit);
+        }
+        return productList;
+    }
+    /*处理从前台获取来的查询所需的参数值
+     * @param scId 二级分类名称
+     * @param fcId 一级分类名称
+     *@param productName 商品名称
+     *@param sortway 排序方式名称
+     *@param priceSortToggle 价格升序降序符号 0是降序 1是升序 默认降序
+     *
+     * */
+    @RequestMapping("selectProduct")
+    public String selectProduct(Model model, String scId, String fcId, String productName, String sortway,String priceSortToggle){
+        model.addAttribute("scId",scId);
+        model.addAttribute("fcId",fcId);
+        model.addAttribute("productName",productName);
+        model.addAttribute("sortway",sortway);
+        model.addAttribute("priceSortToggle",priceSortToggle);
+        System.out.println("_______________"+productName);
+        return "productList";
+    }
+
+    /*返回查询商品数量countnum*/
+    @RequestMapping("selectPageCount")
+    public @ResponseBody int selectPageCount(String fcId, String scId, String productName){
+        Integer fcIdOut;
+        Integer scIdOut;
+        if(fcId==null || fcId.equals("")){
+            fcIdOut = null;
+        }else{
+            fcIdOut=Integer.parseInt(fcId);
+        }
+        if(scId==null || scId.equals("")){
+            scIdOut = null;
+        }else{
+            scIdOut=Integer.parseInt(scId);
+        }
+        int countnum = service.selectPageNum(fcIdOut, scIdOut, productName);
+        return countnum;
     }
 }

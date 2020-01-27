@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 准备和接口成对匹配 -->
+<mapper namespace="com.mi.model.dao.ReceiverDAO">
+
+    <!-- //得到账户所有收货地址
+    public List<Receiver> selectReceiverByAccount(int accountId); -->
+    <select id="selectReceiverByAccount" parameterType="int" resultType="Receiver">
+        select * from receiver where account_id=#{accountId}
+    </select>
+
+    <select id="selectReceiverById" parameterType="int" resultType="Receiver">
+        select * from receiver where receiver_id=#{receiverId}
+    </select>
+
+
+    <!-- //添加收货地址
+    public void addReceiver(Receiver receiver, int accountId); -->
+    <insert id="addReceiver" parameterType="Receiver">
+        insert into receiver values (#{receiverId},#{account.accountId},#{receiverName},#{receiverPhone},#{adProvince},#{adCity},#{adDistrict},#{adDetail},#{postcode},#{adLabel})
+    </insert>
+
+    <!-- //修改收货地址
+    public void updateReceiver(Receiver receiver); -->
+    <update id="updateReceiver" parameterType="Receiver">
+        update receiver
+        <set>
+            <if test="receiverName!=null and receiverName!=''">receiver_name=#{receiverName},</if>
+            <if test="receiverPhone!=null and receiverPhone!=''">receiver_phone=#{receiverPhone},</if>
+            <if test="adProvince!=null and adProvince!=''">ad_province=#{adProvince},</if>
+            <if test="adCity!=null and adCity!=''">ad_city=#{adCity},</if>
+            <if test="adDistrict!=null and adDistrict!=''">ad_district=#{adDistrict},</if>
+            <if test="adDetail!=null and adDetail!=''">ad_detail=#{adDetail},</if>
+            <if test="postcode!=0 and postcode!=''">postcode=#{postcode},</if>
+            <if test="adLabel!=null and adLabel!=''">ad_label=#{adLabel},</if>
+        </set>
+        where receiver_id=#{receiverId}
+    </update>
+
+    <!-- //删除收货地址
+    public void deleteReceiver(int receiverId); -->
+    <delete id="deleteReceiver" parameterType="int">
+        delete from receiver where receiver_id=#{receiverId}
+    </delete>
+
+
+    <!-- //验证收货地址是否重复
+    public Receiver validateReceiver(Receiver receiver); -->
+    <select id="validateReceiver" parameterType="Receiver" resultType="Receiver">
+        select *
+        from receiver r
+        where r.receiver_name=#{receiverName} and r.receiver_phone=#{receiverPhone}
+        and r.ad_province=#{adProvince} and r.ad_city=#{adCity} and r.ad_district=#{adDistrict} and r.ad_detail=#{adDetail}
+        and r.postcode = #{postcode} and r.ad_label = #{adLabel} and r.account_id=#{account.accountId}
+    </select>
+
+
+</mapper>

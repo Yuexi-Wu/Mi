@@ -9,7 +9,8 @@ public class SeckillQueueStatus {
 	private int sqsStatus;
 	private int sqsWaitCount;
 	private Date sqsAcceptedTime;
-	
+	private Date sqsReceivedTime;
+
 	public int getSqsId() {
 		return sqsId;
 	}
@@ -45,5 +46,13 @@ public class SeckillQueueStatus {
 	}
 	public void setSqsAcceptedTime(Date sqsAcceptedTime) {
 		this.sqsAcceptedTime = sqsAcceptedTime;
+	}
+
+	public Date getSqsReceivedTime() {
+		return sqsReceivedTime;
+	}
+
+	public void setSqsReceivedTime(Date sqsReceivedTime) {
+		this.sqsReceivedTime = sqsReceivedTime;
 	}
 }

@@ -21,7 +21,7 @@ import java.util.Map;
 public class  FirstClassificationController {
 
     @Autowired
-    private FirstClassificationService service;
+    private FirstClassificationService firstClassificationService;
 
     @RequestMapping("getAllFcs")
     @ResponseBody
@@ -30,8 +30,8 @@ public class  FirstClassificationController {
         Map<String, Object> result = new HashMap<>();
         result.put("code", 0);
         result.put("msg", "");
-        result.put("count", service.selectAllFcsCount(fcName));
-        List<FirstClassification> fcs = service.selectAllFcs(fcName, page, limit);
+        result.put("count", firstClassificationService.selectAllFcsCount(fcName));
+        List<FirstClassification> fcs = firstClassificationService.selectAllFcs(fcName, page, limit);
         result.put("data", fcs);
         return result;
     }
@@ -39,7 +39,7 @@ public class  FirstClassificationController {
     @RequestMapping("deleteFc")
     @ResponseBody
     public String deleteFc(String fcId){
-        service.deleteFc(Integer.parseInt(fcId));
+        firstClassificationService.deleteFc(Integer.parseInt(fcId));
         return "success";
     }
 
@@ -50,13 +50,13 @@ public class  FirstClassificationController {
             return "name";
         }
         fc.setFcId(CusMethod.randomId());
-        service.addFc(fc);
+        firstClassificationService.addFc(fc);
         return "success";
     }
 
     @RequestMapping("getFcById")
     public String getFcById(int fcId, Model model){
-        FirstClassification fc = service.selectFcById(fcId);
+        FirstClassification fc = firstClassificationService.selectFcById(fcId);
         model.addAttribute("fc", fc);
         return "fcEdit";
     }
@@ -67,7 +67,33 @@ public class  FirstClassificationController {
         if (fc.getFcName() == null || fc.getFcName().equals("")){
             return "name";
         }
-        service.updateFc(fc);
+        firstClassificationService.updateFc(fc);
         return "success";
+    }
+
+    /**
+     * get all first classifications
+     * @return list of all first classifications
+     * @author huang jiarui
+     * @version 1.1
+     */
+    @RequestMapping("/firstClassificationController/getAllFirstClassification")
+    @ResponseBody
+    public List<FirstClassification> getAllFirstClassification(){
+        List<FirstClassification> firstClassifications = firstClassificationService.getAllFirstClassification();
+        return firstClassifications;
+    }
+
+    /**
+     * get all first classifications with latest portion second classification
+     * @param amount the number of products of second classification
+     * @return list of all first classifications with latest portion second classification
+     * @author huang jiarui
+     * @version 1.1
+     */
+    @RequestMapping("/firstClassificationController/getAllFirstClassificationWithLatestPortionSecondClassification")
+    @ResponseBody
+    public List<FirstClassification> getAllFirstClassificationWithLatestPortionSecondClassification(int amount){
+        return firstClassificationService.getAllFirstClassificationWithLatestPortionSecondClassification(amount);
     }
 }

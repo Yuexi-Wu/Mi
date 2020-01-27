@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 准备和接口成对匹配 -->
+<mapper namespace="com.mi.model.dao.CommentDAO">
+
+
+    <!-- //新增评论
+    public void addComment(Comment comment); -->
+    <insert id="addComment" parameterType="Comment">
+        insert into comment(comment_id,orderitem_id,content,photo_url,total_level,description_level,logistics_level,service_level)  values (#{commentId},#{orderItem.orderitemId},#{content},#{photoUrl},#{totalLevel},#{descriptionLevel},#{logisticsLevel},#{serviceLevel})
+    </insert>
+
+    <!-- //新增评论同时更改item评论状态
+    public void changeStatus(OrderItem item); -->
+    <update id="changeStatus" parameterType="OrderItem">
+        update orderitem set commented=1 where orderitem_id=#{orderitemId}
+    </update>
+
+    <!-- //查看所有评论
+    public List<Comment> viewComment(int accountId); -->
+    <select id="viewComment" parameterType="int" resultType="Comment">
+        select * from comment where account_id=#{accountId}
+    </select>
+
+    <!-- //查看客户未评价的全部商品
+    public List<Product> viewUncommentedProduct(int accountId); -->
+    <select id="selectUncommentedOrder" parameterType="int" resultMap="itemResult">
+        select * from `order` o,orderitem i,product p,receiver r
+        where i.order_id=o.order_id and p.product_id=i.product_id and o.receiver_id=r.receiver_id
+        and i.commented=0 and o.account_id=#{accountId} and o.order_status=3
+    </select>
+
+    <resultMap id="itemResult" type="OrderItem">
+        <result column="orderitem_id" property="orderitemId"/>
+        <result column="orderitem_quantity" property="orderitemQuantity"/>
+        <result column="orderitem_price" property="orderitemPrice"/>
+        <association property="product" column="product_id" javaType="Product" resultMap="productResult"/>
+    </resultMap>
+
+    <resultMap id="productResult" type="Product">
+        <id column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_color" property="productColor"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="product_size" property="productSize"/>
+        <result column="product_sales" property="productSales"/>
+        <result column="product_max" property="productMax"/>
+        <result column="product_url" property="productUrl"/>
+    </resultMap>
+
+    <!-- //查看客户已评价商品
+    public List<OrderItem> selectCommentedOrder(int accountId); -->
+    <select id="selectCommentedOrder" parameterType="int" resultMap="itemResult">
+        select * from `order` o,orderitem i,product p,receiver r
+        where i.order_id=o.order_id and p.product_id=i.product_id and o.receiver_id=r.receiver_id
+        and i.commented=1 and o.account_id=#{accountId}
+    </select>
+
+    <!-- //通过id定位orderItem
+    public OrderItem getOrderItemById(int itemId); -->
+    <select id="getOrderItemById" parameterType="int" resultMap="itemResult">
+        select * from orderitem i,product p where i.orderitem_id=#{itemId} and p.product_id=i.product_id
+    </select>
+
+    <select id="getAllComment" resultMap="allComment">
+        select *
+        from comment c,orderitem oi,`order` o,mi_account a
+        where c.orderitem_id = oi.orderitem_id
+        and oi.order_id = o.order_id
+        and o.account_id = a.account_id
+    </select>
+
+    <resultMap type="Comment" id="allComment">
+        <id property="commentId" column="comment_id"/>
+        <result property="totalLevel" column="total_level"/>
+        <result property="descriptionLevel" column="description_level"/>
+        <result property="logisticsLevel" column="logistics_level"/>
+        <result property="serviceLevel" column="service_level"/>
+        <association property="account" javaType="Account">
+            <id property="accountId" column="account_id"/>
+        </association>
+        <association property="orderItem" javaType="OrderItem">
+            <association property="product" javaType="Product">
+                <id property="productId" column="product_id"/>
+            </association>
+        </association>
+    </resultMap>
+
+</mapper>

@@ -74,6 +74,7 @@ public class AnalysisService {
         return data;
     }
 
+    //获取总销售量和本周销售量，总用户数和本周活跃用户数
     public Map<String,Object> getPanelData() {
         Map<String,Object> result = new HashMap<>();
         result.put("accountTotal", aDao.getAllAccountsCount());

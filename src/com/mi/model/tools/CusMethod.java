@@ -46,4 +46,23 @@ public class CusMethod {
         }
         return fourRandom;
     }
+
+    public static String getSixCode(){
+        int intFlag = 0;
+        for (int i = 0; i <= 200; i++)
+        {
+            intFlag = (int)(Math.random() * 1000000);
+            String flag = String.valueOf(intFlag);
+            if (flag.length() == 6 && flag.substring(0, 1).equals("9"))
+            {
+//                System.out.println(intFlag);
+            }
+            else
+            {
+                intFlag = intFlag + 100000;
+//                System.out.println(intFlag);
+            }
+        }
+        return String.valueOf(intFlag);
+    }
 }

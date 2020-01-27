@@ -1,0 +1,1678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Mi:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="742a132e-6f18-4f86-956e-9210bc27fd7c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/activation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/activation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.mail.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jsqlparser-0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mail.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mailapi.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pagehelper-3.6.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pop3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/smtp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/NotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/ReceiverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/RecommenderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/SeckillUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/SpecificGoodsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/controller/TrainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Hidbiase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Reply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Scoring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Visbiase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Weight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/CartDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/CartDAO.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/CommentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/CommentDAO.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/ReceiverDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/ReceiverDAO.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/RecommenderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/RecommenderDAO.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillQueueStatusDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillQueueStatusDAO.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/service/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/service/ReceiverService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/service/RecommenderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/service/SeckillUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/service/SpecificGoodsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/tools/CheckCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/tools/Email.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/tools/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/utils/CRBMRecommender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/utils/ProbDescComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/utils/SparseMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/utils/SparseVector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/utils/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mi/model/utils/ValueAscComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AccountInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/AccountLogin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Avatar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ChangePass.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/CommentSuccess.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Confidentiality.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/CreateComment.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Email.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/FinishedOrder.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/GroupBuyingMain.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/GroupOrder.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/GroupOver.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/GroupReady.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/GroupRunning.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MyComment.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MyCommented.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MyFavourite.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MyOrder.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MyPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MyReceiver.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Notification.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Password.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/PayingOrder.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/PersonalInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ReadNotification.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ShippingOrder.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/UnreadNotification.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/buyGoods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/buySuccess.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/checkOut.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/accountInfo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/base.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/base_index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/base_navigation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/buySuccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/checkOut.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/checkout.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/customlist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/hh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/mi_index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/myFavourite.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/myOrder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/myPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/myReceiver.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/notification.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/orderView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/payConfirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/productBuy.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/product_buy.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/regist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/seckill.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/seckillMain.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/specs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/generalSpecs.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/demo_fontclass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/demo_symbol.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/demo_unicode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/iconfont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iconfont/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/iframe.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/MiGroupBuying.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/MiWeChat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/hm4X.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/index_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/index_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/index_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/index_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/index_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/index_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/index_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/pay_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/pay_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/pay_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/pay_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/pay_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/pay_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/底栏.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/111.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/112.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/1158.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/123213.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/23442.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/316310.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/32432.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/324432.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/34536.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/4883.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/68279.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/7420.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/7421.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/7563.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/7564.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/7565.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/78bOOOPICb2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/7985.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/7986.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/MiGroupBuying.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/MiWeChat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/QRcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/audio_pic-livingroom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-black-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-black-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-black-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-black-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-blue-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-blue-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-blue-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-blue-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-grey-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-grey-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-grey-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-grey-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/doushi-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-black-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-black-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-black-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-black-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/shangwu-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-black-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-black-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-black-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-black-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-grey-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-grey-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-grey-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-grey-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/backpack/xueyuan-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/banner3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/bookicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7419.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7420.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7421.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7563.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7564.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7565.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7777.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7984.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7985.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/7986.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/audio_pic-livingroom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/hd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/index-banner-hezi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/index-game-img111.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/index-reward-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/index-tv1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/box/summary-function.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/mi_camera_lunbo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/mi_camera_lunbo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/mi_camera_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/mi_camera_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/mi_camera_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaomo_camera_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaomo_camera_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaomo_camera_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaomo_camera_pic3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaomo_camera_pic4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaoyi_camera_lunbo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaoyi_camera_lunbo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaoyi_camera_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaoyi_camera_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/camera/xiaoyi_camera_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/cart-empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/211cab6e09831c12892f0dc46720ac83.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/T1j6C_BQZv1RXrhCrK!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/d822f0c8e6b2fd97ab5a0c53de16b53a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1507878667.12359513.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1507878667.22956822.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1507878667.30934943.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1507878667.31445112.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1510291188.31088548!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1510291191.71443071!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1522139938.61998092!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/pms_1522139938.61998092.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/section-02-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/section-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/section-06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/xiaomi10Wpc1226_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/charge/xiaomi10Wpc1226_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/hat_black_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/hat_grey_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/hat_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/hat_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/hat_pic3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/hat_pic4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/polo_black_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/polo_blue_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/polo_grey_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/polo_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/polo_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/polo_pic3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/polo_pic4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/scarf_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/tech_shirt_black_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/tech_shirt_grey_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/tech_shirt_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/tech_shirt_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/tech_shirt_pic3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/clothes/tech_shirt_pic4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/computer/computer1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/computer/computer2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/computer/computer3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/computer/computer4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/computer/computer5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/_-USB-C--VGA-pc_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/_-USB-C--VGA-pc_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/_-USB-C--VGA-pc_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/_-USB-C--VGA-pc_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/convert1H.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/convert2H.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/convert3H.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/dgnzhqweb_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/dgnzhqweb_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/dgnzhqweb_09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/pms_1469523170.25518983.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/convert/pms_1505375108.71249291.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/cooker/1513822496.31335198!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/cooker/induction-cooker-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/cooker/induction-cooker-7on.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/cooker/pms_1513822496.31335198!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/flashpurchase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/group01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/group02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/group03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/group04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/group05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/header-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/flashpurchase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/header-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/home-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/img.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/left-product-0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/left-product-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/left-product-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/left-product-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/left-product-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/mi-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/xmad_15259408612582_TGdhA.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/xmad_15324001399901_MdiBw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/xmad_15324310409495_Whqlg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/xmad_15325118804129_SjEPH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/xmad_1532616989794_ZVkCh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hjr/xmad_15326189127178_tugca.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/hm4X.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/home-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/icon-slides.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/img.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index-banner-hezi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index-game-img111.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index-reward-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index-tv1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_banner_img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_border2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_dobly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_insert1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_pics_img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_ram_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_slider_img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_slider_img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_slider_img3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_slider_img4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/index_slider_img5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/keyboard/pms_1490702347.3628109!560x560.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/keyboard/pms_1524541900.12582186.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/keyboard/pms_1524541903.00355516.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/1/miwifi4-01 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/1/miwifi4-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/1/pms_1495520422.36514041!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/1/pms_1495520422.36514041!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/2/mi002916.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/2/mi002917.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/2/mi002918.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/2/pms_1501555761.30759835!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/2/pms_1501555761.30759835!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/4fe56fb1b646659c8dce6cdede1497ee.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/64c6a2d787b07843f42f50a1a99fb100.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/8ada66d169d7242789644eda300d3b00.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/a4a04807fad7fa9892d67bff404c7b8e (1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/c71722dbd4dd62b2d17d5a4c20a4020b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/e6d3516af4ee3e5fad57c9fcb7d93353的副本.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/pms_1517214417.03015779.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/3/pms_1517214458.75038587.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/4/mj-nightlight-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/4/mj-nightlight-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/4/mj-nightlight-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/4/mj-nightlight-06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/4/pms_1500278194.46038854!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/4/pms_1500278194.46038854!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/5/mi002920.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/5/mi002921.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/5/mi002922.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/5/mi002923.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/5/pms_1473125484.8332236!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/5/pms_1473125484.8332236!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/6/flpqpd_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/6/flpqpd_06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/6/flpqpd_09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/6/flpqpdgai_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/6/pms_1496647119.81414190!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/6/pms_1496647122.3582338.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/7/mj-bedsidelamp-08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/7/mj-bedsidelamp-09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/7/mj-bedsidelamp-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/7/pms_1508724951.09887337!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/7/pms_1508724951.09887337!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/absorb-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/absorb-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/absorb-05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/absorb-09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/mi002924.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/pms_1494396907.36868077!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/pms_1495181529.76425098!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/8/pms_1495181529.76425098!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/9/0c90907457d4ce04028f69bf128e0e55.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/9/536b46f6ae9f0805940819383f2d7d54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/9/623706b31228b9beb08e54258e76c513.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/9/824f393f6bd81173eb73e6fc95d6dfdd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/9/95f569375e1e6b434ccaf226510e2349.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/9/bd679731caa00043d99b2886f485ce24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/lamp/9/pms_1524452958.92865446.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1496997930.13622399!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1499138177.54329452!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897517.20426731!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897519.01412654!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897530.44794561!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897532.53627318!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897557.94046102!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897560.08951601!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897564.63434595!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897565.87322685!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897592.73836006!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897594.08222545!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897597.14269000!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1505897598.42214958!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1507889670.69493704!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514387864.15165583!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514387867.79856696!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514387870.19449093!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514387870.70845803!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514387870.88251945!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514387870.88251945!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514390379.45372827!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514390379.45372827!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514390380.3716884!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514390439.56264253!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514390440.00176219!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514390440.34968863!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514392647.20391761!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514392655.34928396!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514392656.24129948!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514392657.06744272!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514392657.06744272!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1514392658.476822!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1516349082.36786758!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1516349082.37272507!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1516349082.38637765!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1516349082.41644510!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1516349082.44032667!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1516349082.45949564!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1516349082.52386126!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1518074918.78422526!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1518074918.87067338!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1518074918.95099104!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1518074919.21869003!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1518074919.25767727!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1518074919.40924515!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1518074919.50268475!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1522050377.11834334!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1522050377.12831152!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1522050377.16574279!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1522050377.16658998!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1522050377.22784953!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1524636075.71677607!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1524636097.66136168!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1524636115.71585919!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1525231442.13261362!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1525231579.56571137!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/pms_1533196200.13174382!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/封面图/pms_1514387870.88251945!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/封面图/pms_1514390379.45372827!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/封面图/pms_1514392657.06744272!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/金色/128g/pms_1514392647.20391761!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/金色/128g/pms_1514392655.34928396!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/金色/128g/pms_1514392656.24129948!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/金色/128g/pms_1514392657.06744272!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/金色/128g/pms_1514392658.476822!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/128g/pms_1514387864.15165583!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/128g/pms_1514387867.79856696!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/128g/pms_1514387870.19449093!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/128g/pms_1514387870.70845803!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/128g/pms_1514387870.88251945!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/256g/pms_1514390379.45372827!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/256g/pms_1514390380.3716884!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/256g/pms_1514390439.56264253!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/256g/pms_1514390440.00176219!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Air/12.5英寸/轮播图/银色/256g/pms_1514390440.34968863!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i5 8g/pms_1505897592.73836006!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i5 8g/pms_1505897594.08222545!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i5 8g/pms_1505897597.14269000!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i5 8g/pms_1505897598.42214958!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 16g/pms_1505897517.20426731!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 16g/pms_1505897519.01412654!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 16g/pms_1505897530.44794561!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 16g/pms_1505897532.53627318!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 8g/pms_1505897557.94046102!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 8g/pms_1505897560.08951601!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 8g/pms_1505897564.63434595!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米Pro/i7 8g/pms_1505897565.87322685!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米游戏本/封面图/pms_1533196200.13174382!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米游戏本/轮播图/pms_1522050377.11834334!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米游戏本/轮播图/pms_1522050377.12831152!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米游戏本/轮播图/pms_1522050377.16574279!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米游戏本/轮播图/pms_1522050377.16658998!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/laptop/小米游戏本/轮播图/pms_1522050377.22784953!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/left-product-0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/left-product-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/left-product-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/left-product-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/left-product-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/mi-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/mouse/pms_1478248566.62624407!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/mouse/pms_1488533926.06453673!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/mouse/pms_1490595812.95661863!560x560.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/mouse/pms_1501740205.21516774!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/mouse/pms_1524047797.9265920!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/event-mipay20170427.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/mifinanceinstal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_ant_huabei.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_bjnsyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_bjyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_fcyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_gdyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_gfyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_gsyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_hyyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_hzyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_jiangsshuyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_jsyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_jtyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_msyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_nbyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_nyyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_payh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_pufa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_shncsyyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_shnsyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_shyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_xyyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_youzheng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_zfb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_zgyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_zsyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/payOnline_zxyh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/unionpay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payBank/weixinpay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/payMitu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/pay_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/pay_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/pay_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/pay_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/pay_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/pay_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/1527684983.06149292.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/appearance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/border1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/border2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/border3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/border4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/index_body_bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/index_body_bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/index_pic_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/index_pic_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/index_specs_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/m8-140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/m8se-140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527684986.6891825!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527684986.69698543!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527684986.69828101!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685277.58269008!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685277.58778153!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685277.65255600!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685277.65297400!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685281.79277634!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685281.81199430!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685281.83671292!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527685281.91668174!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735134.01919050!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735134.03584233!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735134.08232431!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735134.24873718!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735137.80842202!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735137.81615202!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735137.81949846!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735137.92672512!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735142.43654818!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735142.44453301!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735142.44622837!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527735142.66256003!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/pms_1527840584.43636811!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/xiaomis8gold1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/xiaomishoujiIndex_cpu_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/phone/xiaomishouji_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/battery-2c-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/battery-2c-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/newbattery2-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/newbattery2-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/newbattery2-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1505264799.43246303!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1505264799.43246303!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1505264802.20244406!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1505264804.52383051!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1505264806.99139086!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1513857241.9291821!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1513857241.9291821!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1513948456.57461422!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1513948456.57461422!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1513948460.69589822!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1513948464.95833144!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1515404353.30152325.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1515404353.30516645!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1515404353.30516645.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1515404353.32161582.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/portable/pms_1515404353.38931918.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/product_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/returnToTop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3AH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3AL1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3AL2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3Asummary-quick-pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3Asummary-wifi-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3Asummary_header2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3G.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3GH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3Gbg-broadband.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3Gbg-equipment.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3Gbg-features.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router3Gpms_1496289113.78361376!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4C.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4C1a2b097f136624ce6b04f8d2926caff0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4C57255ce6b94dae50938eb05ba805d3dd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4C581af6938183ac59bd52c482f9cd2ebe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4CH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4Ce01ab51c254aeb198d887fead082a4b7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4Cpms_1532604005.71645697.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/router/router4Cpms_1532604005.80875371.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/screen-tv02-small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1506324190.01216564!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1506324190.01216564.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1506324191.98549793.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1511162363.30926502!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1511162363.30926502!482x482.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1511162365.26074460!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1511162365.26074460!482x482.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1523344542.36184338!200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/selfie/pms_1523344542.36184338.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-black-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-black-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-red-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-red-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-white-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/mishoes-white-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-black-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-black-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-summary6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-white-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/shoes/tieshoes-white-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/slogan2016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/smart-screen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen-jinshu-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen-shangwu-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-black-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-black-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-black-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-black-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-white-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-white-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-white-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen20-white-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-black-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-black-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-black-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-black-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-white-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-white-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-white-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/90fen24-white-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-white-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-white-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/jinshu-white-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-200x200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-blue-info1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-blue-info2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-blue-info3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-summary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-summary2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-summary3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-summary4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/suitcase/shangwu-summary5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/summary-function.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/111.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/112.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/1158.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/123213.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/23442.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/316310.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/32432.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/324432.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/34536.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/4883.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/68279.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/banner3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/group01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/group02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/group03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/group04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/group05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_banner_img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_border2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_dobly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_insert1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_pics_img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_ram_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_slider_img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_slider_img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_slider_img3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_slider_img4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/index_slider_img5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/screen-tv02-small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/smart-screen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/television/top-end.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/top-end.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video1H.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video1camera360-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video1camera360-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video1camera360-12v2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video1pms_1526540190.59052324!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video2H.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video2xiaofang-05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video2xiaofang-06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video2xiaofang-07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video3H.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video3da-fang-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video3da-fang-03-v2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video3da-fang-06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/video3pms_1508834879.33595290!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/video/vidoe3pms_1508834880.70691225!560x560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/weinxinPay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj4k_lunbo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj4k_lunbo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj4k_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj4k_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj4k_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_battery_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_battery_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_battery_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_battery_pic3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_battery_pic4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_propeller_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_usb_link.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_usb_link_pic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_usb_link_pic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_usb_link_pic3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_usb_link_pic4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/wrj/wrj_usb_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/xmad_15259408612582_TGdhA.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/xmad_15324001399901_MdiBw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/xmad_15324310409495_Whqlg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/xmad_15325118804129_SjEPH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/xmad_1532616989794_ZVkCh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/xmad_15326189127178_tugca.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/底栏.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jquery/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/address.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/address_all_new.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/base.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/base_index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/checkout.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/address.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/buyGoods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/buySuccess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/checkOut.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/jquery.timers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/orderView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/payConfirm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/showComment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/specs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/daiqibin/underscore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/favourite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/iconfont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/index.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-3.2.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery.statData.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/mi_index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/myReceiver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/productList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/product_buy.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/seckillMain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/seckillPay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/specs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/xmst.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/navbarTop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/navbarTop.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/navigation.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/option.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/orderView.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/payConfirm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/payoff.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/productList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/regist1.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/regist2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/regist3.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/regist4.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/registA.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/registEmail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/returnToTop.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/seckillMain.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/seckillPay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/seckillQueue.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/sendEmail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/showComment.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/siteFooter.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/topBarBuy.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Mi_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Mi_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Spring_4_3_18_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Spring_MVC_4_3_18_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/asm_3_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_beanutils_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/aopalliance-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/aopalliance-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-beanutils-1.7.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons-beanutils-1.7.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-collections-3.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons-collections-3.2.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-httpclient-3.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons-httpclient-3.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-lang-2.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons-lang-2.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-logging-1.1.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons-logging-1.1.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ezmorph-1.0.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ezmorph-1.0.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/json-lib-2.2.3-jdk15.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/json-lib-2.2.3-jdk15.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-aop-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-aop-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-aspects-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-aspects-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-beans-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-beans-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-context-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-context-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-context-support-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-context-support-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-core-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-core-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-expression-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-expression-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-instrument-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-instrument-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-instrument-tomcat-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-instrument-tomcat-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-jdbc-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-jdbc-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-jms-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-jms-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-messaging-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-messaging-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-orm-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-orm-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-oxm-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-oxm-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-test-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-test-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-tx-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-tx-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-web-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-web-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-webmvc-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-webmvc-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-webmvc-portlet-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-webmvc-portlet-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-websocket-4.3.18.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spring-websocket-4.3.18.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SqlMapConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/SqlMapConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/AnalysisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/FirstClassificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/FirstClassificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/GroupBuyingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/GroupBuyingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/SeckillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/SeckillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/controller/SecondClassificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/controller/SecondClassificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Confiditiality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Confiditiality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Descripe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Descripe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Detail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/FavouriteItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/FavouriteItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/FirstClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/FirstClassification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/GroupBuying.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/GroupBuying.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/GroupBuyingProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/GroupBuyingProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/PieData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/PieData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/Seckill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/Seckill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/SeckillProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/SeckillProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/SeckillQueueStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/SeckillQueueStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/bean/SecondClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/bean/SecondClassification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/FirstClassificationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/FirstClassificationDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/FirstClassificationDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/FirstClassificationDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingProductDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/GroupBuyingProductDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/ManagerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/ManagerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/ManagerDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/ManagerDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/NotificationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/NotificationDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/NotificationDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/NotificationDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/ProductDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/ProductDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillProductDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SeckillProductDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/SecondClassificationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SecondClassificationDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/dao/SecondClassificationDAO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/dao/SecondClassificationDAO.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/AnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/AnalysisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/FirstClassificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/FirstClassificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/GroupBuyingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/GroupBuyingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/ManagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/SeckillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/SeckillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/service/SecondClassificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/service/SecondClassificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/tools/CusMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/tools/CusMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/tools/Md5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/tools/Md5Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/tools/ParameterCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/tools/ParameterCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/model/tools/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/model/tools/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/web/BackstageInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/web/BackstageInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mi/web/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mi/web/LoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/analysis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/analysis.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/backstage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/backstage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/editManager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/editManager.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/editPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/editPassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/fcAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/fcAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/fcEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/fcEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/fcManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/fcManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gbAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/gbAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gbInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/gbInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gbManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/gbManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gbpAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/gbpAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/home-logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/home-logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/logo-black-orange.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/logo-black-orange.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/logo-black.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/logo-black.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/logo-color.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/logo-color.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/backstage.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/backstage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/echarts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/orderManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/orderManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/productAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/productAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/productEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/productEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/productManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/productManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/scAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/scAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/scEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/scEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/scManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/scManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/seckillAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/seckillAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/seckillInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/seckillInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/seckillManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/seckillManage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/spAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/spAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/tip.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/tip.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Project Files" color="Blue" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AccountService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi/model/service/AccountService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2235">
+              <caret line="169" column="40" selection-start-line="169" selection-start-column="24" selection-end-line="169" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mi/controller/AccountController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="367" column="15" lean-forward="true" selection-start-line="367" selection-start-column="15" selection-end-line="367" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/AccountInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SparseMatrix.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi/model/utils/SparseMatrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDAO.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1080">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountDAO.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>span</find>
+      <find>selectOrderByMap</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/web/buyGoods.jsp" />
+        <option value="$PROJECT_DIR$/web/GroupOver.jsp" />
+        <option value="$PROJECT_DIR$/web/GroupReady.jsp" />
+        <option value="$PROJECT_DIR$/web/GroupRunning.jsp" />
+        <option value="$PROJECT_DIR$/web/GroupOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.xml" />
+        <option value="$PROJECT_DIR$/web/MyOrder.jsp" />
+        <option value="$PROJECT_DIR$/web/js/daiqibin/cart.js" />
+        <option value="$PROJECT_DIR$/web/test.jsp" />
+        <option value="$PROJECT_DIR$/src/db.properties" />
+        <option value="$PROJECT_DIR$/web/FinishedOrder.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/CommentSuccess.jsp" />
+        <option value="$PROJECT_DIR$/web/CreateComment.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi/controller/AccountController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="777" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mi" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mi" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mi" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="bean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mi" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mi" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mi" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mi" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.44" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Mi:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Mi" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52016" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Mi:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="742a132e-6f18-4f86-956e-9210bc27fd7c" name="Default" comment="" />
+      <created>1533794237077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533794237077</updated>
+      <workItem from="1533794239188" duration="4569000" />
+      <workItem from="1533804461039" duration="2123000" />
+      <workItem from="1533824434738" duration="338000" />
+      <workItem from="1533825937462" duration="2048000" />
+      <workItem from="1533838442862" duration="138000" />
+      <workItem from="1533861035188" duration="85000" />
+      <workItem from="1550825900382" duration="1596000" />
+      <workItem from="1553062250015" duration="2544000" />
+      <workItem from="1553138597185" duration="316000" />
+      <workItem from="1553159817637" duration="45000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13802000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32859176" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32859176" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32859176" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/navigation.jsp</url>
+          <line>15</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="169" column="40" selection-start-line="169" selection-start-column="24" selection-end-line="169" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/AccountInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/utils/SparseMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5340">
+          <caret line="356" column="9" selection-start-line="356" selection-start-column="9" selection-end-line="356" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="169" column="40" selection-start-line="169" selection-start-column="24" selection-end-line="169" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/AccountInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/utils/SparseMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="21" lean-forward="true" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5340">
+          <caret line="356" column="9" lean-forward="true" selection-start-line="356" selection-start-column="9" selection-end-line="356" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/PayingOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/dao/OrderDAO.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="169" column="40" selection-start-line="169" selection-start-column="24" selection-end-line="169" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/AccountInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/model/utils/SparseMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="367" column="15" lean-forward="true" selection-start-line="367" selection-start-column="15" selection-end-line="367" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Mi:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Mi</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>activation1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

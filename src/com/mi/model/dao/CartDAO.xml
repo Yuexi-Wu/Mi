@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ 	@author daiqibin
+ 	@version 1.0.0
+ 	@date 2018/7/18 d
+ -->
+<mapper namespace="com.mi.model.dao.CartDAO">
+
+    <insert id="addCartItem" parameterType="map">
+		INSERT INTO
+		cartitem(`cartitem_id`,`account_id`,`product_id`,`cartitem_price`,`cartitem_status`,`cartitem_quantity`)
+		VALUES(#{k_cart.cartitemId},#{k_account,jdbcType=NUMERIC},#{k_cart.product.productId},#{k_cart.cartitemPrice},1,#{k_cart.cartitemQuantity})
+	</insert>
+
+    <update id="deleteCartItem" parameterType="list">
+        UPDATE cartitem SET `cartitem_status` = 0 WHERE `cartitem_id` IN
+        <foreach collection="list" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <update id="editQuantity" parameterType="CartItem">
+		UPDATE cartitem SET `cartitem_quantity` = #{cartitemQuantity} WHERE `cartitem_id` = #{cartitemId}
+	</update>
+
+    <select id="selectCartItemByAccount" parameterType="int" resultMap="cartResult">
+		SELECT *
+		FROM cartitem c,product p
+		WHERE c.product_id = p.product_id AND account_id = #{accountId} AND `cartitem_status` = 1
+	</select>
+
+    <select id="selectCartItemById" resultMap="cartResult">
+        SELECT *
+        FROM cartitem c,product p
+        WHERE c.product_id = p.product_id AND `cartitem_status` = 1
+        AND `cartitem_id` IN
+        <foreach collection="array" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="selectCartItemByProductId" parameterType="map" resultMap="cartResult">
+        SELECT *
+        FROM cartitem c,product p
+        WHERE c.product_id = p.product_id AND account_id = #{k_account} AND p.`product_id` = #{k_product} AND `cartitem_status` = 1
+    </select>
+
+    <select id="findCartItem" parameterType="map" resultMap="cartResult">
+        SELECT *
+        FROM cartitem c,product p
+        WHERE c.product_id = p.product_id AND account_id = #{accountId}
+        <if test=" cartitemId != null and cartitemId !=0 ">
+            and cartitem_id=#{cartitemId}
+        </if>
+    </select>
+
+    <resultMap id="cartResult" type="CartItem">
+        <id column="cartitem_id" property="cartitemId"/>
+        <result column="cartitem_price" property="cartitemPrice"/>
+        <result column="cartitem_quantity" property="cartitemQuantity"/>
+        <association property="product" column="product_id" javaType="Product" resultMap="productResult"/>
+    </resultMap>
+    <resultMap id="productResult" type="Product">
+        <result column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_color" property="productColor"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="product_size" property="productSize"/>
+        <result column="product_sales" property="productSales"/>
+        <result column="product_max" property="productMax"/>
+        <result column="product_url" property="productUrl"/>
+    </resultMap>
+</mapper>
+
+
+
+
+
+
+
+
+

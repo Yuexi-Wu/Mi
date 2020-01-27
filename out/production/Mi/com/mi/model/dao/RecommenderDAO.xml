@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ 	@author huangjiarui
+ 	@version 1.0
+ -->
+
+<mapper namespace="com.mi.model.dao.RecommenderDAO">
+
+    <select id="getAllWeight" resultMap="weight">
+        select *
+        from weight
+    </select>
+
+    <resultMap type="Weight" id="weight">
+        <id property="weightId" column="weight_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="featureNumber" column="feature_number"/>
+        <result property="weightValue" column="weight_value"/>
+    </resultMap>
+
+    <select id="getAllHidbiase" resultMap="hidbiase">
+        select *
+        from hidbiase
+    </select>
+
+    <resultMap type="Hidbiase" id="hidbiase">
+        <id property="hidbiaseId" column="hidbiase_id"/>
+        <result property="featureNumber" column="feature_number"/>
+        <result property="hidbiaseValue" column="hidbiase_value"/>
+    </resultMap>
+
+    <select id="getAllVisbiase" resultMap="visbiase">
+        select *
+        from visbiase
+    </select>
+
+    <resultMap type="Visbiase" id="visbiase">
+        <id property="visbiaseId" column="visbiase_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="visbiaseValue" column="visbiase_value"/>
+    </resultMap>
+
+    <delete id="deleteWeight">
+        TRUNCATE TABLE weight
+    </delete>
+
+    <delete id="deleteHidbiase">
+        TRUNCATE TABLE hidbiase
+    </delete>
+
+    <delete id="deleteVisbiase">
+        TRUNCATE TABLE visbiase
+    </delete>
+
+    <insert id="insertAllWeight" parameterType="java.util.List">
+        insert into weight values
+        <foreach collection="list" item="weight" index="index" separator=",">
+            (#{weight.weightId},#{weight.productId},#{weight.featureNumber},#{weight.weightValue})
+        </foreach>
+    </insert>
+
+    <insert id="insertAllHidbiase" parameterType="java.util.List">
+        insert into hidbiase values
+        <foreach collection="list" item="hidbiase" index="index" separator=",">
+            (#{hidbiase.hidbiaseId},#{hidbiase.featureNumber},#{hidbiase.hidbiaseValue})
+        </foreach>
+    </insert>
+
+    <insert id="insertAllVisbiase" parameterType="java.util.List">
+        insert into visbiase values
+        <foreach collection="list" item="visbiase" index="index" separator=",">
+            (#{visbiase.visbiaseId},#{visbiase.productId},#{visbiase.visbiaseValue})
+        </foreach>
+    </insert>
+
+
+</mapper>

@@ -22,4 +22,14 @@ public interface SecondClassificationDAO {
     public SecondClassification selectScById(int scId);
     //修改二级分类信息
     public void updateSc(SecondClassification sc);
+    /*根据一级分类返回全部二级分类*/
+    public List<SecondClassification> selectScByFc(int fcId);
+    /**
+     * get all second classifications by id of first classification
+     * @param fcId id of first classification
+     * @return list of second classifications
+     * @author huang jiarui
+     * @version 1.0
+     */
+    public List<SecondClassification> getSecondClassificationByFcId(Integer fcId);
 }

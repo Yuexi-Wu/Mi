@@ -5,6 +5,7 @@ import com.mi.model.bean.Confiditiality;
 import com.mi.model.bean.FavouriteItem;
 import com.mi.model.bean.Receiver;
 import java.util.List;
+import java.util.Map;
 
 
 public interface AccountDAO {
@@ -27,6 +28,12 @@ public interface AccountDAO {
     //检验用户名是否重复
     public String validateAccountName(String accountName);
 
+    //验证用户名和电话是否有冲突
+    public String validateNameAndPhone(String accountName);
+
+    //检验用户名和邮箱是否有冲突
+    public String validateNameAndEmail(String accountName);
+
     //修改密码时验证原密码是否正确
     public Account verifyPassword(Account account);
 
@@ -37,7 +44,6 @@ public interface AccountDAO {
     public List<FavouriteItem> checkFavouriteById(int accountId);
 
     //登录时验证用户名密码是否有效
-    //public Account validateAccount(int telephone, String accountName, String email, String password);
     public Account validateAccount(Account account);
 
     //绑定新邮箱
@@ -70,6 +76,33 @@ public interface AccountDAO {
     //得到所有账户id
     public List<Integer> selectAllAccountsId();
 
+    //修改头像
+    public void updateAvatar(Account account);
+
+    //得到待支付商品数量
+    public int getPayingNum(int accountId);
+
+    //得到待收货商品数量
+    public int getShippingNum(int accountId);
+
+    //得到未评价商品数
+    public int getUncommentedNum(int accountId);
+
+    //w
+    public Account findAccountByName(Account account);
+
     //获取总用户数量 zkn
     public int getAllAccountsCount();
+
+    /**
+     * get all account id from small to large
+     * @return the sorted list of account id
+     * @author huang jiarui
+     * @version 1.0
+     */
+    public List<Integer> getAllSortedAccountId();
+
+    /*添加到我的喜欢*/
+    public void addToFavorite(Map<String,Object> map);
+
 }

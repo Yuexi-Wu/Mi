@@ -25,15 +25,15 @@ public class Account {
     private List<Order> orders;
     private List<Notification> notes;
 
-    public List<Confiditiality> getQa() {
-        return qa;
+    public Confiditiality getConfiditiality() {
+        return confiditiality;
     }
 
-    public void setQa(List<Confiditiality> qa) {
-        this.qa = qa;
+    public void setConfiditiality(Confiditiality confiditiality) {
+        this.confiditiality = confiditiality;
     }
 
-    private List<Confiditiality> qa;
+    private Confiditiality confiditiality;
 
     public String getTelephone() {
         return telephone;

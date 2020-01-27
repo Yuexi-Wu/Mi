@@ -20,4 +20,16 @@ public interface SeckillDAO {
     void addSeckill(Seckill seckill);
     //通过秒杀活动Id获取秒杀活动对象
     Seckill selectSeckillById(int seckillId);
+    //根据id获取唯一秒杀活动Seckill
+    public Seckill getSeckillById(int seckillId);
+    //获取今日正在进行和即将进行的秒杀活动集合
+    public List<Seckill> getTodayRemainingSeckills();
+    /**
+     * get latest second kill activity
+     * @return latest second kill activity
+     * @author huang jiarui
+     * @version 1.0
+     */
+    public Seckill getLatestSeckill();
+
 }

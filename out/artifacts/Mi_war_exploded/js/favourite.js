@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $(".xm-goods-item").mouseover(function(){
+        $(this).children("delf").fadeIn();
+        $(this).children("fdet").fadeIn();
+    });
+    $(".xm-goods-item").mouseleave(function(){
+        $(this).children("delf").fadeOut();
+        $(this).children("fdet").fadeOut();
+    });
+});
