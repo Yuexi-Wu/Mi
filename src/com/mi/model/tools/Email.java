@@ -18,7 +18,7 @@ public class Email {
     //发件人账户名
     public static String senderAccount = "wuyuki1998@qq.com";
     //发件人账户密码
-    public static String senderPassword = "ftbigxwnqzaubcch";
+    public static String senderPassword = "***";
 
     public static void getEmailMesg(String recipientAddress,String code){
         Properties props = new Properties();
